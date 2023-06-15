@@ -1,13 +1,26 @@
 import { RouterProvider } from 'react-router-dom';
+import { useState } from 'react';
 
 import router from './router';
-import SideBar from './components/layout/SideBar';
+import Sidebar from './components/layout/Sidebar';
+import Header from './components/layout/Header';
+import MobileSidebar from './components/layout/MobileSidebar';
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div className="flex">
-      <SideBar />
-      <RouterProvider router={router} />
+    <div>
+      <Header toggleSidebar={toggleSidebar} />
+      <div className="flex">
+        <Sidebar />
+        {isSidebarOpen && <MobileSidebar />}
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }

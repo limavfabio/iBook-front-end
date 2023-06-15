@@ -16,7 +16,7 @@ function Details() {
           <p>1 Hour</p>
         </div>
         <p>DISCOVER MORE MODELS</p>
-        <button>Configure</button>
+        <button type="button">Configure</button>
       </div>
     </div>
   );
