@@ -1,12 +1,12 @@
 import { RouterProvider } from 'react-router-dom';
 
 import router from './router';
-import Header from './components/layout/Header';
+import SideBar from './components/layout/SideBar';
 
 function App() {
   return (
-    <div>
-      <Header />
+    <div className="flex">
+      <SideBar />
       <RouterProvider router={router} />
     </div>
   );
