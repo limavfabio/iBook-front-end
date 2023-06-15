@@ -1,19 +1,19 @@
 import {
   createBrowserRouter,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import Home from './routes/Home.jsx'
-import About from './routes/About.jsx'
+import Home from './routes/Home';
+import About from './routes/About';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Home />,
   },
   {
-    path: "/about",
+    path: '/about',
     element: <About />,
-  }
+  },
 ]);
 
 export default router;

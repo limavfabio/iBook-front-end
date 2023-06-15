@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -7,7 +7,7 @@ function Home() {
       <p>This is the home page</p>
       <Link to="/about">Link to the about page</Link>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

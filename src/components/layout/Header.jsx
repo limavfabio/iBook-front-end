@@ -3,7 +3,7 @@ function Header() {
     <div>
       This is the header
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

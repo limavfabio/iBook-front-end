@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function About() {
   return (
@@ -7,7 +7,7 @@ function About() {
       <p>This is the about page</p>
       <Link to="/">Link to the Homepage</Link>
     </div>
-  )
+  );
 }
 
-export default About
+export default About;
