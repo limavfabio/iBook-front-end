@@ -13,10 +13,12 @@ function App() {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+
+
   return (
-    <div>
+    <div className='text-stone-800'>
       <Header toggleSidebar={toggleSidebar} />
-      <div className="flex">
+      <div className="flex container mx-auto">
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
         <RouterProvider router={router} />
