@@ -1,9 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import Home from './routes/Home';
+import ItemForm from './components/Item-form/ItemForm';
+import Reserve from './components/reserve/Reserve';
 import About from './routes/About';
 import Details from './routes/Details';
-import Reserve from './components/reserve/Reserve';
+import Home from './routes/Home';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     element: <Details />,
   },
   { path: '/reserve', element: <Reserve /> },
+  { path: '/form', element: <ItemForm /> },
 ]);
 
 export default router;

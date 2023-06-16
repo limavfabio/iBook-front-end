@@ -22,7 +22,7 @@ const MainHome = () => {
     },
   ];
   return (
-    <div className="text-center w-full mx-auto">
+    <div className="text-center flex flex-col justify-center items-center h-screen w-full mx-auto">
       <h2 className="font-black text-2xl uppercase">Latest Models</h2>
       <p className="text-[#D2D2D2] text-xs font-bold">Please select a vespa model</p>
       <div className="md:flex  gap-5 mt-16 items-center justify-center">
