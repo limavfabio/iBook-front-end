@@ -1,50 +1,50 @@
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
+import 'swiper/css';
 
 const MainHome = () => {
-  const [isBeginning, setIsBeginning] = useState(true)
-  const [isEnd, setIsEnd] = useState(false)
-  
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
   const products = [
     {
-      title: "vehicle1",
-      img: "https://vespaindia.com/images/classic/vxl_yellow.webp",
-      desc: "blablabal hello world this is vehicle where you can drive into the mood. hahah",
-      bgColor: "lime",
+      title: 'vehicle1',
+      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
+      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
+      bgColor: 'lime',
     },
     {
-      title: "vehicle2",
-      img: "https://vespaindia.com/images/classic/vxl_yellow.webp",
-      desc: "blablabal hello world this is vehicle where you can drive into the mood. hahah",
-      bgColor: "gray",
+      title: 'vehicle2',
+      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
+      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
+      bgColor: 'gray',
     },
     {
-      title: "vehicle3",
-      img: "https://vespaindia.com/images/classic/vxl_yellow.webp",
-      desc: "blablabal hello world this is vehicle where you can drive into the mood. hahah",
-      bgColor: "green",
+      title: 'vehicle3',
+      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
+      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
+      bgColor: 'green',
     },
     {
-      title: "vehicle3",
-      img: "https://vespaindia.com/images/classic/vxl_yellow.webp",
-      desc: "blablabal hello world this is vehicle where you can drive into the mood. hahah",
-      bgColor: "green",
+      title: 'vehicle4',
+      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
+      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
+      bgColor: 'green',
     },
     {
-      title: "vehicle3",
-      img: "https://vespaindia.com/images/classic/vxl_yellow.webp",
-      desc: "blablabal hello world this is vehicle where you can drive into the mood. hahah",
-      bgColor: "green",
+      title: 'vehicle5',
+      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
+      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
+      bgColor: 'green',
     },
   ];
   const swiperRef = useRef();
-  
+
   return (
     <div className="mx-auto flex h-screen gap-5 items-center justify-center text-center">
-       <button type="button" className={`swiper-button-prev ${isBeginning?'bg-[#E4E5E9]': 'bg-[#97BF0F]'}  pl-7 pr-2 py-3 rounded-r-full`} disabled={isBeginning} onClick={() => swiperRef.current?.slidePrev()}>
+      <button type="button" className={`swiper-button-prev ${isBeginning ? 'bg-[#E4E5E9]' : 'bg-[#97BF0F]'}  pl-7 pr-2 py-3 rounded-r-full`} disabled={isBeginning} onClick={() => swiperRef.current?.slidePrev()}>
         <img
           width="24"
           height="24"
@@ -59,31 +59,30 @@ const MainHome = () => {
         breakpoints={{
           1024: {
             slidesPerView: 3,
-            spaceBetween:20
+            spaceBetween: 20,
 
           },
-          550:{
-            slidesPerView:2,
-            spaceBetween:20,
-          }
+          550: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
         }}
-        allowTouchMove = {false}
+        allowTouchMove={false}
         onSlideChange={(swiper) => {
-          setIsBeginning(swiper.isBeginning)
-          setIsEnd(swiper.isEnd)
+          setIsBeginning(swiper.isBeginning);
+          setIsEnd(swiper.isEnd);
         }}
-        onSwiper={(swiper) => console.log('ed',swiper)}
         className="w-full"
         navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         }}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
       >
-        {products.map((product, ind) => (
-          <SwiperSlide key={ind} className="cursor-pointer">
+        {products.map((product) => (
+          <SwiperSlide key={product.title} className="cursor-pointer">
             <div
               className={`mx-auto flex h-[200px] w-[200px] items-center justify-center rounded-full bg-${product.bgColor}`}
             >
@@ -95,7 +94,7 @@ const MainHome = () => {
         ))}
       </Swiper>
 
-      <button type="button" className={`swiper-button-next ${!isEnd?'bg-[#97BF0F]': 'bg-[#E4E5E9]'} pl-2 pr-7 py-3 rounded-l-full`} disabled={isEnd} onClick={() => swiperRef.current?.slideNext()}>
+      <button type="button" className={`swiper-button-next ${!isEnd ? 'bg-[#97BF0F]' : 'bg-[#E4E5E9]'} pl-2 pr-7 py-3 rounded-l-full`} disabled={isEnd} onClick={() => swiperRef.current?.slideNext()}>
         <img
           width="24"
           height="24"
