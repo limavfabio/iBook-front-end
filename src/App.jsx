@@ -16,7 +16,7 @@ function App() {
   return (
     <div>
       <Header toggleSidebar={toggleSidebar} />
-      <div className="container flex mx-auto">
+      <div className="container flex mx-auto ">
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
         <RouterProvider router={router} />
