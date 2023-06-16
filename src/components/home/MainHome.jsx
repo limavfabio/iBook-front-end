@@ -1,46 +1,108 @@
-import React from 'react';
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
 
 const MainHome = () => {
+  const [isBeginning, setIsBeginning] = useState(true)
+  const [isEnd, setIsEnd] = useState(false)
+  
   const products = [
     {
-      title: 'vehicle1',
-      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
-      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
-      bgColor: 'lime',
+      title: "vehicle1",
+      img: "https://vespaindia.com/images/classic/vxl_yellow.webp",
+      desc: "blablabal hello world this is vehicle where you can drive into the mood. hahah",
+      bgColor: "lime",
     },
     {
-      title: 'vehicle2',
-      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
-      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
-      bgColor: 'gray',
+      title: "vehicle2",
+      img: "https://vespaindia.com/images/classic/vxl_yellow.webp",
+      desc: "blablabal hello world this is vehicle where you can drive into the mood. hahah",
+      bgColor: "gray",
     },
     {
-      title: 'vehicle3',
-      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
-      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
-      bgColor: 'green',
+      title: "vehicle3",
+      img: "https://vespaindia.com/images/classic/vxl_yellow.webp",
+      desc: "blablabal hello world this is vehicle where you can drive into the mood. hahah",
+      bgColor: "green",
+    },
+    {
+      title: "vehicle3",
+      img: "https://vespaindia.com/images/classic/vxl_yellow.webp",
+      desc: "blablabal hello world this is vehicle where you can drive into the mood. hahah",
+      bgColor: "green",
+    },
+    {
+      title: "vehicle3",
+      img: "https://vespaindia.com/images/classic/vxl_yellow.webp",
+      desc: "blablabal hello world this is vehicle where you can drive into the mood. hahah",
+      bgColor: "green",
     },
   ];
+  const swiperRef = useRef();
+  
   return (
-    <div className="text-center w-full mx-auto">
-      <h2 className="font-black text-2xl uppercase">Latest Models</h2>
-      <p className="text-[#D2D2D2] text-xs font-bold">Please select a vespa model</p>
-      <div className="md:flex  gap-5 mt-16 items-center justify-center">
-        {products.map((product) => (
-          <div key={product.title} className="flex-1">
-            <div className=" w-[200px] h-[200px] rounded-full flex justify-center items-center mx-auto ">
+    <div className="mx-auto flex h-screen gap-5 items-center justify-center text-center">
+       <button type="button" className={`swiper-button-prev ${isBeginning?'bg-[#E4E5E9]': 'bg-[#97BF0F]'}  pl-7 pr-2 py-3 rounded-r-full`} disabled={isBeginning} onClick={() => swiperRef.current?.slidePrev()}>
+        <img
+          width="24"
+          height="24"
+          src="https://img.icons8.com/material-outlined/24/play--v1.png"
+          alt="play--v1"
+          className="rotate-180"
+        />
+      </button>
+      <Swiper
+        spaceBetween={20}
+        slidesPerView={1}
+        breakpoints={{
+          1024: {
+            slidesPerView: 3,
+            spaceBetween:20
+
+          },
+          550:{
+            slidesPerView:2,
+            spaceBetween:20,
+          }
+        }}
+        allowTouchMove = {false}
+        onSlideChange={(swiper) => {
+          setIsBeginning(swiper.isBeginning)
+          setIsEnd(swiper.isEnd)
+        }}
+        onSwiper={(swiper) => console.log('ed',swiper)}
+        className="w-full"
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
+        onBeforeInit={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+      >
+        {products.map((product, ind) => (
+          <SwiperSlide key={ind} className="cursor-pointer">
+            <div
+              className={`mx-auto flex h-[200px] w-[200px] items-center justify-center rounded-full bg-${product.bgColor}`}
+            >
               <img src={product.img} alt="img" className="rounded-full" />
             </div>
-            <h2 className="my-5  font-bold">{product.title}</h2>
-            <p className="text-[#D2D2D2] mb-10">{product.desc}</p>
-          </div>
+            <h2 className="my-5 font-bold">{product.title}</h2>
+            <p className="mb-10 text-[#D2D2D2]">{product.desc}</p>
+          </SwiperSlide>
         ))}
-        <div className="ml-auto hidden md:block">
-          <button type="button" className="bg-[#97BF0F] w-full pl-3 pr-5 lg:pr-8 py-3 rounded-l-full">
-            <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/play--v1.png" alt="play--v1" />
-          </button>
-        </div>
-      </div>
+      </Swiper>
+
+      <button type="button" className={`swiper-button-next ${!isEnd?'bg-[#97BF0F]': 'bg-[#E4E5E9]'} pl-2 pr-7 py-3 rounded-l-full`} disabled={isEnd} onClick={() => swiperRef.current?.slideNext()}>
+        <img
+          width="24"
+          height="24"
+          src="https://img.icons8.com/material-outlined/24/play--v1.png"
+          alt="play--v1"
+        />
+      </button>
     </div>
   );
 };
