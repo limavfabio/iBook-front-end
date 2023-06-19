@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 const MainHome = () => {
+  const swiperRef = useRef();
   const [isBeginning, setIsBeginning] = useState(true)
   const [isEnd, setIsEnd] = useState(false)
   
@@ -40,7 +41,6 @@ const MainHome = () => {
       bgColor: "green",
     },
   ];
-  const swiperRef = useRef();
   
   return (
     <div className="mx-auto flex h-screen gap-5 items-center justify-center text-center">
