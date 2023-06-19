@@ -7,18 +7,11 @@ import Sidebar from './components/layout/Sidebar';
 import router from './router';
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
 
   return (
     <div>
-      <Header toggleSidebar={toggleSidebar} />
-      <div className="container flex mx-auto ">
-        <Sidebar />
-        {isSidebarOpen && <MobileSidebar />}
+      <div className="">
         <RouterProvider router={router} />
       </div>
     </div>
