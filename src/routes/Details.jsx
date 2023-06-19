@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ConfigureButton from "../components/ConfigureButton";
@@ -13,9 +12,10 @@ import { fetchProductWithId } from "../redux/productsSlice";
 function Details() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const {id} =useParams()
+
   const dispatch = useDispatch();
   const data = useSelector((state) => state.products.value);
-  console.log(data);
+ 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -24,10 +24,6 @@ function Details() {
     dispatch(fetchProductWithId(id));
   }, [dispatch]);
 
-  // const date = new Date(data.created_at)
-  // const formatedDate= date.toLocalString()
-  // console.log(formatedDate);
-
   return (
     <>
       <Header toggleSidebar={toggleSidebar} />
@@ -35,12 +31,12 @@ function Details() {
       <div className="flex">
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
-        <div className="flex w-full items-center">
+        <div className="flex w-full justify-between items-center">
           {/* Left Side Full Screen Image */}
-          <div className="w-full">
+          <div className="">
             <img
               src={data.image}
-              alt="Vespa"
+              alt={data.name}
             />
           </div>
           {/* Right Side Details Panel */}

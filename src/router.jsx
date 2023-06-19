@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     path: '/details/:id',
     element: <Details />,
   },
-  { path: '/reserve', element: <Reserve /> },
+  { path: '/user/:user_id/reserve', element: <Reserve /> },
   { path: '/form', element: <ItemForm /> },
 ]);
 
