@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const ItemForm = () => {
-  const [name, setName] = useState("");
-  const [photo, setPhoto] = useState("");
-  const [vehicle, setVehicle] = useState("");
-  const [rate, setRate] = useState("");
+  const [name, setName] = useState('');
+  const [photo, setPhoto] = useState('');
+  const [vehicle, setVehicle] = useState('');
+  const [rate, setRate] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setName("");
-    setPhoto("");
-    setVehicle("");
-    setRate("");
+    setName('');
+    setPhoto('');
+    setVehicle('');
+    setRate('');
   };
 
   return (
@@ -20,7 +20,7 @@ const ItemForm = () => {
         onSubmit={handleSubmit}
         className="border border-[#9CA3AF] py-10 px-8 shadow-2xl bg-white"
       >
-      <h2 className=" font-bold uppercase text-center">Add New Item</h2>
+        <h2 className=" font-bold uppercase text-center">Add New Item</h2>
         <div className="w-72 md:w-96">
           <label htmlFor="name" className="mb-2 block">
             <p className="font-semibold">Name</p>
@@ -35,7 +35,7 @@ const ItemForm = () => {
             />
           </label>
           <label htmlFor="photo" className="mb-2 block">
-          <p className="font-semibold">Photo</p>
+            <p className="font-semibold">Photo</p>
 
             <input
               type="text"
@@ -48,7 +48,7 @@ const ItemForm = () => {
             />
           </label>
           <label htmlFor="vehicle" className="mb-2 block">
-          <p className="font-semibold">Vehicle</p>
+            <p className="font-semibold">Vehicle</p>
 
             <input
               type="text"
@@ -61,7 +61,7 @@ const ItemForm = () => {
             />
           </label>
           <label htmlFor="rate" className="mb-2 block">
-          <p className="font-semibold">Rate</p>
+            <p className="font-semibold">Rate</p>
 
             <input
               type="number"

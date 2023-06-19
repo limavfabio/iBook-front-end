@@ -1,40 +1,44 @@
-import DetailRow from "../components/DetailRow";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import ConfigureButton from "../components/ConfigureButton";
+import { useState } from "react";
+
+import Header from "../components/layout/Header";
+import Sidebar from "../components/layout/Sidebar";
+import MobileSidebar from "../components/layout/MobileSidebar";
 
 function Details() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
-    <div className="flex w-full items-center">
-      {/* Left Side Full Screen Image */}
-      <div className="w-full">
-        <img
-          src="https://vespaindia.com/images/classic/vxl_yellow.webp"
-          alt="Vespa"
-        />
-      </div>
-      {/* Right Side Details Panel */}
-      <div className="flex h-full w-1/3 min-w-fit flex-col justify-center px-5 text-end">
-        <h2 className="text-4xl mb-1">Package name</h2>
-        <p className="mb-5">Package description</p>
-        {/* Table */}
-        <div className="mb-5 flex flex-col justify-between">
-          <DetailRow
-            label={"Package price"}
-            value={"$150.00"}
-            isGrayBackground
-          />
-          <DetailRow label={"Date"} value={"May 15"} />
-          <DetailRow label={"Start Time"} value={"9:00"} isGrayBackground />
-          <DetailRow label={"End Time"} value={"11:00"} />
-          <DetailRow label={"Duration"} value={"1 Hour"} isGrayBackground />
+    <>
+      <Header toggleSidebar={toggleSidebar} />
+
+      <div className="flex">
+        <Sidebar />
+        {isSidebarOpen && <MobileSidebar />}
+        <div className="flex w-full">
+          {/* Left Side Full Screen Image */}
+          <div className="w-full">Left side image of package</div>
+          {/* Right Side Details Panel */}
+          <div className="w-1/3 min-w-fit bg-red-100 px-5 text-end">
+            <h2 className="text-3xl">Package name</h2>
+            <p className="text-sm">Package description</p>
+            <div className="flex justify-between text-sm">
+              <p>Package price</p>
+              <p>$10.00</p>
+            </div>
+            <div className="flex justify-between text-sm">
+              <p>Duration</p>
+              <p>1 Hour</p>
+            </div>
+            <p>DISCOVER MORE MODELS</p>
+            <button type="button">Configure</button>
+          </div>
         </div>
-        <p className="flex items-center self-end font-bold">
-          DISCOVER MORE MODELS{" "}
-          <ChevronRightIcon className="h-5 text-[#97BF0F]" />{" "}
-        </p>
-        <ConfigureButton className="mt-5" />
       </div>
-    </div>
+    </>
   );
 }
 
