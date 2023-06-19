@@ -1,26 +1,15 @@
-import { RouterProvider } from 'react-router-dom';
 import { useState } from 'react';
+import { RouterProvider } from 'react-router-dom';
 
-import router from './router';
-import Sidebar from './components/layout/Sidebar';
 import Header from './components/layout/Header';
 import MobileSidebar from './components/layout/MobileSidebar';
+import Sidebar from './components/layout/Sidebar';
+import router from './router';
 
 function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-
-
   return (
     <div className='text-stone-800'>
-      <Header toggleSidebar={toggleSidebar} />
-      <div className="flex container mx-auto">
-        <Sidebar />
-        {isSidebarOpen && <MobileSidebar />}
+      <div>
         <RouterProvider router={router} />
       </div>
     </div>
