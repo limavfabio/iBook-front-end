@@ -1,46 +1,35 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from '../../redux/productsSlice';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 
 const MainHome = () => {
+
+  // Fetch products from the store
+  const products = useSelector((state) => state.products.value);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
+
   const swiperRef = useRef();
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
-  const products = [
-    {
-      title: 'vehicle1',
-      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
-      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
-      bgColor: 'lime',
-    },
-    {
-      title: 'vehicle2',
-      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
-      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
-      bgColor: 'gray',
-    },
-    {
-      title: 'vehicle3',
-      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
-      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
-      bgColor: 'green',
-    },
-    {
-      title: 'vehicle4',
-      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
-      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
-      bgColor: 'green',
-    },
-    {
-      title: 'vehicle5',
-      img: 'https://vespaindia.com/images/classic/vxl_yellow.webp',
-      desc: 'blablabal hello world this is vehicle where you can drive into the mood. hahah',
-      bgColor: 'green',
-    },
-  ];
+  // productType = [
+  //   {
+  //     id: 1,
+  //     name: 'vehicle',
+  //     image:
+  //     owner_id:
+  //     price:
+  //     description
+  //   }
+  // ]
 
   return (
     <div className="mx-auto flex h-screen gap-5 items-center justify-center text-center">
@@ -81,17 +70,19 @@ const MainHome = () => {
           swiperRef.current = swiper;
         }}
       >
-        {products.map((product) => (
-          <SwiperSlide key={product.title} className="cursor-pointer">
-            <div
-              className={`mx-auto flex h-[200px] w-[200px] items-center justify-center rounded-full bg-${product.bgColor}`}
-            >
-              <img src={product.img} alt="img" className="rounded-full" />
-            </div>
-            <h2 className="my-5 font-bold">{product.title}</h2>
-            <p className="mb-10 text-[#D2D2D2]">{product.desc}</p>
-          </SwiperSlide>
-        ))}
+        {
+          products ? products.map((product) => (
+            <SwiperSlide key={product.id} className="cursor-pointer">
+              <div
+                className={`mx-auto flex h-[200px] w-[200px] items-center justify-center rounded-full bg-${product.bgColor}`}
+              >
+                <img src={product.image} alt="img" className="rounded-full" />
+              </div>
+              <h2 className="my-5 font-bold">{product.name}</h2>
+              <p className="mb-10 text-[#D2D2D2]">{product.description}</p>
+            </SwiperSlide>
+          )) : 'Loading'
+        }
       </Swiper>
 
       <button type="button" className={`swiper-button-next ${!isEnd ? 'bg-[#97BF0F]' : 'bg-[#E4E5E9]'} pl-2 pr-7 py-3 rounded-l-full`} disabled={isEnd} onClick={() => swiperRef.current?.slideNext()}>
