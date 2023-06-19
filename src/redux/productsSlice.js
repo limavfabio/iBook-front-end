@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL = 'http://localhost:3000/api/v1/products';
+const URL = 'https://venom-precision.onrender.com/api/v1/products';
 
 const initialState = {
   value: '',
@@ -19,6 +19,18 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async ()
     return data;
   } catch (error) {
     throw new Error(error.message);
+  }
+})
+
+export const fetchProductWithId = createAsyncThunk('productsId/fetchProductWithId', async (id)=>{
+  try {
+    // const {id} = getState().products;
+
+    const response = await fetch(`${URL}/${id}`)
+    const data = await response.json()
+    return data
+  } catch (error) {
+    throw new Error(error.message)
   }
 })
 
@@ -41,7 +53,20 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.rejected, (state) => ({
         ...state,
         isLoading: false,
-      }));
+      }))
+      .addCase(fetchProductWithId.pending, (state)=>({
+        ...state,
+        isLoading:true
+      }))
+      .addCase(fetchProductWithId.fulfilled, (state, action)=>({
+        ...state,
+        isLoading:false,
+        value:action.payload
+      }))
+      .addCase(fetchProductWithId.rejected, (state)=>({
+        ...state,
+        isLoading:false
+      }))
   },
 })
 

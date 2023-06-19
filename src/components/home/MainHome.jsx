@@ -1,20 +1,23 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from '../../redux/productsSlice';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { fetchProducts } from '../../redux/productsSlice';
 
 // Import Swiper styles
+import { Link } from 'react-router-dom';
 import 'swiper/css';
 
 const MainHome = () => {
 
   // Fetch products from the store
-  const products = useSelector((state) => state.products.value);
+  const products = useSelector((state) => state.products.value || []);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
+
+  console.log( products);
 
   const swiperRef = useRef();
   const [isBeginning, setIsBeginning] = useState(true);
@@ -71,8 +74,9 @@ const MainHome = () => {
         }}
       >
         {
-          products ? products.map((product) => (
+           products.map((product) => (
             <SwiperSlide key={product.id} className="cursor-pointer">
+              <Link to={`/details/${product.id}`} >
               <div
                 className={`mx-auto flex h-[200px] w-[200px] items-center justify-center rounded-full bg-${product.bgColor}`}
               >
@@ -80,8 +84,9 @@ const MainHome = () => {
               </div>
               <h2 className="my-5 font-bold">{product.name}</h2>
               <p className="mb-10 text-[#D2D2D2]">{product.description}</p>
+              </Link>
             </SwiperSlide>
-          )) : 'Loading'
+          )) 
         }
       </Swiper>
 
