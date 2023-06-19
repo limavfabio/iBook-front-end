@@ -1,4 +1,5 @@
-import { Cog6ToothIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import PropTypes from 'prop-types';
+import { Cog6ToothIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 function ConfigureButton({ className }) {
   return (
@@ -12,5 +13,13 @@ function ConfigureButton({ className }) {
     </button>
   );
 }
+
+ConfigureButton.defaultProps = {
+  className: '',
+};
+
+ConfigureButton.propTypes = {
+  className: PropTypes.string,
+};
 
 export default ConfigureButton;

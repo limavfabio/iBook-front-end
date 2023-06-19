@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import MainHome from "../components/home/MainHome";
-import Header from "../components/layout/Header";
-import Sidebar from "../components/layout/Sidebar";
-import MobileSidebar from "../components/layout/MobileSidebar";
+import MainHome from '../components/home/MainHome';
+import Header from '../components/layout/Header';
+import Sidebar from '../components/layout/Sidebar';
+import MobileSidebar from '../components/layout/MobileSidebar';
 
 function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

@@ -6,8 +6,8 @@ import 'swiper/css';
 
 const MainHome = () => {
   const swiperRef = useRef();
-  const [isBeginning, setIsBeginning] = useState(true)
-  const [isEnd, setIsEnd] = useState(false)
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
 
   const products = [
     {
