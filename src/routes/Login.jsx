@@ -6,10 +6,27 @@ function Login() {
   const [username, setUsername] = useState("");
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    dispatch(setUsernameRedux(username));
+    try {
+      // Make a request to retrieve all users
+      const response = await fetch('http://localhost:3000/api/v1/users');
+      const users = await response.json();
+      console.log('Users:', users)
+
+      // Check if the submitted username exists in the retrieved users
+      const userExists = users.some((user) => user.username === username);
+      console.log('User exists:', userExists);
+
+      if (userExists) {
+        dispatch(setUsernameRedux(username)); // Dispatch the setUsername action to store the username
+      } else {
+        console.error('User does not exist'); // Log an error message
+      }
+    } catch (error) {
+      console.error('Error:', error); // Log any other errors
+    }
   };
 
   return (
