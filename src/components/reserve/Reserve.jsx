@@ -8,7 +8,7 @@ import { fetchProductWithId } from "../../redux/productsSlice";
 
 const Reserve = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const redirect = useNavigate();
 
   // Fetch user from redux store
   const user = useSelector((state) => state.user);
@@ -19,6 +19,13 @@ const Reserve = () => {
   useEffect(() => {
     dispatch(fetchProductWithId(productId));
   }, [dispatch]);
+
+  // Redirect to login page if user is not logged in
+  useEffect(() => {
+    if (!user.id) {
+      redirect("/login");
+    }
+  }, [user, redirect]);
 
   const [date, setDate] = useState(null);
 
@@ -38,7 +45,7 @@ const Reserve = () => {
     dispatch(postReservation({ postData }));
 
     // Navigate to the user's reservations page
-    navigate(`/users/${user.id}/reservations`);
+    redirect(`/users/${user.id}/reservations`);
   };
 
   const bgImg = {
