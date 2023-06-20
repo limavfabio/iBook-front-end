@@ -2,9 +2,9 @@ import { ChevronRightIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function ConfigureButton({ className }) {
+function ConfigureButton({ className, productId, ownerId }) {
   return (
-    <Link to={`/user/1/reserve`}>
+    <Link to={`/reserve`} state={{additional:{productId, ownerId}}}>
       <button
         type="button"
         className={`flex w-min float-right items-center gap-2  rounded-full bg-[#97BF0F] p-3 font-bold text-white ${className}`}

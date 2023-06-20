@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL = 'https://venom-precision.onrender.com/api/v1/products';
+const URL = 'https://venom-precision.onrender.com/api/v1/';
 
 const initialState = {
   value: '',
@@ -11,7 +11,7 @@ const initialState = {
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
   try {
-    const response = await fetch(URL);
+    const response = await fetch(`${URL}/products`);
     if (!response.ok) {
       throw new Error('Request failed');
     }
@@ -24,11 +24,26 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async ()
 
 export const fetchProductWithId = createAsyncThunk('productsId/fetchProductWithId', async (id)=>{
   try {
-    // const {id} = getState().products;
-
-    const response = await fetch(`${URL}/${id}`)
+    const response = await fetch(`${URL}/products/${id}`)
     const data = await response.json()
     return data
+  } catch (error) {
+    throw new Error(error.message)
+  }
+})
+
+export const postReservation = createAsyncThunk('reservation/postReservation', async ({ data})=>{
+  try {
+    console.log( data);
+    const response = await fetch(`${URL}/users/${data.user_id}/reservations`, {
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify(data)
+    })
+    const responseData = await response.json()
+    return responseData
   } catch (error) {
     throw new Error(error.message)
   }
@@ -64,6 +79,19 @@ const productsSlice = createSlice({
         value:action.payload
       }))
       .addCase(fetchProductWithId.rejected, (state)=>({
+        ...state,
+        isLoading:false
+      }))
+      .addCase(postReservation.pending, (state)=>({
+        ...state,
+        isLoading:true
+      }))
+      .addCase(postReservation.fulfilled, (state, action)=>({
+        ...state,
+        isLoading:false,
+        value:action.payload
+      }))
+      .addCase(postReservation.rejected, (state)=>({
         ...state,
         isLoading:false
       }))

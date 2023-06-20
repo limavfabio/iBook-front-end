@@ -3,11 +3,12 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { FaCalendarAlt } from 'react-icons/fa';
 
-const ReserveCalender = () => {
+const ReserveCalender = ({handleCalender}) => {
   const [isCalenderOpen, setIsCalenderOpen] = useState(false);
-
   const [value, onChange] = useState(new Date());
-
+  
+  const date = new Date(value).toJSON().slice(0,10);
+  handleCalender(date)
   const openCalendar = () => {
     setIsCalenderOpen(!isCalenderOpen);
   };

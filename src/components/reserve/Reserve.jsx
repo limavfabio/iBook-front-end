@@ -1,11 +1,30 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
+import { postReservation } from "../../redux/productsSlice";
 import ReserveCalender from "./ReserveCalender";
 import ReserveCity from "./ReserveCity";
 
 const Reserve = () => {
-  const { user_id } = useParams();
+  const dispatch = useDispatch();
+  const [date, setDate] = useState(null);
+  const history = useLocation();
+  const { additional } = history.state;
+  const navigate = useNavigate()
+  const handleCalender = (date) => {
+    setDate(date);
+  };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = {
+      date: date,
+      user_id: additional.ownerId,
+      product_id: additional.productId,
+    };
+    dispatch(postReservation({ data }));
+    navigate('/reservations')
+  };
   const bgImg = {
     backgroundImage:
       'url("https://vespaindia.com/images/classic/vxl_yellow.webp")',
@@ -26,12 +45,13 @@ const Reserve = () => {
         </p>
 
         <div className="mt-5 flex items-center justify-center gap-5">
-          <ReserveCalender />
+          <ReserveCalender handleCalender={handleCalender} />
           <ReserveCity />
 
           <button
             type="button"
             className="rounded-full border-2  border-white bg-white px-8 py-2 text-xs text-[#97BF0F]"
+            onClick={handleSubmit}
           >
             Book Now
           </button>

@@ -17,22 +17,9 @@ const MainHome = () => {
     dispatch(fetchProducts());
   }, []);
 
-  console.log( products);
-
   const swiperRef = useRef();
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-
-  // productType = [
-  //   {
-  //     id: 1,
-  //     name: 'vehicle',
-  //     image:
-  //     owner_id:
-  //     price:
-  //     description
-  //   }
-  // ]
 
   return (
     <div className="mx-auto flex h-screen gap-5 items-center justify-center text-center">

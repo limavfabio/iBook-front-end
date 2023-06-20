@@ -19,11 +19,9 @@ function Details() {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-
   useEffect(() => {
     dispatch(fetchProductWithId(id));
   }, [dispatch]);
-
   return (
     <>
       <Header toggleSidebar={toggleSidebar} />
@@ -59,7 +57,7 @@ function Details() {
               DISCOVER MORE MODELS{" "}
               <ChevronRightIcon className="h-5 text-[#97BF0F]" />{" "}
             </p>
-            <ConfigureButton className="mt-5" />
+            <ConfigureButton className="mt-5" productId={data.id} ownerId={data.owner_id}/>
           </div>
         </div>
       </div>
