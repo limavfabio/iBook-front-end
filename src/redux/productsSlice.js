@@ -32,15 +32,15 @@ export const fetchProductWithId = createAsyncThunk('productsId/fetchProductWithI
   }
 })
 
-export const postReservation = createAsyncThunk('reservation/postReservation', async ({ data})=>{
+export const postReservation = createAsyncThunk('reservation/postReservation', async ({ postData})=>{
   try {
-    console.log( data);
-    const response = await fetch(`${URL}/users/${data.user_id}/reservations`, {
+    console.log( postData);
+    const response = await fetch(`${URL}/users/${postData.user_id}/reservations`, {
       method:'POST',
       headers:{
         'Content-Type':'application/json'
       },
-      body:JSON.stringify(data)
+      body:JSON.stringify(postData)
     })
     const responseData = await response.json()
     return responseData

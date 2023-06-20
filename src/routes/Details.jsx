@@ -57,7 +57,7 @@ function Details() {
               DISCOVER MORE MODELS{" "}
               <ChevronRightIcon className="h-5 text-[#97BF0F]" />{" "}
             </p>
-            <ConfigureButton className="mt-5" productId={data.id} ownerId={data.owner_id}/>
+            <ConfigureButton className="mt-5" data={data} productId={data.id} ownerId={data.owner_id} productImage={data.image}/>
           </div>
         </div>
       </div>

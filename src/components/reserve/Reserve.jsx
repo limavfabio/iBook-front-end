@@ -9,7 +9,7 @@ const Reserve = () => {
   const dispatch = useDispatch();
   const [date, setDate] = useState(null);
   const history = useLocation();
-  const { additional } = history.state;
+  const { data } = history.state;
   const navigate = useNavigate()
   const handleCalender = (date) => {
     setDate(date);
@@ -17,19 +17,20 @@ const Reserve = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = {
+    const postData = {
       date: date,
-      user_id: additional.ownerId,
-      product_id: additional.productId,
+      user_id: data.owner_id,
+      product_id: data.id,
     };
-    dispatch(postReservation({ data }));
+    dispatch(postReservation({ postData }));
     navigate('/reservations')
   };
   const bgImg = {
     backgroundImage:
-      'url("https://vespaindia.com/images/classic/vxl_yellow.webp")',
+      `url(${data.image})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
+    backgroundRepeat:'no-repeat'
   };
 
   return (
@@ -44,13 +45,14 @@ const Reserve = () => {
           production: the
         </p>
 
-        <div className="mt-5 flex items-center justify-center gap-5">
+        <div className="mt-5 flex flex-col md:flex-row items-center justify-center gap-5">
+
           <ReserveCalender handleCalender={handleCalender} />
           <ReserveCity />
 
           <button
             type="button"
-            className="rounded-full border-2  border-white bg-white px-8 py-2 text-xs text-[#97BF0F]"
+            className="rounded-full border-2  border-white bg-white px-8 py-2 text-xs text-[#97BF0F] hover:text-white transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-200 hover:bg-[#97BF0F]"
             onClick={handleSubmit}
           >
             Book Now

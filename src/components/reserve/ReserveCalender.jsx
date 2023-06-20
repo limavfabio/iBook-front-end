@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { FaCalendarAlt } from 'react-icons/fa';
 
-const ReserveCalender = ({handleCalender}) => {
+const ReserveCalender = ({ handleCalender }) => {
   const [isCalenderOpen, setIsCalenderOpen] = useState(false);
-  const [value, onChange] = useState(new Date());
-  
-  const date = new Date(value).toJSON().slice(0,10);
-  handleCalender(date)
+  const [value, setValue] = useState(new Date());
+
+  const date = new Date(value).toJSON().slice(0, 10);
+  handleCalender(date);
+
   const openCalendar = () => {
     setIsCalenderOpen(!isCalenderOpen);
   };
@@ -20,16 +19,22 @@ const ReserveCalender = ({handleCalender}) => {
         className="flex items-center justify-between gap-3 rounded-full border-2 border-[#BED86B] bg-[#97BF0F] px-4 py-2 text-xs"
         onClick={openCalendar}
       >
-        <span>Open Calendar</span>
-        <FaCalendarAlt/>
+        <input
+          type="date"
+          className="cursor-pointer appearance-none border-none bg-transparent text-black outline-none"
+          style={{
+            color: "white",
+            backgroundColor: "transparent",
+            cursor: "pointer",
+            WebkitAppearance: "none",
+            MozAppearance: "none",
+            appearance: "none",
+            outline: "none",
+            border: "none",
+          }}
+          onChange={(e) => setValue(e.target.value)}
+        />
       </button>
-      {isCalenderOpen && (
-        <div className="absolute">
-          <div className="  text-black shadow-lg">
-            <Calendar className="w-full mt-2 w-80 h-48 overflow-auto" onChange={onChange} value={value} />
-          </div>
-        </div>
-      )}
     </div>
   );
 };
