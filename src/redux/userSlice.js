@@ -9,8 +9,12 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setUsername: (state, action) => {
-      state.username = action.payload;
-      localStorage.setItem('username', action.payload);
+      if (action.payload === '') {
+        localStorage.removeItem('username');
+      } else {
+        state.username = action.payload;
+        localStorage.setItem('username', action.payload);
+      }
     },
   },
 });
