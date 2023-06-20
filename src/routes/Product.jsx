@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProductById } from '../redux/productsSlice';
 
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import DetailRow from '../components/DetailRow';
@@ -6,13 +9,25 @@ import ConfigureButton from '../components/ConfigureButton';
 import Header from '../components/layout/Header';
 import Sidebar from '../components/layout/Sidebar';
 import MobileSidebar from '../components/layout/MobileSidebar';
+import { useEffect } from 'react';
 
-function Details() {
+function Product() {
+  const dispatch = useDispatch();
+  let { productId } = useParams();
+  const product = useSelector((state) => state.products.selectedProduct);
+
+  useEffect(() => {
+    dispatch(fetchProductById(productId));
+  }, []);
+
+  product && console.log(product);
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+
 
   return (
     <>
@@ -59,4 +74,4 @@ function Details() {
   );
 }
 
-export default Details;
+export default Product;

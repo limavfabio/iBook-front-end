@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { fetchProducts } from '../../redux/productsSlice';
@@ -10,6 +11,7 @@ const MainHome = () => {
   // Fetch products from the store
   const products = useSelector((state) => state.products.value);
   const dispatch = useDispatch();
+  const redirect = useNavigate();
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -18,17 +20,6 @@ const MainHome = () => {
   const swiperRef = useRef();
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-
-  // productType = [
-  //   {
-  //     id: 1,
-  //     name: 'vehicle',
-  //     image:
-  //     owner_id:
-  //     price:
-  //     description
-  //   }
-  // ]
 
   return (
     <div className="mx-auto flex h-screen gap-5 items-center justify-center text-center">
@@ -71,13 +62,13 @@ const MainHome = () => {
       >
         {
           products ? products.map((product) => (
-            <SwiperSlide key={product.id} className="cursor-pointer">
+            <SwiperSlide key={product.id} >
               <div
                 className={`mx-auto flex h-[200px] w-[200px] items-center justify-center rounded-full bg-${product.bgColor}`}
               >
-                <img src={product.image} alt="img" className="rounded-full" />
+                <img src={product.image} alt="img" className="rounded-full hover:cursor-pointer" onClick={() => redirect(`/products/${product.id}`)}/>
               </div>
-              <h2 className="my-5 font-bold">{product.name}</h2>
+              <h2 className="my-5 font-bold hover:cursor-pointer" onClick={() => redirect(`/products/${product.id}`)}>{product.name}</h2>
               <p className="mb-10 text-[#D2D2D2]">{product.description}</p>
             </SwiperSlide>
           )) : 'Loading'
