@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
-import { postReservation } from "../../redux/reservationSlice";
-import ReserveCalender from "./ReserveCalender";
-import ReserveCity from "./ReserveCity";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { postReservation } from '../../redux/reservationSlice';
+import ReserveCalender from './ReserveCalender';
+import ReserveCity from './ReserveCity';
 
 const Reserve = () => {
   const dispatch = useDispatch();
   const [date, setDate] = useState(null);
   const history = useLocation();
   const { data } = history.state;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleCalender = (date) => {
     setDate(date);
   };
@@ -18,19 +18,19 @@ const Reserve = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const postData = {
-      date: date,
+      date,
       user_id: data.owner_id,
       product_id: data.id,
     };
     dispatch(postReservation({ postData }));
-    navigate(`/users/${data.owner_id}/reservations`, {state:{data}})
+    navigate(`/users/${data.owner_id}/reservations`, { state: { data } });
   };
   const bgImg = {
     backgroundImage:
       `url(${data.image})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat:'no-repeat'
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
   };
 
   return (

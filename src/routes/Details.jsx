@@ -1,21 +1,21 @@
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import ConfigureButton from "../components/ConfigureButton";
-import DetailRow from "../components/DetailRow";
-import Header from "../components/layout/Header";
-import MobileSidebar from "../components/layout/MobileSidebar";
-import Sidebar from "../components/layout/Sidebar";
-import { fetchProductWithId } from "../redux/productsSlice";
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import ConfigureButton from '../components/ConfigureButton';
+import DetailRow from '../components/DetailRow';
+import Header from '../components/layout/Header';
+import MobileSidebar from '../components/layout/MobileSidebar';
+import Sidebar from '../components/layout/Sidebar';
+import { fetchProductWithId } from '../redux/productsSlice';
 
 function Details() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const {id} =useParams()
+  const { id } = useParams();
 
   const dispatch = useDispatch();
   const data = useSelector((state) => state.products.value);
- 
+
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -48,16 +48,18 @@ function Details() {
                 value={data.price}
                 isGrayBackground
               />
-              <DetailRow label="Date" value={new Date(data.created_at).toLocaleDateString(undefined,{ year: 'numeric', month: 'long', day: 'numeric' })} />
+              <DetailRow label="Date" value={new Date(data.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })} />
               <DetailRow label="Start Time" value={`${new Date(data.created_at).getHours()}:00`} isGrayBackground />
               <DetailRow label="End Time" value={`${new Date(data.updated_at).getHours()}:00`} />
               <DetailRow label="Duration" value={new Date(data.updated_at).getHours() - new Date(data.created_at).getHours()} isGrayBackground />
             </div>
             <p className="flex items-center self-end font-bold">
-              DISCOVER MORE MODELS{" "}
-              <ChevronRightIcon className="h-5 text-[#97BF0F]" />{" "}
+              DISCOVER MORE MODELS
+              {' '}
+              <ChevronRightIcon className="h-5 text-[#97BF0F]" />
+              {' '}
             </p>
-            <ConfigureButton className="mt-5" data={data}/>
+            <ConfigureButton className="mt-5" data={data} />
           </div>
         </div>
       </div>

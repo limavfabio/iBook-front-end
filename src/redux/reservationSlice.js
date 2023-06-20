@@ -9,17 +9,17 @@ const initialState = {
   errors: null,
 };
 
-export const fetchReservations = createAsyncThunk('reservations/fetchReservations', async(user_id) =>{
+export const fetchReservations = createAsyncThunk('reservations/fetchReservations', async (user_id) => {
   try {
-    const response = await fetch(`${URL}/users/${user_id}/reservations`)
-    const data = await response.json()
-    return data
+    const response = await fetch(`${URL}/users/${user_id}/reservations`);
+    const data = await response.json();
+    return data;
   } catch (error) {
-    throw new Error(error.message)
+    throw new Error(error.message);
   }
-})
+});
 
-export const postReservation = createAsyncThunk('reservation/postReservation', async ({ postData})=>{
+export const postReservation = createAsyncThunk('reservation/postReservation', async ({ postData }) => {
   try {
     // const response = await fetch(`${URL}/users/${postData.user_id}/reservations`, {
     //   method:'POST',
@@ -31,9 +31,9 @@ export const postReservation = createAsyncThunk('reservation/postReservation', a
     // const responseData = await response.json()
     // return responseData
   } catch (error) {
-    throw new Error(error.message)
+    throw new Error(error.message);
   }
-})
+});
 
 const reservationSlice = createSlice({
   name: 'reservations',
@@ -41,34 +41,34 @@ const reservationSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchReservations.pending, state => ({
+      .addCase(fetchReservations.pending, (state) => ({
         ...state,
-        isLoading:true
+        isLoading: true,
       }))
       .addCase(fetchReservations.fulfilled, (state, action) => ({
         ...state,
-        isLoading:false,
-        value:action.payload
+        isLoading: false,
+        value: action.payload,
       }))
-      .addCase(fetchReservations.rejected, (state, action) =>({
+      .addCase(fetchReservations.rejected, (state, action) => ({
         ...state,
-        isLoading:false,
-        errors: action.payload.error
+        isLoading: false,
+        errors: action.payload.error,
       }))
 
-      .addCase(postReservation.pending, (state)=>({
+      .addCase(postReservation.pending, (state) => ({
         ...state,
-        isLoading:true
+        isLoading: true,
       }))
-      .addCase(postReservation.fulfilled, (state, action)=>({
+      .addCase(postReservation.fulfilled, (state, action) => ({
         ...state,
-        isLoading:false,
-        value:action.payload
+        isLoading: false,
+        value: action.payload,
       }))
-      .addCase(postReservation.rejected, (state)=>({
+      .addCase(postReservation.rejected, (state) => ({
         ...state,
-        isLoading:false
-      }))
+        isLoading: false,
+      }));
   },
 });
 

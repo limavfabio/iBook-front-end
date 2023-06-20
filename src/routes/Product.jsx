@@ -1,19 +1,18 @@
-import { useState } from "react";
-import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProductById } from "../redux/productsSlice";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import { fetchProductById } from '../redux/productsSlice';
 
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import DetailRow from "../components/DetailRow";
-import ConfigureButton from "../components/ConfigureButton";
-import Header from "../components/layout/Header";
-import Sidebar from "../components/layout/Sidebar";
-import MobileSidebar from "../components/layout/MobileSidebar";
-import { useEffect } from "react";
+import DetailRow from '../components/DetailRow';
+import ConfigureButton from '../components/ConfigureButton';
+import Header from '../components/layout/Header';
+import Sidebar from '../components/layout/Sidebar';
+import MobileSidebar from '../components/layout/MobileSidebar';
 
 function Product() {
   const dispatch = useDispatch();
-  let { productId } = useParams();
+  const { productId } = useParams();
   const product = useSelector((state) => state.products.selectedProduct);
 
   useEffect(() => {
@@ -55,7 +54,11 @@ function Product() {
               <h2 className="mb-1 text-4xl">Loading</h2>
             )}
             {product ? (
-              <p className="mb-5"> {product.description} </p>
+              <p className="mb-5">
+                {' '}
+                {product.description}
+                {' '}
+              </p>
             ) : (
               <p className="mb-5">Loading</p>
             )}
@@ -72,8 +75,10 @@ function Product() {
             )}
 
             <p className="flex items-center self-end font-bold">
-              DISCOVER MORE MODELS{" "}
-              <ChevronRightIcon className="h-5 text-[#97BF0F]" />{" "}
+              DISCOVER MORE MODELS
+              {' '}
+              <ChevronRightIcon className="h-5 text-[#97BF0F]" />
+              {' '}
             </p>
             <ConfigureButton className="mt-5" />
           </div>
