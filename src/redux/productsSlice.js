@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL = 'http://localhost:3000/api/v1/products';
+const URL = 'https://venom-precision.onrender.com/api/v1/products';
 
 const initialState = {
   value: '',
