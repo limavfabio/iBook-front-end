@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setUsername as setUsernameRedux } from "../redux/userSlice";
 
 function Login() {
@@ -41,8 +41,4 @@ function Login() {
   );
 }
 
-const mapDispatchToProps = {
-  setUsernameRedux,
-};
-
-export default connect(null, mapDispatchToProps)(Login);
+export default Login
