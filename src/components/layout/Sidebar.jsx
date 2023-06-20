@@ -1,4 +1,4 @@
-import { useLogout } from "../../utils/auth";
+import { useLogout } from '../../utils/auth';
 
 function Sidebar() {
   const logout = useLogout();
@@ -12,7 +12,7 @@ function Sidebar() {
         </li>
         <li className="ml-2 py-2 pl-3 font-bold text-slate-700">LIFESTYLE</li>
         <li className="ml-2 py-2 pl-3 font-bold text-slate-700">SHOP</li>
-        <li className="ml-2 py-2 pl-3 font-bold text-slate-700 hover:cursor-pointer" onClick={logout} >LOGOUT</li>
+        <button type="button" className="ml-2 py-2 pl-3 font-bold text-slate-700 hover:cursor-pointer" onClick={logout}>LOGOUT</button>
       </ul>
       <ul className="mt-auto flex">
         <li>icon</li>

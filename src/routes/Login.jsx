@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from "react-redux";
-import { setUsername as setUsernameRedux } from "../redux/userSlice";
+import { useDispatch } from 'react-redux';
+import { setUsername as setUsernameRedux } from '../redux/userSlice';
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [username, setUsername] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const dispatch = useDispatch();
   const redirect = useNavigate();
 
@@ -21,7 +21,8 @@ function Login() {
       const userExists = users.some((user) => user.username === username);
 
       if (userExists) {
-        dispatch(setUsernameRedux(username)); // Dispatch the setUsername action to store the username
+        // Dispatch the setUsername action to store the username
+        dispatch(setUsernameRedux(username));
         setErrorMessage(''); // Reset the error message
         redirect('/'); // Redirect to the home page
       } else {
@@ -51,7 +52,7 @@ function Login() {
         </label>
 
         {errorMessage && (
-          <p className="text-red-500 text-sm font-semibold">{errorMessage}</p>
+          <p className="text-sm font-semibold text-red-500">{errorMessage}</p>
         )}
 
         <button
@@ -65,4 +66,4 @@ function Login() {
   );
 }
 
-export default Login
+export default Login;
