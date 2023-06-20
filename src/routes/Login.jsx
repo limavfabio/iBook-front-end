@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { setUsername as setUsernameRedux } from "../redux/userSlice";
 
 function Login() {
   const [username, setUsername] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const dispatch = useDispatch();
+  const redirect = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,16 +16,16 @@ function Login() {
       // Make a request to retrieve all users
       const response = await fetch('http://localhost:3000/api/v1/users');
       const users = await response.json();
-      console.log('Users:', users)
 
       // Check if the submitted username exists in the retrieved users
       const userExists = users.some((user) => user.username === username);
-      console.log('User exists:', userExists);
 
       if (userExists) {
         dispatch(setUsernameRedux(username)); // Dispatch the setUsername action to store the username
+        setErrorMessage(''); // Reset the error message
+        redirect('/'); // Redirect to the home page
       } else {
-        console.error('User does not exist'); // Log an error message
+        setErrorMessage('User does not exist'); // Set an error message
       }
     } catch (error) {
       console.error('Error:', error); // Log any other errors
@@ -46,6 +49,10 @@ function Login() {
             required
           />
         </label>
+
+        {errorMessage && (
+          <p className="text-red-500 text-sm font-semibold">{errorMessage}</p>
+        )}
 
         <button
           type="submit"
