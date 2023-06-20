@@ -2,7 +2,7 @@ import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import ConfigureButton from '../components/ConfigureButton';
+import ReserveButton from '../components/ReserveButton';
 import DetailRow from '../components/DetailRow';
 import Header from '../components/layout/Header';
 import MobileSidebar from '../components/layout/MobileSidebar';
@@ -56,7 +56,7 @@ function Details() {
               <ChevronRightIcon className="h-5 text-[#97BF0F]" />
               {' '}
             </p>
-            <ConfigureButton className="mt-5" data={data} />
+            <ReserveButton className="mt-5" data={data} />
           </div>
         </div>
       </div>

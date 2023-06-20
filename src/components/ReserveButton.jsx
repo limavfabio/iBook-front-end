@@ -2,9 +2,9 @@ import { ChevronRightIcon, Cog6ToothIcon } from '@heroicons/react/24/outline';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function ConfigureButton({ className, data }) {
+function ReserveButton({ className, data }) {
   return (
-    <Link to={`/product/${data.id}/reservations`} state={{ data }}>
+    <Link to={`/products/${data.id}/reservation`} state={{ data }}>
       <button
         type="button"
         className={`flex w-min float-right items-center gap-2  rounded-full bg-[#97BF0F] p-3 font-bold text-white ${className}`}
@@ -17,12 +17,12 @@ function ConfigureButton({ className, data }) {
   );
 }
 
-ConfigureButton.defaultProps = {
+ReserveButton.defaultProps = {
   className: '',
 };
 
-ConfigureButton.propTypes = {
+ReserveButton.propTypes = {
   className: PropTypes.string,
 };
 
-export default ConfigureButton;
+export default ReserveButton;
