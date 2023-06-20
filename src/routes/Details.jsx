@@ -40,7 +40,7 @@ function Details() {
                 value="$150.00"
                 isGrayBackground
               />
-              <DetailRow label="Date" value="May 15" />
+              <DetailRow label="Price" value="45" />
               <DetailRow label="Start Time" value="9:00" isGrayBackground />
               <DetailRow label="End Time" value="11:00" />
               <DetailRow label="Duration" value="1 Hour" isGrayBackground />

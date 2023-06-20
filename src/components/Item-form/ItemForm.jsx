@@ -17,7 +17,7 @@ const ItemForm = () => {
       owner_id: 1,
     };
 
-    fetch('http://localhost:3001/api/v1/products', {
+    fetch('http://localhost:3000/api/v1/products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

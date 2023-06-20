@@ -20,7 +20,7 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async ()
   } catch (error) {
     throw new Error(error.message);
   }
-})
+});
 
 const productsSlice = createSlice({
   name: 'products',
@@ -43,6 +43,6 @@ const productsSlice = createSlice({
         isLoading: false,
       }));
   },
-})
+});
 
 export default productsSlice.reducer;
