@@ -10,6 +10,10 @@ import 'swiper/css';
 const MainHome = () => {
   // Fetch products from the store
   const products = useSelector((state) => state.products.value );
+  const username = useSelector((state) => state.user.username);
+  const userId = useSelector((state) => state.user.id);
+  console.log(username);
+  console.log(userId);
   const dispatch = useDispatch();
 
   useEffect(() => {
