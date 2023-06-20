@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function ConfigureButton({ className, data }) {
   return (
-    <Link to={`/product/${data.id}/reservations`} state={{ data }}>
+    <Link to={`/products/${data.id}/reservation`} state={{ data }}>
       <button
         type="button"
         className={`flex w-min float-right items-center gap-2  rounded-full bg-[#97BF0F] p-3 font-bold text-white ${className}`}
