@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setUsername as setUsernameRedux } from '../redux/userSlice';
+import { setUser } from '../redux/userSlice';
 
 /* eslint-disable import/prefer-default-export */
 export const useLogout = () => {
@@ -8,7 +8,7 @@ export const useLogout = () => {
   const redirect = useNavigate();
 
   const logout = () => {
-    dispatch(setUsernameRedux(''));
+    dispatch(setUser('DELETE_USER'));
     redirect('/login');
   };
 

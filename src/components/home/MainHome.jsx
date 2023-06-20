@@ -65,13 +65,13 @@ const MainHome = () => {
               <div
                 className={`mx-auto flex h-[200px] w-[200px] items-center justify-center rounded-full bg-${product.bgColor}`}
               >
-                <img src={product.image} alt="img" className="rounded-full" />
+                <img src={product.image} alt="img" className="rounded-full hover:cursor-pointer"/>
               </div>
-              <h2 className="my-5 font-bold">{product.name}</h2>
+              <h2 className="my-5 font-bold hover:cursor-pointer" >{product.name}</h2>
               <p className="mb-10 text-[#D2D2D2]">{product.description}</p>
               </Link>
             </SwiperSlide>
-          )) 
+          ))
         }
       </Swiper>
 

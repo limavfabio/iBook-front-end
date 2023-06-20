@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setUsername as setUsernameRedux } from '../redux/userSlice';
+import { setUser } from '../redux/userSlice';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -17,12 +17,17 @@ function Login() {
       const response = await fetch('http://localhost:3000/api/v1/users');
       const users = await response.json();
 
-      // Check if the submitted username exists in the retrieved users
-      const userExists = users.some((user) => user.username === username);
+      // Check if the submitted username exists in the retrieved users and get the user id
+      const userExists = users.some((user) => {
+        if (user.username === username) {
+          // Dispatch the setUsername action to store the username and id
+          dispatch(setUser({ id: user.id, username }));
+          return true;
+        }
+        return false;
+      });
 
       if (userExists) {
-        // Dispatch the setUsername action to store the username
-        dispatch(setUsernameRedux(username));
         setErrorMessage(''); // Reset the error message
         redirect('/'); // Redirect to the home page
       } else {

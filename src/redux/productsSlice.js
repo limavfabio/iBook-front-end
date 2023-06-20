@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const URL = "https://venom-precision.onrender.com/api/v1/";
+const URL = 'https://venom-precision.onrender.com/api/v1';
 
 const initialState = {
   value: "",
   ifSucceed: false,
   ifLoading: false,
   errors: null,
+  selectedProduct: null,
 };
 
 export const fetchProducts = createAsyncThunk(
@@ -37,6 +38,7 @@ export const fetchProductWithId = createAsyncThunk(
     }
   }
 );
+
 
 const productsSlice = createSlice({
   name: "products",
@@ -71,7 +73,7 @@ const productsSlice = createSlice({
         ...state,
         isLoading: false,
       }))
-      
+
   },
 });
 
