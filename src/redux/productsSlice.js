@@ -1,29 +1,45 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const URL = 'http://localhost:3000/api/v1/products';
+const URL = "https://venom-precision.onrender.com/api/v1/";
 
 const initialState = {
-  value: '',
+  value: "",
   ifSucceed: false,
   ifLoading: false,
   errors: null,
 };
 
-export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
-  try {
-    const response = await fetch(URL);
-    if (!response.ok) {
-      throw new Error('Request failed');
+export const fetchProducts = createAsyncThunk(
+  "products/fetchProducts",
+  async () => {
+    try {
+      const response = await fetch(`${URL}/products`);
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error(error.message);
     }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    throw new Error(error.message);
   }
-});
+);
+
+export const fetchProductWithId = createAsyncThunk(
+  "productsId/fetchProductWithId",
+  async (id) => {
+    try {
+      const response = await fetch(`${URL}/products/${id}`);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }
+);
 
 const productsSlice = createSlice({
-  name: 'products',
+  name: "products",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -41,7 +57,21 @@ const productsSlice = createSlice({
       .addCase(fetchProducts.rejected, (state) => ({
         ...state,
         isLoading: false,
-      }));
+      }))
+      .addCase(fetchProductWithId.pending, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
+      .addCase(fetchProductWithId.fulfilled, (state, action) => ({
+        ...state,
+        isLoading: false,
+        value: action.payload,
+      }))
+      .addCase(fetchProductWithId.rejected, (state) => ({
+        ...state,
+        isLoading: false,
+      }))
+      
   },
 });
 

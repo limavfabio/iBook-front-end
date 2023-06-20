@@ -1,53 +1,59 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
+import { postReservation } from "../../redux/reservationSlice";
+import ReserveCalender from "./ReserveCalender";
+import ReserveCity from "./ReserveCity";
 
 const Reserve = () => {
-  const bgImg = {
-    backgroundImage: 'url("https://vespaindia.com/images/classic/vxl_yellow.webp")',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+  const dispatch = useDispatch();
+  const [date, setDate] = useState(null);
+  const history = useLocation();
+  const { data } = history.state;
+  const navigate = useNavigate()
+  const handleCalender = (date) => {
+    setDate(date);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const postData = {
+      date: date,
+      user_id: data.owner_id,
+      product_id: data.id,
+    };
+    dispatch(postReservation({ postData }));
+    navigate(`/users/${data.owner_id}/reservations`, {state:{data}})
+  };
+  const bgImg = {
+    backgroundImage:
+      `url(${data.image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat:'no-repeat'
   };
 
   return (
     <div style={bgImg}>
-      <div className="flex flex-col items-center justify-center w-full h-screen text-center text-white bg-[#96BF01] bg-opacity-90">
-        <h2 className="font-bold text-2xl uppercase tracking-[.6rem]">book a vespa test-drive</h2>
+      <div className="flex h-screen w-full flex-col items-center justify-center bg-[#96BF01] bg-opacity-90 text-center text-white">
+        <h2 className="text-2xl font-bold uppercase tracking-[.6rem]">
+          book a vespa test-drive
+        </h2>
         <hr className="my-5 w-2/3 border-[#A1C839]" />
         <p className="w-1/2 text-xs leading-6">
-          There are 34 different versions of the Vespa. Today five series are in production: the
+          There are 34 different versions of the Vespa. Today five series are in
+          production: the
         </p>
 
-        <div className="flex justify-center items-center mt-5 gap-5">
-          <div className="relative inline-block ">
-            <button
-              type="button"
-              className="bg-[#97BF0F] py-2 px-6 text-xs rounded-full border-2 border-[#BED86B] flex justify-between items-center gap-5"
-              onClick={toggleDropdown}
-            >
-              <p>Select City</p>
-              {
-                        isOpen
-                          ? <img width="22" height="22" src="https://img.icons8.com/windows/32/sort-up.png" alt="sort-up" />
-                          : <img width="22" height="22" src="https://img.icons8.com/windows/32/sort-down.png" alt="sort-down" />
-                    }
+        <div className="mt-5 flex flex-col md:flex-row items-center justify-center gap-5">
 
-            </button>
-            {isOpen && (
-            <ul className="absolute bg-transparent rounded-lg text-left shadow-lg mt-2 w-full">
-              <li className="px-4 py-2 hover:bg-[#97BF0F]">City 1</li>
-              <li className="px-4 py-2 hover:bg-[#97BF0F]">City 2</li>
-              <li className="px-4 py-2 hover:bg-[#97BF0F]">City 3</li>
-            </ul>
-            )}
-          </div>
+          <ReserveCalender handleCalender={handleCalender} />
+          <ReserveCity />
+
           <button
             type="button"
-            className="text-[#97BF0F] bg-white  py-2 px-8 rounded-full text-xs border-2 border-white"
+            className="rounded-full border-2  border-white bg-white px-8 py-2 text-xs text-[#97BF0F] hover:text-white transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-200 hover:bg-[#97BF0F]"
+            onClick={handleSubmit}
           >
             Book Now
           </button>
