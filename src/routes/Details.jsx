@@ -49,9 +49,6 @@ function Details() {
                 isGrayBackground
               />
               <DetailRow label="Date" value={new Date(data.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })} />
-              <DetailRow label="Start Time" value={`${new Date(data.created_at).getHours()}:00`} isGrayBackground />
-              <DetailRow label="End Time" value={`${new Date(data.updated_at).getHours()}:00`} />
-              <DetailRow label="Duration" value={new Date(data.updated_at).getHours() - new Date(data.created_at).getHours()} isGrayBackground />
             </div>
             <p className="flex items-center self-end font-bold">
               DISCOVER MORE MODELS
