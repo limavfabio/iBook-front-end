@@ -18,8 +18,8 @@ const userSlice = createSlice({
       } else {
         state.id = action.payload.id;
         state.username = action.payload.username;
-        localStorage.setItem('userId', action.payload.id);
-        localStorage.setItem('username', action.payload.username);
+        localStorage.setItem('userId', state.id);
+        localStorage.setItem('username', state.username);
       }
     },
   },
