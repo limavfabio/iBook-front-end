@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "react-calendar/dist/Calendar.css";
+import React, { useState } from 'react';
+import 'react-calendar/dist/Calendar.css';
 
 const ReserveCalender = ({ handleCalender }) => {
   const [isCalenderOpen, setIsCalenderOpen] = useState(false);
@@ -23,14 +23,14 @@ const ReserveCalender = ({ handleCalender }) => {
           type="date"
           className="cursor-pointer appearance-none border-none bg-transparent text-black outline-none"
           style={{
-            color: "white",
-            backgroundColor: "transparent",
-            cursor: "pointer",
-            WebkitAppearance: "none",
-            MozAppearance: "none",
-            appearance: "none",
-            outline: "none",
-            border: "none",
+            color: 'white',
+            backgroundColor: 'transparent',
+            cursor: 'pointer',
+            WebkitAppearance: 'none',
+            MozAppearance: 'none',
+            appearance: 'none',
+            outline: 'none',
+            border: 'none',
           }}
           onChange={(e) => setValue(e.target.value)}
         />

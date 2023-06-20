@@ -1,4 +1,4 @@
-import { useLogout } from '../../utils/auth';
+import { useLogout } from '../../lib/auth';
 
 function Sidebar() {
   const logout = useLogout();

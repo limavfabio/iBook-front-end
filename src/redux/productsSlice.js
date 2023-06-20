@@ -1,32 +1,33 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL = "https://venom-precision.onrender.com/api/v1/";
+const URL = 'https://venom-precision.onrender.com/api/v1';
 
 const initialState = {
-  value: "",
+  value: '',
   ifSucceed: false,
   ifLoading: false,
   errors: null,
+  selectedProduct: null,
 };
 
 export const fetchProducts = createAsyncThunk(
-  "products/fetchProducts",
+  'products/fetchProducts',
   async () => {
     try {
       const response = await fetch(`${URL}/products`);
       if (!response.ok) {
-        throw new Error("Request failed");
+        throw new Error('Request failed');
       }
       const data = await response.json();
       return data;
     } catch (error) {
       throw new Error(error.message);
     }
-  }
+  },
 );
 
 export const fetchProductWithId = createAsyncThunk(
-  "productsId/fetchProductWithId",
+  'productsId/fetchProductWithId',
   async (id) => {
     try {
       const response = await fetch(`${URL}/products/${id}`);
@@ -35,11 +36,11 @@ export const fetchProductWithId = createAsyncThunk(
     } catch (error) {
       throw new Error(error.message);
     }
-  }
+  },
 );
 
 const productsSlice = createSlice({
-  name: "products",
+  name: 'products',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -70,8 +71,7 @@ const productsSlice = createSlice({
       .addCase(fetchProductWithId.rejected, (state) => ({
         ...state,
         isLoading: false,
-      }))
-      
+      }));
   },
 });
 
