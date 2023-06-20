@@ -23,7 +23,7 @@ const Reserve = () => {
       product_id: data.id,
     };
     dispatch(postReservation({ postData }));
-    navigate(`/users/${data.owner_id}/reservations/${data.id}`)
+    navigate(`/users/${data.owner_id}/reservations`, {state:{data}})
   };
   const bgImg = {
     backgroundImage:

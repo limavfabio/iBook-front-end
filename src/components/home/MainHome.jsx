@@ -9,17 +9,16 @@ import 'swiper/css';
 
 const MainHome = () => {
   // Fetch products from the store
-  const products = useSelector((state) => state.products.value || []);
+  const products = useSelector((state) => state.products.value );
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchProducts());
-  }, []);
+  }, [dispatch]);
 
   const swiperRef = useRef();
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-
   return (
     <div className="mx-auto flex h-screen gap-5 items-center justify-center text-center">
       <button type="button" className={`swiper-button-prev ${isBeginning ? 'bg-[#E4E5E9]' : 'bg-[#97BF0F]'}  pl-7 pr-2 py-3 rounded-r-full`} disabled={isBeginning} onClick={() => swiperRef.current?.slidePrev()}>
@@ -60,7 +59,7 @@ const MainHome = () => {
         }}
       >
         {
-           products.map((product) => (
+          products && products.map((product) => (
             <SwiperSlide key={product.id} className="cursor-pointer">
               <Link to={`/details/${product.id}`} >
               <div
