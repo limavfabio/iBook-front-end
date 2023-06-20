@@ -1,56 +1,45 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const URL = 'https://venom-precision.onrender.com/api/v1/';
+const URL = "https://venom-precision.onrender.com/api/v1/";
 
 const initialState = {
-  value: '',
+  value: "",
   ifSucceed: false,
   ifLoading: false,
   errors: null,
 };
 
-export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
-  try {
-    const response = await fetch(`${URL}/products`);
-    if (!response.ok) {
-      throw new Error('Request failed');
+export const fetchProducts = createAsyncThunk(
+  "products/fetchProducts",
+  async () => {
+    try {
+      const response = await fetch(`${URL}/products`);
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error(error.message);
     }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    throw new Error(error.message);
   }
-});
+);
 
-export const fetchProductWithId = createAsyncThunk('productsId/fetchProductWithId', async (id)=>{
-  try {
-    const response = await fetch(`${URL}/products/${id}`)
-    const data = await response.json()
-    return data
-  } catch (error) {
-    throw new Error(error.message)
+export const fetchProductWithId = createAsyncThunk(
+  "productsId/fetchProductWithId",
+  async (id) => {
+    try {
+      const response = await fetch(`${URL}/products/${id}`);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      throw new Error(error.message);
+    }
   }
-})
-
-export const postReservation = createAsyncThunk('reservation/postReservation', async ({ postData})=>{
-  try {
-    console.log( postData);
-    const response = await fetch(`${URL}/users/${postData.user_id}/reservations`, {
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json'
-      },
-      body:JSON.stringify(postData)
-    })
-    const responseData = await response.json()
-    return responseData
-  } catch (error) {
-    throw new Error(error.message)
-  }
-})
+);
 
 const productsSlice = createSlice({
-  name: 'products',
+  name: "products",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -69,32 +58,20 @@ const productsSlice = createSlice({
         ...state,
         isLoading: false,
       }))
-      .addCase(fetchProductWithId.pending, (state)=>({
+      .addCase(fetchProductWithId.pending, (state) => ({
         ...state,
-        isLoading:true
+        isLoading: true,
       }))
-      .addCase(fetchProductWithId.fulfilled, (state, action)=>({
+      .addCase(fetchProductWithId.fulfilled, (state, action) => ({
         ...state,
-        isLoading:false,
-        value:action.payload
+        isLoading: false,
+        value: action.payload,
       }))
-      .addCase(fetchProductWithId.rejected, (state)=>({
+      .addCase(fetchProductWithId.rejected, (state) => ({
         ...state,
-        isLoading:false
+        isLoading: false,
       }))
-      .addCase(postReservation.pending, (state)=>({
-        ...state,
-        isLoading:true
-      }))
-      .addCase(postReservation.fulfilled, (state, action)=>({
-        ...state,
-        isLoading:false,
-        value:action.payload
-      }))
-      .addCase(postReservation.rejected, (state)=>({
-        ...state,
-        isLoading:false
-      }))
+      
   },
 });
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { postReservation } from "../../redux/productsSlice";
+import { postReservation } from "../../redux/reservationSlice";
 import ReserveCalender from "./ReserveCalender";
 import ReserveCity from "./ReserveCity";
 
@@ -23,7 +23,7 @@ const Reserve = () => {
       product_id: data.id,
     };
     dispatch(postReservation({ postData }));
-    navigate('/reservations')
+    navigate(`/users/${data.owner_id}/reservations/${data.id}`)
   };
   const bgImg = {
     backgroundImage:
