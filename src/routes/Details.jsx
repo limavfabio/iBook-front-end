@@ -11,7 +11,7 @@ import { fetchProductWithId } from '../redux/productsSlice';
 
 function Details() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const { id } = useParams();
+  const { productId } = useParams();
 
   const dispatch = useDispatch();
   const data = useSelector((state) => state.products.value);
@@ -20,7 +20,7 @@ function Details() {
     setIsSidebarOpen(!isSidebarOpen);
   };
   useEffect(() => {
-    dispatch(fetchProductWithId(id));
+    dispatch(fetchProductWithId(productId));
   }, [dispatch]);
   return (
     <>

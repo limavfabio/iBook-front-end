@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { fetchProducts } from '../../redux/productsSlice';
 
 // Import Swiper styles
@@ -12,8 +12,7 @@ const MainHome = () => {
   const products = useSelector((state) => state.products.value);
   const username = useSelector((state) => state.user.username);
   const userId = useSelector((state) => state.user.id);
-  console.log(username);
-  console.log(userId);
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -65,7 +64,7 @@ const MainHome = () => {
         {
           products && products.map((product) => (
             <SwiperSlide key={product.id} className="cursor-pointer">
-              <Link to={`/details/${product.id}`}>
+              <Link to={`/products/${product.id}`}>
                 <div
                   className={`mx-auto flex h-[200px] w-[200px] items-center justify-center rounded-full bg-${product.bgColor}`}
                 >
