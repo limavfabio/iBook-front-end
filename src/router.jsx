@@ -5,6 +5,8 @@ import Reserve from './components/reserve/Reserve';
 import About from './routes/About';
 import Details from './routes/Details';
 import Home from './routes/Home';
+import SignUp from './routes/SignUp';
+import Login from './routes/Login';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,8 @@ const router = createBrowserRouter([
   },
   { path: '/reserve', element: <Reserve /> },
   { path: '/form', element: <ItemForm /> },
+  { path: '/login', element: <Login /> },
+  { path: '/signup', element: <SignUp /> },
 ]);
 
 export default router;
