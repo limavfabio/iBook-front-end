@@ -20,7 +20,7 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', async ()
   } catch (error) {
     throw new Error(error.message);
   }
-})
+});
 
 export const fetchProductWithId = createAsyncThunk('productsId/fetchProductWithId', async (id)=>{
   try {
@@ -96,6 +96,6 @@ const productsSlice = createSlice({
         isLoading:false
       }))
   },
-})
+});
 
 export default productsSlice.reducer;

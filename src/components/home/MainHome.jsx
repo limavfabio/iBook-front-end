@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { fetchProducts } from '../../redux/productsSlice';
 
@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import 'swiper/css';
 
 const MainHome = () => {
-
   // Fetch products from the store
   const products = useSelector((state) => state.products.value || []);
   const dispatch = useDispatch();
