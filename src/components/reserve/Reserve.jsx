@@ -10,6 +10,7 @@ const Reserve = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Fetch user from redux store
   const user = useSelector((state) => state.user);
 
   // Fetch product based on the parameter id
@@ -33,9 +34,11 @@ const Reserve = () => {
       product_id: product.id,
     };
 
+    // Create a new reservation
     dispatch(postReservation({ postData }));
 
-    navigate(`/users/${data.owner_id}/reservations`, { state: { data } });
+    // Navigate to the user's reservations page
+    navigate(`/users/${user.id}/reservations`);
   };
 
   const bgImg = {
