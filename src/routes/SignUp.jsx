@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { createUser } from '../redux/userSlice';
 
 function SignUp() {
@@ -27,7 +29,8 @@ function SignUp() {
       dispatch(createUser(username));
       // Handle user created
 
-      alert('User created successfully! Procceed to login page.');
+      toast.success('User created successfully! Procceed to login page.',{theme:'dark'});
+
       redirect('/login');
     } catch (error) {
       console.error('Error:', error); // Log any other errors

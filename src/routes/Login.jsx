@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { setUser } from '../redux/userSlice';
 
 function Login() {
@@ -14,7 +16,7 @@ function Login() {
 
     try {
       // Make a request to retrieve all users
-      const response = await fetch('http://localhost:3000/api/v1/users');
+      const response = await fetch('https://venom-precision.onrender.com/api/v1/users');
       const users = await response.json();
 
       // Check if the submitted username exists in the retrieved users and get the user id
@@ -30,11 +32,15 @@ function Login() {
       if (userExists) {
         setErrorMessage(''); // Reset the error message
         redirect('/'); // Redirect to the home page
+        toast.success('Login Successfully!!!',{theme:'dark'})
       } else {
         setErrorMessage('User does not exist, please choose another username'); // Set an error message
+        toast.error('Login failed. Please try again.',{theme:'dark'})
+
       }
     } catch (error) {
       console.error('Error:', error); // Log any other errors
+      toast.error('Login failed. Please try again.',{theme:'dark'})
     }
   };
 
