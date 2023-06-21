@@ -46,8 +46,10 @@ const ItemForm = () => {
       });
   };
 
+
+
   return (
-    <div className="container flex h-screen w-full flex-col items-center justify-center bg-[#E4E5E9]">
+    <div className=" flex h-screen w-full flex-col items-center justify-center bg-[#E4E5E9]">
       <form
         onSubmit={handleSubmit}
         className="border border-[#9CA3AF] bg-white px-8 py-10 shadow-2xl"
@@ -114,6 +116,7 @@ const ItemForm = () => {
           <button
             type="button"
             className="ml-5 mt-4 bg-[#E4E5E9] px-6 py-2 text-black hover:bg-[#cacacc] focus:bg-[#9a9a9c]"
+            onClick={()=>redirect(-1)}
           >
             Cancel
           </button>
