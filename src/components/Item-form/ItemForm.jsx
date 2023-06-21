@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const ItemForm = () => {
+  const URL = 'https://venom-precision.onrender.com/api/v1';
+
   const user = useSelector((state) => state.user);
 
   const redirect = useNavigate();
@@ -22,7 +24,7 @@ const ItemForm = () => {
       owner_id: user.id,
     };
 
-    fetch('http://localhost:3000/api/v1/products', {
+    fetch(`${URL}/products`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

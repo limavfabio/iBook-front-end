@@ -24,7 +24,7 @@ function MobileSidebar() {
           <div className="">
             <p className="ml-5">
               Logged in as
-              {user.username}
+              <span> {user.username}</span>
             </p>
             <button
               type="button"
@@ -36,12 +36,6 @@ function MobileSidebar() {
           </div>
         )}
 
-      </ul>
-      <ul className="mt-auto flex">
-        <li>icon</li>
-        <li>icon</li>
-        <li>icon</li>
-        <li>icon</li>
       </ul>
     </div>
   );
