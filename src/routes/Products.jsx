@@ -8,6 +8,9 @@ import MobileSidebar from '../components/layout/MobileSidebar';
 import userSlice from '../redux/userSlice';
 
 function Products() {
+  const URL = 'https://venom-precision.onrender.com/api/v1';
+  // const URL = 'http://127.0.0.1:3000/api/v1';
+
   // Fetch data from the store
   const products = useSelector((state) => state.products.value.products);
   const user = useSelector((state) => state.user);
@@ -26,7 +29,7 @@ function Products() {
   };
 
   function handleDelete(id) {
-    fetch(`http://localhost:3000/api/v1/products/${id}`, {
+    fetch(`${URL}/products/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
