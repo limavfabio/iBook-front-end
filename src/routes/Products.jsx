@@ -5,10 +5,13 @@ import { fetchProducts } from '../redux/productsSlice';
 import Header from '../components/layout/Header';
 import Sidebar from '../components/layout/Sidebar';
 import MobileSidebar from '../components/layout/MobileSidebar';
+import userSlice from '../redux/userSlice';
 
 function Products() {
   // Fetch data from the store
   const products = useSelector((state) => state.products.value.products);
+  const user = useSelector((state) => state.user);
+
 
   const dispatch = useDispatch();
 
@@ -26,11 +29,12 @@ function Products() {
   function handleDelete(id) {
     fetch(`http://localhost:3000/api/v1/products/${id}`, {
       method: 'DELETE',
+      body: JSON.stringify({ user_id: user.id }),
     })
       .then((response) => console.log(response))
       .then((data) => {
         console.log('Success:', data);
-        // dispatch(fetchProducts());
+        dispatch(fetchProducts());
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -69,12 +73,27 @@ function Products() {
                   <td className="px-6 py-4 whitespace-nowrap">{product.name}</td>
                   <td className="px-6 py-4 whitespace-nowrap">{product.price}</td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <button
-                      onClick={() => handleDelete(product.id)}
-                      className="px-3 py-1 text-sm font-medium text-red-500 bg-transparent border border-red-500 rounded-md hover:bg-red-500 hover:text-white"
-                    >
-                      Delete
-                    </button>
+
+                    {
+                      Number(user.id) === product.owner_id ? (
+                        // Delete button when the user IS the owner of the product
+                        <button
+                          onClick={() => handleDelete(product.id)}
+                          className="px-3 py-1 text-sm font-medium text-red-500 bg-transparent border border-red-500 rounded-md hover:bg-red-500 hover:text-white"
+                        >
+                          Delete
+                        </button>
+                      ) : (
+                        // Delete button when the user is NOT the owner of the product
+                        <button
+                          disabled
+                          className="px-3 py-1 text-sm font-medium text-gray-400 bg-transparent border border-gray-400 rounded-md"
+                        >
+                          Delete
+                        </button>
+                      )
+                    }
+
                   </td>
                 </tr>
               ))
