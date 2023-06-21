@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const ItemForm = () => {
+  const user = useSelector((state) => state.user);
+
+  const redirect = useNavigate();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
@@ -14,7 +19,7 @@ const ItemForm = () => {
       description,
       image,
       price,
-      owner_id: 1,
+      owner_id: user.id,
     };
 
     fetch('http://localhost:3000/api/v1/products', {
@@ -27,12 +32,8 @@ const ItemForm = () => {
       .then((response) => response.json())
       .then((result) => {
         // Handle the successful response
-        console.log('Product created:', result);
-        // Reset the form fields
-        setName('');
-        setDescription('');
-        setImage('');
-        setPrice('');
+        const product = result.details;
+        redirect(`/products/${product.id}`);
       })
       .catch((error) => {
         // Handle the error
@@ -55,7 +56,7 @@ const ItemForm = () => {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="John Doe"
+              placeholder="Marker Kit"
               className="my-2 w-full border border-[#BFD872] px-6 py-2 focus:border-[#85a80d] focus:bg-white focus:outline-none"
               required
             />

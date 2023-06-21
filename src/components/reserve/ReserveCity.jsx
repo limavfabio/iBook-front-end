@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BsPlay } from 'react-icons/bs';
 
-const ReserveCity = ({handleCity}) => {
+const ReserveCity = ({ handleCity }) => {
   const [isCityOpen, setCityIsOpen] = useState(false);
   const [cityValue, setCityValue] = useState('New York');
 
@@ -13,7 +13,7 @@ const ReserveCity = ({handleCity}) => {
     setCityIsOpen(!isCityOpen);
   };
 
-  handleCity(cityValue)
+  handleCity(cityValue);
 
   return (
     <div className=" inline-block ">

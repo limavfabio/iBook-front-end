@@ -9,7 +9,7 @@ export const useLogout = () => {
 
   const logout = () => {
     dispatch(setUser('DELETE_USER'));
-    redirect('/login');
+    redirect('/');
   };
 
   return logout;

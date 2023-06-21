@@ -5,6 +5,7 @@ import { Bars3Icon } from '@heroicons/react/24/outline';
 
 function Header({ toggleSidebar }) {
   const username = useSelector((state) => state.user.username);
+  const id = useSelector((state) => state.user.id);
 
   return (
     <div className="flex items-center justify-between bg-lime-500 px-4 py-2 md:hidden">
@@ -12,7 +13,7 @@ function Header({ toggleSidebar }) {
         <Bars3Icon className="h-8 text-white" />
       </button>
       <p className="font-bold text-white">
-        {username ? `Welcome, ${username}` : 'Welcome, Guest'}
+        VenomPrecision
       </p>
       <div />
     </div>
