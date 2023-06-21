@@ -12,6 +12,7 @@ function MobileSidebar() {
         <SidebarLink text='MAIN PAGE' path='/' />
         <SidebarLink text='MY RESERVATIONS' path='/reservations' />
         <SidebarLink text='ALL PRODUCTS' path='/products' />
+        <SidebarLink text='ADD NEW PRODUCT' path='/products/new' />
 
         <button
           type="button"
