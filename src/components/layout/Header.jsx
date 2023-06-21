@@ -13,7 +13,7 @@ function Header({ toggleSidebar }) {
         <Bars3Icon className="h-8 text-white" />
       </button>
       <p className="font-bold text-white">
-        {username ? `Welcome, ${username} of id ${id}` : 'Welcome, Guest'}
+        VenomPrecision
       </p>
       <div />
     </div>
