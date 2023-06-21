@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import { postReservation } from "../../redux/reservationSlice";
-import ReserveCalender from "./ReserveCalender";
-import ReserveCity from "./ReserveCity";
-import { fetchProductWithId } from "../../redux/productsSlice";
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import { postReservation } from '../../redux/reservationSlice';
+import ReserveCalender from './ReserveCalender';
+import ReserveCity from './ReserveCity';
+import { fetchProductWithId } from '../../redux/productsSlice';
 
 const Reserve = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const Reserve = () => {
   // Redirect to login page if user is not logged in
   useEffect(() => {
     if (!user.id) {
-      redirect("/login");
+      redirect('/login');
     }
   }, [user, redirect]);
 
@@ -50,9 +50,9 @@ const Reserve = () => {
 
   const bgImg = {
     backgroundImage: `url(${product.image})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
   };
 
   return (

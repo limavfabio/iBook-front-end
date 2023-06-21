@@ -39,9 +39,9 @@ function Login() {
   };
 
   return (
-    <div className='h-screen flex flex-col bg-slate-100 items-center justify-center'>
-      <div className='border p-5 rounded-lg bg-white shadow w-min'>
-        <form onSubmit={handleSubmit} className='flex flex-col items-end'>
+    <div className="h-screen flex flex-col bg-slate-100 items-center justify-center">
+      <div className="border p-5 rounded-lg bg-white shadow w-min">
+        <form onSubmit={handleSubmit} className="flex flex-col items-end">
           <label htmlFor="username" className="mb-2 block">
             <p className="font-semibold text-center text-slate-700 pb-3">Log in with your username</p>
             <input
@@ -64,9 +64,9 @@ function Login() {
             Log In
           </button>
         </form>
-        <div className='flex flex-col items-center text-slate-700'>
-          <p className='mt-4'>Don't have an username?</p>
-          <Link to='/signup' className='hover:text-black hover:underline' >Click here to sign up.</Link>
+        <div className="flex flex-col items-center text-slate-700">
+          <p className="mt-4">Don't have an username?</p>
+          <Link to="/signup" className="hover:text-black hover:underline">Click here to sign up.</Link>
         </div>
       </div>
     </div>

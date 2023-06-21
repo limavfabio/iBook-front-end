@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { createUser } from "../redux/userSlice";
+import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { createUser } from '../redux/userSlice';
 
 function SignUp() {
-  const [username, setUsername] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [username, setUsername] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const dispatch = useDispatch();
   const redirect = useNavigate();
 
@@ -14,31 +14,30 @@ function SignUp() {
 
     try {
       // Fetch all users
-      const response = await fetch("http://localhost:3000/api/v1/users");
+      const response = await fetch('http://localhost:3000/api/v1/users');
       const users = await response.json();
 
       // Check if there isn't a user with the submitted username
       const userExists = users.some((user) => user.username === username);
 
       if (userExists) {
-        setErrorMessage("User already exists, please log in.");
+        setErrorMessage('User already exists, please log in.');
         return;
-      } else {
-        dispatch(createUser(username));
-        // Handle user created
-
-        alert("User created successfully! Procceed to login page.");
-        redirect("/login");
       }
+      dispatch(createUser(username));
+      // Handle user created
+
+      alert('User created successfully! Procceed to login page.');
+      redirect('/login');
     } catch (error) {
-      console.error("Error:", error); // Log any other errors
+      console.error('Error:', error); // Log any other errors
     }
   };
 
   return (
-    <div className='h-screen flex flex-col bg-slate-100 items-center justify-center'>
-      <div className='border p-5 rounded-lg bg-white shadow w-min'>
-        <form onSubmit={handleSubmit} className='flex flex-col items-end'>
+    <div className="h-screen flex flex-col bg-slate-100 items-center justify-center">
+      <div className="border p-5 rounded-lg bg-white shadow w-min">
+        <form onSubmit={handleSubmit} className="flex flex-col items-end">
           <label htmlFor="username" className="mb-2 block">
             <p className="font-semibold text-center text-slate-700 pb-3">Sign up with your username</p>
             <input
@@ -61,9 +60,9 @@ function SignUp() {
             Sign Up
           </button>
         </form>
-        <div className='flex flex-col items-center text-slate-700'>
-          <p className='mt-4'>Already have an username?</p>
-          <Link to='/login' className='hover:text-black hover:underline' >Click here to log in.</Link>
+        <div className="flex flex-col items-center text-slate-700">
+          <p className="mt-4">Already have an username?</p>
+          <Link to="/login" className="hover:text-black hover:underline">Click here to log in.</Link>
         </div>
       </div>
     </div>

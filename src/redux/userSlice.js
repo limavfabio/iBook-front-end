@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice,  } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const API_URL = 'http://localhost:3000/api/v1/users'
+const API_URL = 'http://localhost:3000/api/v1/users';
 
 const initialState = {
   id: localStorage.getItem('userId') || '',
@@ -29,7 +29,7 @@ export const createUser = createAsyncThunk(
     } catch (error) {
       throw new Error(error.message);
     }
-  }
+  },
 );
 
 const userSlice = createSlice({
