@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const ItemForm = () => {
   const user = useSelector((state) => state.user);
 
+  const redirect = useNavigate()
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState('');
@@ -30,12 +32,8 @@ const ItemForm = () => {
       .then((response) => response.json())
       .then((result) => {
         // Handle the successful response
-        console.log('Product created:', result);
-        // Reset the form fields
-        setName('');
-        setDescription('');
-        setImage('');
-        setPrice('');
+        const product = result.details
+        redirect(`/products/${product.id}`)
       })
       .catch((error) => {
         // Handle the error
