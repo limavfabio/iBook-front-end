@@ -4,8 +4,8 @@ import 'react-calendar/dist/Calendar.css';
 const ReserveCalender = ({ handleCalender }) => {
   const [isCalenderOpen, setIsCalenderOpen] = useState(false);
   const [value, setValue] = useState(new Date());
-
   const date = new Date(value).toJSON().slice(0, 10);
+  
   handleCalender(date);
 
   const openCalendar = () => {
@@ -21,11 +21,11 @@ const ReserveCalender = ({ handleCalender }) => {
       >
         <input
           type="date"
-          className="cursor-pointer appearance-none border-none bg-transparent text-black outline-none"
+          value={date}
+          className=" appearance-none border-none bg-transparent text-black outline-none"
           style={{
             color: 'white',
             backgroundColor: 'transparent',
-            cursor: 'pointer',
             WebkitAppearance: 'none',
             MozAppearance: 'none',
             appearance: 'none',

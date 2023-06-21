@@ -1,11 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { fetchProducts } from '../redux/productsSlice';
 import Header from '../components/layout/Header';
-import Sidebar from '../components/layout/Sidebar';
 import MobileSidebar from '../components/layout/MobileSidebar';
-import userSlice from '../redux/userSlice';
+import Sidebar from '../components/layout/Sidebar';
+import { fetchProducts } from '../redux/productsSlice';
 
 function Products() {
   const URL = 'https://venom-precision.onrender.com/api/v1';

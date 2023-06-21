@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { fetchProductWithId } from '../../redux/productsSlice';
 import { postReservation } from '../../redux/reservationSlice';
 import ReserveCalender from './ReserveCalender';
 import ReserveCity from './ReserveCity';
-import { fetchProductWithId } from '../../redux/productsSlice';
 
 const Reserve = () => {
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const Reserve = () => {
   const userId = useSelector((state) => state.user.id);
 
   const navigate = useNavigate();
-
+  
   const handleCalender = (date) => {
     setDate(date);
   };
@@ -48,14 +48,14 @@ const Reserve = () => {
       date,
       user_id: parseInt(userId),
       product_id: data.id,
-      city,
+      city:city
     };
 
     // Create a new reservation
     dispatch(postReservation({ postData }));
-    navigate('/reservations', { state: { userId, data } });
+    navigate(`/reservations`, { state: { userId, data } });
   };
-
+  
   const bgImg = {
     backgroundImage: `url(${product.image})`,
     backgroundSize: 'cover',

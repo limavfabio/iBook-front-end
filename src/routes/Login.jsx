@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { setUser } from '../redux/userSlice';
 
 function Login() {
@@ -14,7 +14,7 @@ function Login() {
 
     try {
       // Make a request to retrieve all users
-      const response = await fetch('http://localhost:3000/api/v1/users');
+      const response = await fetch('https://venom-precision.onrender.com/api/v1/users');
       const users = await response.json();
 
       // Check if the submitted username exists in the retrieved users and get the user id
