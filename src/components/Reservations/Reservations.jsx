@@ -11,8 +11,8 @@ const Reservations = () => {
   }, []);
   return (
     <div>
-      <div >
-        <h2 className='text-center my-5 font-bold text-3xl uppercase'>My Reservations</h2>
+      <div>
+        <h2 className="text-center my-5 font-bold text-3xl uppercase">My Reservations</h2>
         <section className="bg-blueGray-50 py-1">
           <div className="mx-auto mb-12 mt-10 w-full px-4 xl:mb-0 xl:w-8/12">
             <div className="relative mb-6 flex w-full min-w-0 flex-col break-words rounded  shadow-lg ">
@@ -31,14 +31,14 @@ const Reservations = () => {
                       </th>
                     </tr>
                   </thead>
-                  <tbody className='bg-gray-200'>
+                  <tbody className="bg-gray-200">
                     {reservations
                       && reservations.map((item) => (
                         <tr key={item.reserver_at}>
                           <th className="text-blueGray-700 whitespace-nowrap border-l-0 border-r-0 border-t-0 p-4 px-6 text-left align-middle text-xs">
                             {item.city}
                           </th>
-                          
+
                           <td className="whitespace-nowrap border-l-0 border-r-0 border-t-0 p-4 px-6 align-middle text-xs">
                             {item.product_name}
                           </td>

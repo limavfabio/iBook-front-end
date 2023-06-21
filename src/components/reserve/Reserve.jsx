@@ -31,7 +31,7 @@ const Reserve = () => {
   const [city, setCity] = useState(null);
   const history = useLocation();
   const { data } = history.state;
-  const userId = useSelector(state => state.user.id)
+  const userId = useSelector((state) => state.user.id);
 
   const navigate = useNavigate();
   
@@ -77,7 +77,7 @@ const Reserve = () => {
 
         <div className="mt-5 flex flex-col items-center justify-center gap-5 md:flex-row">
           <ReserveCalender handleCalender={handleCalender} />
-          <ReserveCity handleCity={handleCity}/>
+          <ReserveCity handleCity={handleCity} />
 
           <button
             type="button"

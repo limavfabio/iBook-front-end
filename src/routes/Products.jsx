@@ -10,7 +10,6 @@ function Products() {
   const products = useSelector((state) => state.products.value.products);
   const user = useSelector((state) => state.user);
 
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,6 +26,9 @@ function Products() {
   function handleDelete(id) {
     fetch(`https://venom-precision.onrender.com/api/v1/products/${id}`, {
       method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({ user_id: user.id }),
     })
       .then((response) => console.log(response))

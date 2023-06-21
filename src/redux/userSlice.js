@@ -7,7 +7,6 @@ const initialState = JSON.parse(localStorage.getItem('user')) || {
   username: '',
 };
 
-
 // Async thunk for creating a user
 export const createUser = createAsyncThunk(
   'user/createUser',
@@ -49,7 +48,7 @@ const userSlice = createSlice({
         const user = {
           id: state.id,
           username: state.username,
-        }
+        };
         localStorage.setItem('user', JSON.stringify(user));
       }
     },
