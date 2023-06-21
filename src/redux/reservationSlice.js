@@ -23,14 +23,14 @@ export const fetchReservations = createAsyncThunk('reservations/fetchReservation
 export const postReservation = createAsyncThunk('reservation/postReservation', async ({ postData }) => {
   try {
     const response = await fetch(`${URL}/users/${postData.user_id}/reservations`, {
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json'
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
-      body:JSON.stringify(postData)
-    })
-    const responseData = await response.json()
-    return responseData
+      body: JSON.stringify(postData),
+    });
+    const responseData = await response.json();
+    return responseData;
   } catch (error) {
     throw new Error(error.message);
   }

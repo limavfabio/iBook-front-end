@@ -39,8 +39,16 @@ function Details() {
           </div>
           {/* Right Side Details Panel */}
           <div className="flex h-full w-full sm:w-1/3 min-w-fit flex-col justify-center px-5 text-end">
-            <h2 className="mb-1 text-4xl"> {data.name} </h2>
-            <p className="mb-5"> {data.description} </p>
+            <h2 className="mb-1 text-4xl">
+              {' '}
+              {data.name}
+              {' '}
+            </h2>
+            <p className="mb-5">
+              {' '}
+              {data.description}
+              {' '}
+            </p>
             {/* Table */}
             <div className="mb-5 flex flex-col justify-between">
               <DetailRow

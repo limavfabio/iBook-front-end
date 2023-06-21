@@ -12,7 +12,6 @@ function Products() {
   const products = useSelector((state) => state.products.value.products);
   const user = useSelector((state) => state.user);
 
-
   const dispatch = useDispatch();
 
   useEffect(() => {

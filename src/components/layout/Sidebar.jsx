@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useLogout } from '../../lib/auth';
-import SidebarLink from './SidebarLink'
+import SidebarLink from './SidebarLink';
 
 function Sidebar() {
   const logout = useLogout();
@@ -11,19 +11,21 @@ function Sidebar() {
       <h2 className="mt-8 self-center text-xl">VenomPrecision</h2>
       <ul className="mt-16">
 
-        <SidebarLink text='MAIN PAGE' path='/' />
-        <SidebarLink text='MY RESERVATIONS' path='/reservations' />
-        <SidebarLink text='ALL PRODUCTS' path='/products' />
-        <SidebarLink text='ADD NEW PRODUCT' path='/products/new' />
-
+        <SidebarLink text="MAIN PAGE" path="/" />
+        <SidebarLink text="MY RESERVATIONS" path="/reservations" />
+        <SidebarLink text="ALL PRODUCTS" path="/products" />
+        <SidebarLink text="ADD NEW PRODUCT" path="/products/new" />
 
         {user.username === '' ? (
           // If NOT logged in ->
-          <SidebarLink text='LOGIN' path='/login' />
+          <SidebarLink text="LOGIN" path="/login" />
         ) : (
           // If logged in ->
-          <div className=''>
-            <p className='ml-5'>Logged in as {user.username} </p>
+          <div className="">
+            <p className="ml-5">
+              Logged in as
+              {user.username}
+            </p>
             <button
               type="button"
               className="ml-2 py-2 pl-3 font-bold text-slate-700 hover:cursor-pointer"
@@ -32,8 +34,7 @@ function Sidebar() {
               LOGOUT
             </button>
           </div>
-        )
-        }
+        )}
 
       </ul>
       <ul className="mt-auto flex">
