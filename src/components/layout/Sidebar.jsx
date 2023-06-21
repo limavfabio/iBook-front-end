@@ -22,10 +22,6 @@ function Sidebar() {
         ) : (
           // If logged in ->
           <div className="">
-            <p className="ml-5">
-              Logged in as
-              {user.username}
-            </p>
             <button
               type="button"
               className="ml-2 py-2 pl-3 font-bold text-slate-700 hover:cursor-pointer"

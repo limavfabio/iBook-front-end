@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { BsPlay } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { fetchProducts } from '../../redux/productsSlice';
 
@@ -25,7 +26,6 @@ const MainHome = () => {
   
   return (
     <div className='h-screen mt-20'>
-      
       <div className='text-center my-5'>
         <h2 className='text-3xl font-bold uppercase'>latest models</h2>
         <p className='text-[#B9B9B9] text-sm'>Please select a model</p>

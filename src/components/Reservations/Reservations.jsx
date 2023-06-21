@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import 'react-toastify/dist/ReactToastify.css';
 import { fetchReservations } from '../../redux/reservationSlice';
 
 const Reservations = () => {
