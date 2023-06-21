@@ -29,6 +29,9 @@ function Products() {
   function handleDelete(id) {
     fetch(`http://localhost:3000/api/v1/products/${id}`, {
       method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({ user_id: user.id }),
     })
       .then((response) => console.log(response))
