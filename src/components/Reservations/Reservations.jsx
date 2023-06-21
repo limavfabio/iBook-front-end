@@ -35,7 +35,7 @@ const Reservations = () => {
               <div className="relative mb-6 flex w-full min-w-0 flex-col break-words rounded  shadow-lg ">
                 <div className="block w-full overflow-x-auto">
                   <table className="w-full border-collapse border  items-center bg-transparent ">
-                    <thead className='bg-[#97BF0F] text-white'>
+                    <thead className="bg-[#97BF0F] text-white">
                       <tr>
                         <th className="bg-blueGray-50 text-blueGray-500 border-blueGray-100 whitespace-nowrap border border-l-0 border-r-0 border-solid px-6 py-3 text-left align-middle text-xs font-semibold uppercase">
                           City

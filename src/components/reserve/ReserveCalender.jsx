@@ -5,7 +5,7 @@ const ReserveCalender = ({ handleCalender }) => {
   const [isCalenderOpen, setIsCalenderOpen] = useState(false);
   const [value, setValue] = useState(new Date());
   const date = new Date(value).toJSON().slice(0, 10);
-  
+
   handleCalender(date);
 
   const openCalendar = () => {

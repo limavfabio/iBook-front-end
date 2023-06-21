@@ -12,8 +12,8 @@ export const useLogout = () => {
   const logout = () => {
     dispatch(setUser('DELETE_USER'));
     redirect('/login');
-    toast.success('Log out successfully!!',{theme:'dark'}
-    ,{theme:'dark'})
+    toast.success('Log out successfully!!', { theme: 'dark' },
+      { theme: 'dark' });
   };
 
   return logout;

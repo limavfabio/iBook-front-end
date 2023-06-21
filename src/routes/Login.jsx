@@ -32,15 +32,14 @@ function Login() {
       if (userExists) {
         setErrorMessage(''); // Reset the error message
         redirect('/'); // Redirect to the home page
-        toast.success('Login Successfully!!!',{theme:'dark'})
+        toast.success('Login Successfully!!!', { theme: 'dark' });
       } else {
         setErrorMessage('User does not exist, please choose another username'); // Set an error message
-        toast.error('Login failed. Please try again.',{theme:'dark'})
-
+        toast.error('Login failed. Please try again.', { theme: 'dark' });
       }
     } catch (error) {
       console.error('Error:', error); // Log any other errors
-      toast.error('Login failed. Please try again.',{theme:'dark'})
+      toast.error('Login failed. Please try again.', { theme: 'dark' });
     }
   };
 

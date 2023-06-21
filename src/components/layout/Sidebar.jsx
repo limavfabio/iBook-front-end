@@ -24,7 +24,10 @@ function Sidebar() {
           <div className="">
             <p className="ml-5">
               Logged in as
-              <span> {user.username}</span>
+              <span>
+                {' '}
+                {user.username}
+              </span>
             </p>
             <button
               type="button"

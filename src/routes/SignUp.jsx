@@ -29,7 +29,7 @@ function SignUp() {
       dispatch(createUser(username));
       // Handle user created
 
-      toast.success('User created successfully! Procceed to login page.',{theme:'dark'});
+      toast.success('User created successfully! Procceed to login page.', { theme: 'dark' });
 
       redirect('/login');
     } catch (error) {

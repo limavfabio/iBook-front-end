@@ -51,7 +51,7 @@ function Products() {
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
         {/* Table */}
-        <div className='w-full max-h-screen overflow-y-auto'>
+        <div className="w-full max-h-screen overflow-y-auto">
           <table className="w-full divide-y divide-gray-200">
             <thead>
               <tr>
