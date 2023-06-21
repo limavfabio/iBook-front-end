@@ -1,5 +1,4 @@
 import { Cog6ToothIcon } from '@heroicons/react/24/outline';
-import PropTypes from 'prop-types';
 import { IoIosArrowDropright } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
@@ -17,13 +16,5 @@ function ReserveButton({ className, data }) {
     </Link>
   );
 }
-
-ReserveButton.defaultProps = {
-  className: '',
-};
-
-ReserveButton.propTypes = {
-  className: PropTypes.string,
-};
 
 export default ReserveButton;

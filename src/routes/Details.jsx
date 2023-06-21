@@ -22,7 +22,7 @@ function Details() {
   };
   useEffect(() => {
     dispatch(fetchProductWithId(productId));
-  }, [dispatch]);
+  }, [dispatch, productId]);
   return (
     <>
       <Header toggleSidebar={toggleSidebar} />

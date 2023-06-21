@@ -6,10 +6,14 @@ const ReserveCalender = ({ handleCalender }) => {
   const [value, setValue] = useState(new Date());
   const date = new Date(value).toJSON().slice(0, 10);
 
-  handleCalender(date);
-
   const openCalendar = () => {
     setIsCalenderOpen(!isCalenderOpen);
+  };
+
+  handleCalender(date);
+
+  const handleChange = (e) => {
+    setValue(e.target.value);
   };
 
   return (
@@ -32,7 +36,7 @@ const ReserveCalender = ({ handleCalender }) => {
             outline: 'none',
             border: 'none',
           }}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={handleChange}
         />
       </button>
     </div>

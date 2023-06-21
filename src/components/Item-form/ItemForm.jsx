@@ -39,7 +39,7 @@ const ItemForm = () => {
       })
       .catch((error) => {
         // Handle the error
-        console.error('Error creating product:', error);
+        throw new Error(error);
       });
   };
 

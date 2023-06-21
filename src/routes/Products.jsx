@@ -34,13 +34,12 @@ function Products() {
       },
       body: JSON.stringify({ user_id: user.id }),
     })
-      .then((response) => console.log(response))
-      .then((data) => {
-        console.log('Success:', data);
+      .then()
+      .then(() => {
         dispatch(fetchProducts());
       })
       .catch((error) => {
-        console.error('Error:', error);
+        throw new Error('Error:', error);
       });
   }
 
@@ -82,6 +81,7 @@ function Products() {
                           // Delete button when the user IS the owner of the product
                           <button
                             onClick={() => handleDelete(product.id)}
+                            type="button"
                             className="px-3 py-1 text-sm font-medium text-red-500 bg-transparent border border-red-500 rounded-md hover:bg-red-500 hover:text-white"
                           >
                             Delete
@@ -89,6 +89,7 @@ function Products() {
                         ) : (
                           // Delete button when the user is NOT the owner of the product
                           <button
+                            type="button"
                             disabled
                             className="px-3 py-1 text-sm font-medium text-gray-400 bg-transparent border border-gray-400 rounded-md"
                           >

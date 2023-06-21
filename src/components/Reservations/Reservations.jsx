@@ -11,8 +11,8 @@ const Reservations = () => {
   const userId = useSelector((state) => state.user.id);
   const { reservations } = useSelector((state) => state.reservations.value);
   useEffect(() => {
-    dispatch(fetchReservations(parseInt(userId)));
-  }, []);
+    dispatch(fetchReservations(parseInt(userId, 10)));
+  }, [dispatch, userId]);
 
   // State for sidebar
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
-import { fetchProductById } from '../redux/productsSlice';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { fetchProductWithId } from '../redux/productsSlice';
 
 import DetailRow from '../components/DetailRow';
-import ConfigureButton from '../components/ConfigureButton';
 import Header from '../components/layout/Header';
-import Sidebar from '../components/layout/Sidebar';
 import MobileSidebar from '../components/layout/MobileSidebar';
+import Sidebar from '../components/layout/Sidebar';
+import ReserveButton from '../components/ReserveButton';
 
 function Product() {
   const dispatch = useDispatch();
@@ -16,10 +16,8 @@ function Product() {
   const product = useSelector((state) => state.products.selectedProduct);
 
   useEffect(() => {
-    dispatch(fetchProductById(productId));
-  }, []);
-
-  console.log(product);
+    dispatch(fetchProductWithId(productId));
+  }, [productId, dispatch]);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -80,7 +78,7 @@ function Product() {
               <ChevronRightIcon className="h-5 text-[#97BF0F]" />
               {' '}
             </p>
-            <ConfigureButton className="mt-5" />
+            <ReserveButton className="mt-5" />
           </div>
         </div>
       </div>

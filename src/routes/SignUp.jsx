@@ -33,7 +33,7 @@ function SignUp() {
 
       redirect('/login');
     } catch (error) {
-      console.error('Error:', error); // Log any other errors
+      throw new Error('Error:', error); // Log any other errors
     }
   };
 

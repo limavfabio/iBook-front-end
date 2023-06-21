@@ -38,7 +38,6 @@ function Login() {
         toast.error('Login failed. Please try again.', { theme: 'dark' });
       }
     } catch (error) {
-      console.error('Error:', error); // Log any other errors
       toast.error('Login failed. Please try again.', { theme: 'dark' });
     }
   };
@@ -70,7 +69,7 @@ function Login() {
           </button>
         </form>
         <div className="flex flex-col items-center text-slate-700">
-          <p className="mt-4">Don't have an username?</p>
+          <p className="mt-4">Dont have an username?</p>
           <Link to="/signup" className="hover:text-black hover:underline">Click here to sign up.</Link>
         </div>
       </div>

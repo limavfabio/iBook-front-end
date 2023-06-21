@@ -19,7 +19,7 @@ const Reserve = () => {
   const product = useSelector((state) => state.products.value);
   useEffect(() => {
     dispatch(fetchProductWithId(productId));
-  }, [dispatch]);
+  }, [productId, dispatch]);
 
   // Redirect to login page if user is not logged in
   useEffect(() => {
@@ -48,7 +48,7 @@ const Reserve = () => {
     e.preventDefault();
     const postData = {
       date,
-      user_id: parseInt(userId),
+      user_id: parseInt(userId, 10),
       product_id: data.id,
       city,
     };
