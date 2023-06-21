@@ -29,18 +29,18 @@ function Details() {
       <div className="flex">
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
-        <div className="flex w-full justify-between items-center">
+        <div className="flex mt-5 sm:mt-0 flex-col sm:flex-row w-full justify-between items-center">
           {/* Left Side Full Screen Image */}
-          <div className="">
+          <div className="mb-5 sm:mb-0">
             <img
               src={data.image}
               alt={data.name}
             />
           </div>
           {/* Right Side Details Panel */}
-          <div className="flex h-full w-1/3 min-w-fit flex-col justify-center px-5 text-end">
-            <h2 className="mb-1 text-4xl">Package name</h2>
-            <p className="mb-5">Package description</p>
+          <div className="flex h-full w-full sm:w-1/3 min-w-fit flex-col justify-center px-5 text-end">
+            <h2 className="mb-1 text-4xl"> {data.name} </h2>
+            <p className="mb-5"> {data.description} </p>
             {/* Table */}
             <div className="mb-5 flex flex-col justify-between">
               <DetailRow
