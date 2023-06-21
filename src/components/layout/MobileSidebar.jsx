@@ -11,7 +11,9 @@ function MobileSidebar() {
         <li className="ml-2 bg-[#97BF0F] py-2 pl-3 font-bold text-white">
           MODELS
         </li>
-        <li className="ml-2 py-2 pl-3 font-bold text-slate-700">LIFESTYLE</li>
+        <Link to='/reservations'>
+          <li className="ml-2 py-2 pl-3 font-bold text-slate-700">MY RESERVATIONS</li>
+        </Link>
         <Link to="/products">
           <li className="ml-2 py-2 pl-3 font-bold text-slate-700">ALL PRODUCTS</li>
         </Link>

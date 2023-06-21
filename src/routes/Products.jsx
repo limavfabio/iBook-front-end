@@ -27,10 +27,10 @@ function Products() {
     fetch(`http://localhost:3000/api/v1/products/${id}`, {
       method: 'DELETE',
     })
-      .then((response) => response.json())
+      .then((response) => console.log(response))
       .then((data) => {
         console.log('Success:', data);
-        dispatch(fetchProducts());
+        // dispatch(fetchProducts());
       })
       .catch((error) => {
         console.error('Error:', error);
