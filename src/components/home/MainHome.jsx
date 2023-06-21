@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { AiFillTwitterCircle } from 'react-icons/ai';
 import { BsPlay } from 'react-icons/bs';
+import { CiFacebook } from 'react-icons/ci';
+import { TiSocialLinkedinCircular } from 'react-icons/ti';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,7 +25,7 @@ const MainHome = () => {
   const [isEnd, setIsEnd] = useState(false);
 
   return (
-    <div className="h-screen mt-20">
+    <div className="h-screen pt-20">
       <div className="text-center my-5">
         <h2 className="text-3xl font-bold uppercase">latest models</h2>
         <p className="text-[#B9B9B9] text-sm">Please select a model</p>
@@ -67,10 +70,15 @@ const MainHome = () => {
                   <div
                     className={`mx-auto flex h-[200px] w-[200px] items-center justify-center rounded-full bg-${product.bgColor}`}
                   >
-                    <img src={product.image} alt="img" className="rounded-full hover:cursor-pointer" />
+                    <img src={product.image} alt="img" className=" h-full w-full rounded-full hover:cursor-pointer" />
                   </div>
                   <h2 className="my-5 font-bold hover:cursor-pointer">{product.name}</h2>
                   <p className="mb-10 text-[#B9B9B9]">{product.description}</p>
+                  <div className='flex justify-center items-center gap-3 text-gray-300 text-xl'>
+                    <CiFacebook/>
+                    <AiFillTwitterCircle/>
+                    <TiSocialLinkedinCircular/>
+                  </div>
                 </Link>
               </SwiperSlide>
             ))

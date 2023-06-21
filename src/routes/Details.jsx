@@ -30,15 +30,14 @@ function Details() {
       <div className="flex">
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
-        <div className="flex mt-5 sm:mt-0 flex-col sm:flex-row w-full justify-between items-center">
+        <div className="relative flex mt-5 sm:mt-0 flex-col sm:flex-row w-full justify-between items-center">
           {/* Left Side Full Screen Image */}
-          <button type="button" className="bg-[#97BF0F] pl-8 pr-2 py-4 rounded-l-full absolute bottom-5" onClick={() => navigate(-1)}>
-            <BsPlay className="text-white rotate-180" />
-          </button>
-          <div className="mb-5 sm:mb-0">
+          
+          <div className="mb-5 sm:mb-0 flex-1">
             <img
               src={data.image}
               alt={data.name}
+              className='w-2/3 mx-auto'
             />
           </div>
           {/* Right Side Details Panel */}
@@ -71,7 +70,11 @@ function Details() {
             <ReserveButton className="mt-5" data={data} />
 
           </div>
+          <button type="button" className="bg-[#97BF0F] pl-8 pr-2 py-4 rounded-r-full absolute left-0 bottom-0 m-5" onClick={() => navigate(-1)}>
+            <BsPlay className="text-white rotate-180" />
+          </button>
         </div>
+        
       </div>
     </>
   );
