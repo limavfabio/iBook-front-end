@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { postReservation } from '../../redux/reservationSlice';
 import ReserveCalender from './ReserveCalender';
 import ReserveCity from './ReserveCity';
@@ -28,24 +28,32 @@ const Reserve = () => {
   }, [user, redirect]);
 
   const [date, setDate] = useState(null);
+  const [city, setCity] = useState(null);
+  const history = useLocation();
+  const { data } = history.state;
+  const userId = useSelector(state => state.user.id)
+
+  const navigate = useNavigate();
 
   const handleCalender = (date) => {
     setDate(date);
+  };
+  const handleCity = (city) => {
+    setCity(city);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const postData = {
       date,
-      user_id: user.id,
-      product_id: product.id,
+      user_id: parseInt(userId),
+      product_id: data.id,
+      city:city
     };
 
     // Create a new reservation
     dispatch(postReservation({ postData }));
-
-    // Navigate to the user's reservations page
-    redirect(`/users/${user.id}/reservations`);
+    navigate(`/reservations`, { state: { userId, data } });
   };
 
   const bgImg = {
@@ -69,7 +77,7 @@ const Reserve = () => {
 
         <div className="mt-5 flex flex-col items-center justify-center gap-5 md:flex-row">
           <ReserveCalender handleCalender={handleCalender} />
-          <ReserveCity />
+          <ReserveCity handleCity={handleCity}/>
 
           <button
             type="button"

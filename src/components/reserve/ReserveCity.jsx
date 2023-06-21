@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { BsPlay } from 'react-icons/bs';
 
-const ReserveCity = () => {
+const ReserveCity = ({handleCity}) => {
   const [isCityOpen, setCityIsOpen] = useState(false);
   const [cityValue, setCityValue] = useState('New York');
 
   const toggleDropdown = () => {
     setCityIsOpen(!isCityOpen);
   };
-  const handleCity = (city) => {
+  const openCity = (city) => {
     setCityValue(city);
     setCityIsOpen(!isCityOpen);
   };
+
+  handleCity(cityValue)
 
   return (
     <div className=" inline-block ">
@@ -19,62 +21,62 @@ const ReserveCity = () => {
         <ul className="absolute top-1/2 z-10 mt-2 h-2/5  w-1/4 overflow-auto rounded-lg bg-white text-left text-[#97BF0F] shadow-lg">
           <li
             className="cursor-pointer px-4 py-2 hover:bg-[#97BF0F] hover:text-white"
-            onClick={() => handleCity('New York')}
+            onClick={() => openCity('New York')}
           >
             New York
           </li>
           <li
             className="cursor-pointer px-4 py-2 hover:bg-[#97BF0F] hover:text-white"
-            onClick={() => handleCity('Chicago')}
+            onClick={() => openCity('Chicago')}
           >
             Chicago
           </li>
           <li
             className="cursor-pointer px-4 py-2 hover:bg-[#97BF0F] hover:text-white"
-            onClick={() => handleCity('Washington, D.C.')}
+            onClick={() => openCity('Washington, D.C.')}
           >
             Washington, D.C.
           </li>
           <li
             className="cursor-pointer px-4 py-2 hover:bg-[#97BF0F] hover:text-white"
-            onClick={() => handleCity('Boston')}
+            onClick={() => openCity('Boston')}
           >
             Boston
             {' '}
           </li>
           <li
             className="cursor-pointer px-4 py-2 hover:bg-[#97BF0F] hover:text-white"
-            onClick={() => handleCity('Los Angeles')}
+            onClick={() => openCity('Los Angeles')}
           >
             Los Angeles
           </li>
           <li
             className="cursor-pointer px-4 py-2 hover:bg-[#97BF0F] hover:text-white"
-            onClick={() => handleCity('San Francisco')}
+            onClick={() => openCity('San Francisco')}
           >
             San Francisco
           </li>
           <li
             className="cursor-pointer px-4 py-2 hover:bg-[#97BF0F] hover:text-white"
-            onClick={() => handleCity('Houston')}
+            onClick={() => openCity('Houston')}
           >
             Houston
           </li>
           <li
             className="cursor-pointer px-4 py-2 hover:bg-[#97BF0F] hover:text-white"
-            onClick={() => handleCity('Dallas')}
+            onClick={() => openCity('Dallas')}
           >
             Dallas
           </li>
           <li
             className="cursor-pointer px-4 py-2 hover:bg-[#97BF0F] hover:text-white"
-            onClick={() => handleCity('Philadelphia')}
+            onClick={() => openCity('Philadelphia')}
           >
             Philadelphia
           </li>
           <li
             className="cursor-pointer px-4 py-2 hover:bg-[#97BF0F] hover:text-white"
-            onClick={() => handleCity('Miami')}
+            onClick={() => openCity('Miami')}
           >
             Miami
           </li>
