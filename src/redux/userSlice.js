@@ -2,10 +2,11 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const API_URL = 'http://localhost:3000/api/v1/users';
 
-const initialState = {
-  id: localStorage.getItem('userId') || '',
-  username: localStorage.getItem('username') || '',
+const initialState = JSON.parse(localStorage.getItem('user')) || {
+  id: '',
+  username: '',
 };
+
 
 // Async thunk for creating a user
 export const createUser = createAsyncThunk(
@@ -38,15 +39,18 @@ const userSlice = createSlice({
   reducers: {
     setUser: (state, action) => {
       if (action.payload === 'DELETE_USER') {
-        localStorage.removeItem('userId');
-        localStorage.removeItem('username');
+        localStorage.removeItem('user');
         state.id = '';
         state.username = '';
+        state.loggedIn = false;
       } else {
         state.id = action.payload.id;
         state.username = action.payload.username;
-        localStorage.setItem('userId', state.id);
-        localStorage.setItem('username', state.username);
+        const user = {
+          id: state.id,
+          username: state.username,
+        }
+        localStorage.setItem('user', JSON.stringify(user));
       }
     },
   },
