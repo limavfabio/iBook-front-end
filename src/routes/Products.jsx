@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Header from '../components/layout/Header';
 import MobileSidebar from '../components/layout/MobileSidebar';
 import Sidebar from '../components/layout/Sidebar';
@@ -37,6 +39,7 @@ function Products() {
       .then()
       .then(() => {
         dispatch(fetchProducts());
+        toast.success('Delete product successfully')
       })
       .catch((error) => {
         throw new Error('Error:', error);

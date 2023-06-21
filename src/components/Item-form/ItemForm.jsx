@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemForm = () => {
   const URL = 'https://venom-precision.onrender.com/api/v1';
@@ -36,6 +38,7 @@ const ItemForm = () => {
         // Handle the successful response
         const product = result.details;
         redirect(`/products/${product.id}`);
+        toast.success('Add Product successfully!!')
       })
       .catch((error) => {
         // Handle the error
