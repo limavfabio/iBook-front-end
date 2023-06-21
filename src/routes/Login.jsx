@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { setUser } from '../redux/userSlice';
 
 function Login() {
@@ -30,11 +32,15 @@ function Login() {
       if (userExists) {
         setErrorMessage(''); // Reset the error message
         redirect('/'); // Redirect to the home page
+        toast.success('Login Successfully!!!',{theme:'dark'})
       } else {
         setErrorMessage('User does not exist, please choose another username'); // Set an error message
+        toast.error('Login failed. Please try again.',{theme:'dark'})
+
       }
     } catch (error) {
       console.error('Error:', error); // Log any other errors
+      toast.error('Login failed. Please try again.',{theme:'dark'})
     }
   };
 

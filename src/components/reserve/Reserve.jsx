@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { fetchProductWithId } from '../../redux/productsSlice';
 import { postReservation } from '../../redux/reservationSlice';
 import ReserveCalender from './ReserveCalender';
@@ -24,6 +25,8 @@ const Reserve = () => {
   useEffect(() => {
     if (!user.id) {
       redirect('/login');
+      toast.error('Failed to add reservation!!',{theme:'dark'})
+
     }
   }, [user, redirect]);
 
@@ -53,6 +56,7 @@ const Reserve = () => {
 
     // Create a new reservation
     dispatch(postReservation({ postData }));
+    toast.success('Reservation added successfully',{theme:'dark'})
     navigate(`/reservations`, { state: { userId, data } });
   };
   
