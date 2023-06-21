@@ -24,9 +24,10 @@ function SignUp() {
         setErrorMessage("User already exists, please log in.");
         return;
       } else {
-        // Dispatch the createUser action to store the username
         dispatch(createUser(username));
-        // Redirects to the login page
+        // Handle user created
+
+        alert("User created successfully! Procceed to login page.");
         redirect("/login");
       }
     } catch (error) {
