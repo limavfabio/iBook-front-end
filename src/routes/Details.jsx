@@ -1,6 +1,7 @@
 import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
 import { BsPlay } from 'react-icons/bs';
+import { Rings } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import DetailRow from '../components/DetailRow';
@@ -23,6 +24,7 @@ function Details() {
   useEffect(() => {
     dispatch(fetchProductWithId(productId));
   }, [dispatch, productId]);
+
   return (
     <>
       <Header toggleSidebar={toggleSidebar} />
@@ -30,15 +32,30 @@ function Details() {
       <div className="flex">
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
+
         <div className="relative flex mt-5 sm:mt-0 flex-col sm:flex-row w-full justify-between items-center">
           {/* Left Side Full Screen Image */}
 
           <div className="mb-5 sm:mb-0 flex-1">
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-2/3 mx-auto"
-            />
+            { product ? (
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-2/3 mx-auto"
+              />
+            ) : (
+              <Rings
+                height="80"
+                width="80"
+                color="#97BF0F"
+                radius="6"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible
+                ariaLabel="rings-loading"
+              />
+            )}
+
           </div>
           {/* Right Side Details Panel */}
           <div className="flex h-full w-full sm:w-1/3 min-w-fit flex-col justify-center px-5 text-end">
@@ -52,7 +69,6 @@ function Details() {
               {product.description}
               {' '}
             </p>
-            {/* Table */}
             <div className="mb-5 flex flex-col justify-between">
               <DetailRow
                 label="Package price"
@@ -71,7 +87,7 @@ function Details() {
 
           </div>
           <button type="button" className="bg-[#97BF0F] pl-8 pr-2 py-4 rounded-r-full absolute left-0 bottom-0 m-5" onClick={() => navigate(-1)}>
-            <BsPlay className="text-white rotate-180" />
+            <BsPlay className="text-white rotate-180 text-xl" />
           </button>
         </div>
 

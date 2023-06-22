@@ -1,3 +1,4 @@
+import React from 'react';
 import { BiLogIn } from 'react-icons/bi';
 import { BsCardChecklist } from 'react-icons/bs';
 import { CgPlayListAdd } from 'react-icons/cg';
@@ -14,7 +15,7 @@ function Sidebar() {
 
   return (
     <div className="hidden h-screen min-w-max flex-col border border-gray-100 bg-white md:flex">
-      <h2 className="mt-8 self-center text-xl">VenomPrecision</h2>
+      <h2 className="mt-8 self-center underline text-2xl font-bold font-poppins -rotate-12">VenomPrecision</h2>
       <ul className="mt-16">
 
         <SidebarLink text="MAIN PAGE" path="/" icon={<HiClipboardList />} />
