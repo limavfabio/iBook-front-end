@@ -21,7 +21,14 @@ function Sidebar() {
         <SidebarLink text="MAIN PAGE" path="/" icon={<HiClipboardList />} />
         <SidebarLink text="MY RESERVATIONS" path="/reservations" icon={<VscTasklist />} />
         <SidebarLink text="ALL PRODUCTS" path="/products" icon={<BsCardChecklist />} />
-        <SidebarLink text="ADD NEW PRODUCT" path="/products/new" icon={<CgPlayListAdd />} />
+
+        {user.username === '' ? (
+          // If NOT logged in ->
+          null
+        ) : (
+          // if logged in ->
+          <SidebarLink text="ADD NEW PRODUCT" path="/products/new" icon={<CgPlayListAdd />} />
+        )}
 
         {user.username === '' ? (
           // If NOT logged in ->
