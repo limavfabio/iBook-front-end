@@ -70,12 +70,12 @@ const Reserve = () => {
     <div style={bgImg}>
       <div className="flex h-screen w-full flex-col items-center justify-center bg-[#96BF01] bg-opacity-90 text-center text-white">
         <h2 className="text-2xl font-bold uppercase tracking-[.6rem]">
-          book a vespa test-drive
+          book a Awesome Weapon
         </h2>
         <hr className="my-5 w-2/3 border-[#A1C839]" />
         <p className="w-1/2 text-xs leading-6">
           There are 34 different versions of the Vespa. Today five series are in
-          production: the
+          production
         </p>
 
         <div className="mt-5 flex flex-col items-center justify-center gap-5 md:flex-row">

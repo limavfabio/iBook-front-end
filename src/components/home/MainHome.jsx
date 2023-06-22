@@ -28,8 +28,8 @@ const MainHome = () => {
   return (
     <div className="h-screen pt-20">
       <div className="text-center my-20">
-        <h2 className="text-3xl font-bold uppercase">latest models</h2>
-        <p className="text-[#B9B9B9] text-sm">Please select a model</p>
+        <h2 className="text-3xl font-bold uppercase">latest products</h2>
+        <p className="text-[#B9B9B9] text-sm">Please select a product</p>
       </div>
       <div className="mx-auto flex  gap-5 items-center justify-center text-center ">
         <button type="button" className={`swiper-button-prev ${isBeginning ? 'bg-[#E4E5E9]' : 'bg-[#97BF0F]'} pl-8 pr-2 py-4 rounded-r-full`} disabled={isBeginning} onClick={() => swiperRef.current?.slidePrev()}>
