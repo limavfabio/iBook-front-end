@@ -1,4 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 function SidebarLink({ text, path, icon }) {
   const location = useLocation();
 
@@ -8,13 +10,23 @@ function SidebarLink({ text, path, icon }) {
     <Link to={path}>
       <li
         className={`ml-2 py-4 pl-3 flex  items-center  font-bold ${isActive ? 'bg-lime-500 text-white' : 'text-slate-700'
-      }`}
+        }`}
       >
-        <span className='mr-5 text-xl'>{icon}</span>
+        {icon && <span className="mr-5 text-xl">{icon}</span>}
         {text}
       </li>
     </Link>
   );
 }
+
+SidebarLink.defaultProps = {
+  icon: null,
+};
+
+SidebarLink.propTypes = {
+  text: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  icon: PropTypes.element,
+};
 
 export default SidebarLink;
