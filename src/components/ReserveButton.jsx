@@ -27,13 +27,13 @@ ReserveButton.propTypes = {
   className: PropTypes.string.isRequired,
   product: PropTypes.shape({
     id: PropTypes.number,
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    price: PropTypes.string,
     owner_id: PropTypes.number,
-    created_at: PropTypes.string.isRequired,
-    updated_at: PropTypes.string.isRequired,
+    created_at: PropTypes.string,
+    updated_at: PropTypes.string,
   }).isRequired,
 };
 
