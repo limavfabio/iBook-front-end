@@ -48,7 +48,7 @@ function Login() {
   return (
     <div className="h-screen flex flex-col bg-slate-100 items-center justify-center">
 
-      <img className="w-56 mb-20" src="/public/venom-precision-logo.png" alt="logo" />
+      <img className="w-56 mb-20" src="/venom-precision-logo.png" alt="logo" />
 
       <div className="border p-5 rounded-lg bg-white shadow w-min">
         <form onSubmit={handleSubmit} className="flex flex-col items-end">

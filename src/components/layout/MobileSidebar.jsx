@@ -16,13 +16,21 @@ function MobileSidebar() {
     <div className="fixed flex h-screen flex-col border border-gray-100 z-10 bg-white md:hidden">
 
       <div className="flex mt-10 justify-center">
-        <img className="w-40" src="/public/venom-precision-logo.png" alt="logo" />
+        <img className="w-40" src="/venom-precision-logo.png" alt="logo" />
       </div>
 
       <ul className="mt-10">
 
         <SidebarLink text="MAIN PAGE" path="/" icon={<HiClipboardList />} />
-        <SidebarLink text="MY RESERVATIONS" path="/reservations" icon={<VscTasklist />} />
+
+        {user.username === '' ? (
+          // If NOT logged in ->
+          null
+        ) : (
+          // if logged in ->
+          <SidebarLink text="MY RESERVATIONS" path="/reservations" icon={<VscTasklist />} />
+        )}
+
         <SidebarLink text="ALL PRODUCTS" path="/products" icon={<BsCardChecklist />} />
 
         {user.username === '' ? (

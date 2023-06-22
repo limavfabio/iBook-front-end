@@ -77,7 +77,7 @@ function Details() {
               />
               <DetailRow label="Date" value={new Date(product.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })} />
             </div>
-            <Link to={'/products'}>
+            <Link to="/products">
               <p className="flex items-center self-end font-bold">
                 DISCOVER MORE MODELS
                 {' '}

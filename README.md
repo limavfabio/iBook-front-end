@@ -1,3 +1,7 @@
+<div align="center">
+<img src="https://github.com/limavfabio/VenomPrecision-back-end/assets/65084923/c724a6f7-3a59-4a5e-93d9-272bf12e8c22" alt="logo" width="300"  height="auto" />
+</div>
+
 <a name="readme-top"></a>
 
 <!-- TABLE OF CONTENTS -->
