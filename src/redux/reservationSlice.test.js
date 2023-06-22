@@ -29,5 +29,4 @@ describe('reservationSlice', () => {
     expect(state.value).toEqual(responseData);
     expect(state.errors).toBeNull();
   });
-
 });

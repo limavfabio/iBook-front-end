@@ -8,6 +8,7 @@ import { VscTasklist } from 'react-icons/vsc';
 import { useSelector } from 'react-redux';
 import { useLogout } from '../../lib/auth';
 import SidebarLink from './SidebarLink';
+
 function Sidebar() {
   const logout = useLogout();
   const user = useSelector((state) => state.user);
