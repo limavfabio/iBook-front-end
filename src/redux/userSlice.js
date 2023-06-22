@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const API_URL = 'http://localhost:3000/api/v1/users';
+const API_URL = 'https://venom-precision.onrender.com/api/v1';
+// const API_URL = 'http://127.0.0.1:3000/api/v1';
 
 const initialState = JSON.parse(localStorage.getItem('user')) || {
   id: '',

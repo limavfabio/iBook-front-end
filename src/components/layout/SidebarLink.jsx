@@ -9,7 +9,7 @@ function SidebarLink({ text, path, icon }) {
   return (
     <Link to={path}>
       <li
-        className={`ml-2 py-4 pl-3 flex  items-center  font-bold ${isActive ? 'bg-lime-500 text-white' : 'text-slate-700'
+        className={`w-64 ml-2 py-4 pl-3 flex  items-center  font-bold ${isActive ? 'bg-lime-500 text-white' : 'text-slate-700'
         }`}
       >
         {icon && <span className="mr-5 text-xl">{icon}</span>}

@@ -13,9 +13,9 @@ function MobileSidebar() {
   const user = useSelector((state) => state.user);
 
   return (
-    <div className="fixed flex h-screen w-3/4 flex-col border border-gray-100 z-10 bg-white sm:w-1/2 md:hidden">
+    <div className="fixed flex h-screen flex-col border border-gray-100 z-10 bg-white md:hidden">
       <h2 className="mt-8 self-center text-xl">VenomPrecision</h2>
-      <ul className="mt-16 flex flex-col">
+      <ul className="mt-16">
 
         <SidebarLink text="MAIN PAGE" path="/" icon={<HiClipboardList />} />
         <SidebarLink text="MY RESERVATIONS" path="/reservations" icon={<VscTasklist />} />
