@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { BsPlay } from 'react-icons/bs';
 import { Rings } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 import DetailRow from '../components/DetailRow';
 import ReserveButton from '../components/ReserveButton';
 import Header from '../components/layout/Header';
@@ -77,12 +77,14 @@ function Details() {
               />
               <DetailRow label="Date" value={new Date(product.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })} />
             </div>
-            <p className="flex items-center self-end font-bold">
-              DISCOVER MORE MODELS
-              {' '}
-              <ChevronRightIcon className="h-5 text-[#97BF0F]" />
-              {' '}
-            </p>
+            <Link to={'/products'}>
+              <p className="flex items-center self-end font-bold">
+                DISCOVER MORE MODELS
+                {' '}
+                <ChevronRightIcon className="h-5 text-[#97BF0F]" />
+                {' '}
+              </p>
+            </Link>
             <ReserveButton className="mt-5" product={product} />
 
           </div>
