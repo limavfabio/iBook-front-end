@@ -1,3 +1,4 @@
+import React from 'react';
 import { BiLogIn } from 'react-icons/bi';
 import { BsCardChecklist } from 'react-icons/bs';
 import { CgPlayListAdd } from 'react-icons/cg';
@@ -7,7 +8,6 @@ import { VscTasklist } from 'react-icons/vsc';
 import { useSelector } from 'react-redux';
 import { useLogout } from '../../lib/auth';
 import SidebarLink from './SidebarLink';
-
 function Sidebar() {
   const logout = useLogout();
   const user = useSelector((state) => state.user);

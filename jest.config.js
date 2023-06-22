@@ -3,4 +3,7 @@ export default {
     transform: {
       '^.+\\.[jt]sx?$': ['babel-jest', { configFile: './babel.config.json' }],
     },
+    moduleNameMapper: {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   };

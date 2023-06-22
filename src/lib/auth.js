@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { setUser } from '../redux/userSlice';
-
 /* eslint-disable import/prefer-default-export */
 export const useLogout = () => {
   const dispatch = useDispatch();

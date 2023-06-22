@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import 'react-toastify/dist/ReactToastify.css';
 import { fetchReservations } from '../../redux/reservationSlice';
 import Header from '../layout/Header';
 import MobileSidebar from '../layout/MobileSidebar';
