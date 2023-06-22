@@ -3,11 +3,11 @@ import { AiFillTwitterCircle } from 'react-icons/ai';
 import { BsPlay } from 'react-icons/bs';
 import { CiFacebook } from 'react-icons/ci';
 import { TiSocialLinkedinCircular } from 'react-icons/ti';
+import { Rings } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Rings } from 'react-loader-spinner';
 import { fetchProducts } from '../../redux/productsSlice';
 
 // Import Swiper styles
@@ -26,7 +26,7 @@ const MainHome = () => {
   const [isEnd, setIsEnd] = useState(false);
 
   return (
-    <div className="h-screen pt-20">
+    <div className="h-screen md:pt-20">
       <div className="text-center my-20">
         <h2 className="text-3xl font-bold uppercase">latest products</h2>
         <p className="text-[#B9B9B9] text-sm">Please select a product</p>
