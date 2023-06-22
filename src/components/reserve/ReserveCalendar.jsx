@@ -49,7 +49,7 @@ ReserveCalendar.defaultProps = {
 };
 
 ReserveCalendar.propTypes = {
-  handleCalendar: PropTypes.func.isRequired,
+  handleCalendar: PropTypes.func,
 };
 
 export default ReserveCalendar;
