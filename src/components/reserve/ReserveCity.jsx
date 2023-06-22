@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { BsPlay } from 'react-icons/bs';
 import CityOption from './CityOption';
 
-
 const ReserveCity = ({ handleCity }) => {
   const [isCityOpen, setCityIsOpen] = useState(false);
   const [cityValue, setCityValue] = useState('New York');
@@ -19,18 +18,18 @@ const ReserveCity = ({ handleCity }) => {
   handleCity(cityValue);
 
   const cityOptions = [
-    "New York",
-    "Chicago",
-    "Washington, D.C.",
-    "San Francisco",
-    "Los Angeles",
-    "Boston",
-    "Seattle",
-    "Miami",
-    "Denver",
-    "Philadelphia",
-    "Atlanta"
-  ]
+    'New York',
+    'Chicago',
+    'Washington, D.C.',
+    'San Francisco',
+    'Los Angeles',
+    'Boston',
+    'Seattle',
+    'Miami',
+    'Denver',
+    'Philadelphia',
+    'Atlanta',
+  ];
 
   return (
     <div className=" inline-block ">
