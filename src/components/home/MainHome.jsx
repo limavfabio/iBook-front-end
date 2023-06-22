@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Rings } from 'react-loader-spinner';
 import { fetchProducts } from '../../redux/productsSlice';
 
 // Import Swiper styles
-import { Rings } from 'react-loader-spinner';
 import 'swiper/css';
 
 const MainHome = () => {
@@ -65,7 +65,7 @@ const MainHome = () => {
           }}
         >
           <div className="flex justify-center">
-          {
+            {
             products ? products.map((product) => (
               <SwiperSlide key={product.id} className="cursor-pointer">
                 <Link to={`/products/${product.id}`}>
@@ -83,17 +83,20 @@ const MainHome = () => {
                   </div>
                 </Link>
               </SwiperSlide>
-            )):<Rings
-            height="80"
-            width="80"
-            color="#97BF0F"
-            radius="6"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-            ariaLabel="rings-loading"
-          />
-          }</div>
+            )) : (
+              <Rings
+                height="80"
+                width="80"
+                color="#97BF0F"
+                radius="6"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible
+                ariaLabel="rings-loading"
+              />
+            )
+          }
+          </div>
         </Swiper>
 
         <button type="button" className={`swiper-button-next ${!isEnd ? 'bg-[#97BF0F]' : 'bg-[#E4E5E9]'} pl-2 pr-8 py-4 rounded-l-full`} disabled={isEnd} onClick={() => swiperRef.current?.slideNext()}>

@@ -36,22 +36,26 @@ function Details() {
         <div className="relative flex mt-5 sm:mt-0 flex-col sm:flex-row w-full justify-between items-center">
           {/* Left Side Full Screen Image */}
 
-         <div className="mb-5 sm:mb-0 flex-1">
-         { product ? (<img
-              src={product.image}
-              alt={product.name}
-              className="w-2/3 mx-auto"
-            />): <Rings
-            height="80"
-            width="80"
-            color="#97BF0F"
-            radius="6"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-            ariaLabel="rings-loading"
-          />}
-            
+          <div className="mb-5 sm:mb-0 flex-1">
+            { product ? (
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-2/3 mx-auto"
+              />
+            ) : (
+              <Rings
+                height="80"
+                width="80"
+                color="#97BF0F"
+                radius="6"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible
+                ariaLabel="rings-loading"
+              />
+            )}
+
           </div>
           {/* Right Side Details Panel */}
           <div className="flex h-full w-full sm:w-1/3 min-w-fit flex-col justify-center px-5 text-end">

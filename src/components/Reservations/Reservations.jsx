@@ -7,6 +7,7 @@ import { fetchReservations } from '../../redux/reservationSlice';
 import Header from '../layout/Header';
 import MobileSidebar from '../layout/MobileSidebar';
 import Sidebar from '../layout/Sidebar';
+
 const Reservations = () => {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.user.id);
@@ -39,13 +40,24 @@ const Reservations = () => {
                     <thead className="bg-gray-500 text-white">
                       <tr>
                         <th className="bg-blueGray-50 text-blueGray-500 border-blueGray-100 whitespace-nowrap border border-l-0 border-r-0 border-solid px-6 py-3 text-left align-middle text-xs font-semibold uppercase">
-                        <span className='inline-block align-middle text-xl pr-2'><GiModernCity/></span>  City
+                          <span className="inline-block align-middle text-xl pr-2"><GiModernCity /></span>
+                          {' '}
+                          City
                         </th>
                         <th className="bg-blueGray-50 text-blueGray-500 border-blueGray-100 whitespace-nowrap border border-l-0 border-r-0 border-solid px-6 py-3 text-left align-middle text-xs font-semibold uppercase">
-                        <span className='inline-block align-middle text-xl pr-2'><MdProductionQuantityLimits/> </span>Product
+                          <span className="inline-block align-middle text-xl pr-2">
+                            <MdProductionQuantityLimits />
+                            {' '}
+                          </span>
+                          Product
                         </th>
                         <th className="bg-blueGray-50 text-blueGray-500 border-blueGray-100 whitespace-nowrap border border-l-0 border-r-0 border-solid px-6 py-3 text-left align-middle text-xs font-semibold uppercase">
-                        <span className='inline-block align-middle text-xl pr-2'><FaPlaneDeparture/> </span> Visits
+                          <span className="inline-block align-middle text-xl pr-2">
+                            <FaPlaneDeparture />
+                            {' '}
+                          </span>
+                          {' '}
+                          Visits
                         </th>
                       </tr>
                     </thead>
@@ -63,11 +75,13 @@ const Reservations = () => {
                               {item.date}
                             </td>
                           </tr>
-                        )) : <tr>
-                          <td colSpan="4" className="px-6 py-4 text-center">
-                            Reservations not found
-                          </td>
-                      </tr>}
+                        )) : (
+                          <tr>
+                            <td colSpan="4" className="px-6 py-4 text-center">
+                              Reservations not found
+                            </td>
+                          </tr>
+                        )}
                     </tbody>
                   </table>
                 </div>
