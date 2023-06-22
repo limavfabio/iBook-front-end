@@ -38,15 +38,13 @@ const ItemForm = () => {
         // Handle the successful response
         const product = result.details;
         redirect(`/products/${product.id}`);
-        toast.success('Add Product successfully!!')
+        toast.success('Add Product successfully!!');
       })
       .catch((error) => {
         // Handle the error
         throw new Error(error);
       });
   };
-
-
 
   return (
     <div className=" flex h-screen w-full flex-col items-center justify-center bg-[#E4E5E9]">
@@ -116,7 +114,7 @@ const ItemForm = () => {
           <button
             type="button"
             className="ml-5 mt-4 bg-[#E4E5E9] px-6 py-2 text-black hover:bg-[#cacacc] focus:bg-[#9a9a9c]"
-            onClick={()=>redirect(-1)}
+            onClick={() => redirect(-1)}
           >
             Cancel
           </button>

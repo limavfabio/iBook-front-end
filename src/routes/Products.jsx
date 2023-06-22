@@ -39,7 +39,7 @@ function Products() {
       .then()
       .then(() => {
         dispatch(fetchProducts());
-        toast.success('Delete product successfully')
+        toast.success('Delete product successfully');
       })
       .catch((error) => {
         throw new Error('Error:', error);
@@ -54,9 +54,9 @@ function Products() {
         {isSidebarOpen && <MobileSidebar />}
         {/* Table */}
         <div className="w-full max-h-screen overflow-y-auto pt-20 px-4">
-        <h2 className="text-center my-5 font-bold text-3xl uppercase">All products</h2>
+          <h2 className="text-center my-5 font-bold text-3xl uppercase">All products</h2>
           <table className="w-full divide-y divide-gray-200">
-            <thead >
+            <thead>
               <tr>
                 <th className="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   ID

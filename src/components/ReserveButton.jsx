@@ -1,6 +1,7 @@
 import { Cog6ToothIcon } from '@heroicons/react/24/outline';
 import { IoIosArrowDropright } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function ReserveButton({ className, data }) {
   return (
@@ -16,5 +17,11 @@ function ReserveButton({ className, data }) {
     </Link>
   );
 }
+
+// Not yet working
+ReserveButton.propTypes = {
+  className: PropTypes.string.isRequired,
+  data: PropTypes.string.isRequired,
+};
 
 export default ReserveButton;

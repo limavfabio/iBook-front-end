@@ -74,10 +74,10 @@ const MainHome = () => {
                   </div>
                   <h2 className="my-5 font-bold hover:cursor-pointer">{product.name}</h2>
                   <p className="mb-10 text-[#B9B9B9]">{product.description}</p>
-                  <div className='flex justify-center items-center gap-3 text-gray-300 text-xl'>
-                    <CiFacebook/>
-                    <AiFillTwitterCircle/>
-                    <TiSocialLinkedinCircular/>
+                  <div className="flex justify-center items-center gap-3 text-gray-300 text-xl">
+                    <CiFacebook />
+                    <AiFillTwitterCircle />
+                    <TiSocialLinkedinCircular />
                   </div>
                 </Link>
               </SwiperSlide>

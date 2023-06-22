@@ -28,7 +28,7 @@ const Reservations = () => {
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
 
-        <div className='flex-1 mt-[3rem]'>
+        <div className="flex-1 mt-[3rem]">
           <h2 className="text-center my-5 font-bold text-3xl uppercase">My Reservations</h2>
           <section className="bg-blueGray-50 py-1">
             <div className="mx-auto mb-12 mt-10 w-full px-4 xl:mb-0">
