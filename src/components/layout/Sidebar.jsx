@@ -15,8 +15,12 @@ function Sidebar() {
 
   return (
     <div className="hidden h-screen min-w-max flex-col border border-gray-100 bg-white md:flex">
-      <h2 className="mt-8 self-center underline text-2xl font-bold font-poppins -rotate-12">VenomPrecision</h2>
-      <ul className="mt-16">
+
+      <div className="flex mt-10 justify-center">
+        <img className="w-40" src="/public/venom-precision-logo.png" alt="logo" />
+      </div>
+
+      <ul className="mt-10">
 
         <SidebarLink text="MAIN PAGE" path="/" icon={<HiClipboardList />} />
         <SidebarLink text="MY RESERVATIONS" path="/reservations" icon={<VscTasklist />} />
