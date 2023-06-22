@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL = 'https://venom-precision.onrender.com/api/v1';
-// const URL = 'http://127.0.0.1:3000/api/v1';
-
+const API_URL = 'https://venom-precision.onrender.com/api/v1';
+// const API_URL = 'http://127.0.0.1:3000/api/v1';
 const initialState = {
   value: '',
   ifSucceed: false,
@@ -12,7 +11,7 @@ const initialState = {
 
 export const fetchReservations = createAsyncThunk('reservations/fetchReservations', async (userId) => {
   try {
-    const response = await fetch(`${URL}/users/${userId}/reservations`);
+    const response = await fetch(`${API_URL}/users/${userId}/reservations`);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -22,7 +21,7 @@ export const fetchReservations = createAsyncThunk('reservations/fetchReservation
 
 export const postReservation = createAsyncThunk('reservation/postReservation', async ({ postData }) => {
   try {
-    const response = await fetch(`${URL}/users/${postData.user_id}/reservations`, {
+    const response = await fetch(`${API_URL}/users/${postData.user_id}/reservations`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
