@@ -4,7 +4,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { fetchProductWithId } from '../../redux/productsSlice';
 import { postReservation } from '../../redux/reservationSlice';
-import ReserveCalender from './ReserveCalender';
+import ReserveCalendar from './ReserveCalendar';
 import ReserveCity from './ReserveCity';
 
 const Reserve = () => {
@@ -37,7 +37,7 @@ const Reserve = () => {
 
   const navigate = useNavigate();
 
-  const handleCalender = (date) => {
+  const handleCalendar = (date) => {
     setDate(date);
   };
   const handleCity = (city) => {
@@ -79,7 +79,7 @@ const Reserve = () => {
         </p>
 
         <div className="mt-5 flex flex-col items-center justify-center gap-5 md:flex-row">
-          <ReserveCalender handleCalender={handleCalender} />
+          <ReserveCalendar handleCalendar={handleCalendar} />
           <ReserveCity handleCity={handleCity} />
 
           <button

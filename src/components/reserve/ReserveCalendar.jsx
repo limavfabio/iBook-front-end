@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import 'react-calendar/dist/Calendar.css';
 
-const ReserveCalender = ({ handleCalender }) => {
-  const [isCalenderOpen, setIsCalenderOpen] = useState(false);
+const ReserveCalendar = ({ handleCalendar }) => {
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [value, setValue] = useState(new Date());
   const date = new Date(value).toJSON().slice(0, 10);
 
   const openCalendar = () => {
-    setIsCalenderOpen(!isCalenderOpen);
+    setIsCalendarOpen(!isCalendarOpen);
   };
 
-  handleCalender(date);
+  handleCalendar(date);
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -44,12 +44,12 @@ const ReserveCalender = ({ handleCalender }) => {
   );
 };
 
-// ReserveCalendar.defaultProps = {
-//   icon: null,
-// };
-
-ReserveCalender.propTypes = {
-  handleCalendar: PropTypes.element,
+ReserveCalendar.defaultProps = {
+  handleCalendar: () => {},
 };
 
-export default ReserveCalender;
+ReserveCalendar.propTypes = {
+  handleCalendar: PropTypes.func.isRequired,
+};
+
+export default ReserveCalendar;
