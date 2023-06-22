@@ -6,6 +6,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { createUser } from '../redux/userSlice';
 
 function SignUp() {
+  const API_URL = 'https://venom-precision.onrender.com/api/v1';
+  // const API_URL = 'http://127.0.0.1:3000/api/v1';
+
   const [username, setUsername] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const dispatch = useDispatch();
@@ -16,7 +19,7 @@ function SignUp() {
 
     try {
       // Fetch all users
-      const response = await fetch('http://localhost:3000/api/v1/users');
+      const response = await fetch(`${API_URL}/users`);
       const users = await response.json();
 
       // Check if there isn't a user with the submitted username
