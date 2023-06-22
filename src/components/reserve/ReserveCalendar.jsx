@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 
 const ReserveCalendar = ({ handleCalendar }) => {
@@ -37,6 +37,7 @@ const ReserveCalendar = ({ handleCalendar }) => {
             outline: 'none',
             border: 'none',
           }}
+          min={date}
           onChange={handleChange}
         />
       </button>
