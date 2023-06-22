@@ -55,7 +55,7 @@ function Products() {
         {/* Table */}
         <div className="w-full max-h-screen overflow-y-auto pt-20 px-4">
           <h2 className="text-center my-5 font-bold text-3xl uppercase">All products</h2>
-          <table className="w-full divide-y divide-gray-200">
+          <table className="w-full divide-y divide-gray-200 shadow-lg">
             <thead>
               <tr>
                 <th className="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -86,7 +86,7 @@ function Products() {
                           <button
                             onClick={() => handleDelete(product.id)}
                             type="button"
-                            className="px-3 py-1 text-sm font-medium text-red-500 bg-transparent border border-red-500 rounded-md hover:bg-red-500 hover:text-white"
+                            className="px-3 py-1 text-sm font-medium text-red-500 bg-transparent border border-red-500 rounded-md hover:bg-red-500 hover:text-white shadow-md hover:shadow-sm"
                           >
                             Delete
                           </button>
