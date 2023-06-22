@@ -53,17 +53,7 @@ const userSlice = createSlice({
       }
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(createUser.fulfilled, (state, action) => {
-      // Handle the successful creation of the user
-      // You can update the state or perform any necessary actions
 
-    });
-    builder.addCase(createUser.rejected, (state, action) => {
-      // Handle the failure of creating the user
-      // You can update the state or perform any necessary actions
-    });
-  },
 });
 
 export const { setUser } = userSlice.actions;

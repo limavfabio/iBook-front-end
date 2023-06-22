@@ -13,16 +13,16 @@ import { fetchProductWithId } from '../redux/productsSlice';
 function Details() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { productId } = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.products.value);
+  const product = useSelector((state) => state.products.value);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
   useEffect(() => {
     dispatch(fetchProductWithId(productId));
-  }, [dispatch]);
+  }, [dispatch, productId]);
   return (
     <>
       <Header toggleSidebar={toggleSidebar} />
@@ -30,37 +30,36 @@ function Details() {
       <div className="flex">
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
-        <div className="flex mt-5 sm:mt-0 flex-col sm:flex-row w-full justify-between items-center">
+        <div className="relative flex mt-5 sm:mt-0 flex-col sm:flex-row w-full justify-between items-center">
           {/* Left Side Full Screen Image */}
-          <button type="button" className={`bg-[#97BF0F] pl-8 pr-2 py-4 rounded-l-full absolute bottom-5`} onClick={()=>navigate(-1)}>
-            <BsPlay className='text-white rotate-180'/>
-        </button>
-          <div className="mb-5 sm:mb-0">
+
+          <div className="mb-5 sm:mb-0 flex-1">
             <img
-              src={data.image}
-              alt={data.name}
+              src={product.image}
+              alt={product.name}
+              className="w-2/3 mx-auto"
             />
           </div>
           {/* Right Side Details Panel */}
           <div className="flex h-full w-full sm:w-1/3 min-w-fit flex-col justify-center px-5 text-end">
             <h2 className="mb-1 text-4xl">
               {' '}
-              {data.name}
+              {product.name}
               {' '}
             </h2>
             <p className="mb-5">
               {' '}
-              {data.description}
+              {product.description}
               {' '}
             </p>
             {/* Table */}
             <div className="mb-5 flex flex-col justify-between">
               <DetailRow
                 label="Package price"
-                value={data.price}
+                value={product.price}
                 isGrayBackground
               />
-              <DetailRow label="Date" value={new Date(data.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })} />
+              <DetailRow label="Date" value={new Date(product.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })} />
             </div>
             <p className="flex items-center self-end font-bold">
               DISCOVER MORE MODELS
@@ -68,10 +67,14 @@ function Details() {
               <ChevronRightIcon className="h-5 text-[#97BF0F]" />
               {' '}
             </p>
-            <ReserveButton className="mt-5" data={data} />
-           
+            <ReserveButton className="mt-5" product={product} />
+
           </div>
+          <button type="button" className="bg-[#97BF0F] pl-8 pr-2 py-4 rounded-r-full absolute left-0 bottom-0 m-5" onClick={() => navigate(-1)}>
+            <BsPlay className="text-white rotate-180" />
+          </button>
         </div>
+
       </div>
     </>
   );

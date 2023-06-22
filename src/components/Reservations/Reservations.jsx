@@ -11,8 +11,8 @@ const Reservations = () => {
   const userId = useSelector((state) => state.user.id);
   const { reservations } = useSelector((state) => state.reservations.value);
   useEffect(() => {
-    dispatch(fetchReservations(parseInt(userId)));
-  }, []);
+    dispatch(fetchReservations(parseInt(userId, 10)));
+  }, [dispatch, userId]);
 
   // State for sidebar
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -28,14 +28,14 @@ const Reservations = () => {
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
 
-        <div>
+        <div className="flex-1 mt-[3rem]">
           <h2 className="text-center my-5 font-bold text-3xl uppercase">My Reservations</h2>
           <section className="bg-blueGray-50 py-1">
             <div className="mx-auto mb-12 mt-10 w-full px-4 xl:mb-0">
               <div className="relative mb-6 flex w-full min-w-0 flex-col break-words rounded  shadow-lg ">
                 <div className="block w-full overflow-x-auto">
                   <table className="w-full border-collapse border  items-center bg-transparent ">
-                    <thead className='bg-[#97BF0F] text-white'>
+                    <thead className="bg-[#97BF0F] text-white">
                       <tr>
                         <th className="bg-blueGray-50 text-blueGray-500 border-blueGray-100 whitespace-nowrap border border-l-0 border-r-0 border-solid px-6 py-3 text-left align-middle text-xs font-semibold uppercase">
                           City

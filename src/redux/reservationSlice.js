@@ -10,9 +10,9 @@ const initialState = {
   errors: null,
 };
 
-export const fetchReservations = createAsyncThunk('reservations/fetchReservations', async (user_id) => {
+export const fetchReservations = createAsyncThunk('reservations/fetchReservations', async (userId) => {
   try {
-    const response = await fetch(`${URL}/users/${user_id}/reservations`);
+    const response = await fetch(`${URL}/users/${userId}/reservations`);
     const data = await response.json();
     return data;
   } catch (error) {

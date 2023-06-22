@@ -15,11 +15,12 @@ function DetailRow({ label, value, isGrayBackground }) {
 
 DetailRow.defaultProps = {
   isGrayBackground: false,
+  value: 'Loading',
 };
 
 DetailRow.propTypes = {
   label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   isGrayBackground: PropTypes.bool,
 };
 

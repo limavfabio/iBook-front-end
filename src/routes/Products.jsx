@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Header from '../components/layout/Header';
 import MobileSidebar from '../components/layout/MobileSidebar';
 import Sidebar from '../components/layout/Sidebar';
@@ -34,13 +36,13 @@ function Products() {
       },
       body: JSON.stringify({ user_id: user.id }),
     })
-      .then((response) => console.log(response))
-      .then((data) => {
-        console.log('Success:', data);
+      .then()
+      .then(() => {
         dispatch(fetchProducts());
+        toast.success('Delete product successfully');
       })
       .catch((error) => {
-        console.error('Error:', error);
+        throw new Error('Error:', error);
       });
   }
 
@@ -51,20 +53,21 @@ function Products() {
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
         {/* Table */}
-        <div className='w-full max-h-screen overflow-y-auto'>
+        <div className="w-full max-h-screen overflow-y-auto pt-20 px-4">
+          <h2 className="text-center my-5 font-bold text-3xl uppercase">All products</h2>
           <table className="w-full divide-y divide-gray-200">
             <thead>
               <tr>
-                <th className="px-6 py-3 bg-gray-100 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   ID
                 </th>
-                <th className="px-6 py-3 bg-gray-100 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Name
                 </th>
-                <th className="px-6 py-3 bg-gray-100 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Price
                 </th>
-                <th className="px-6 py-3 bg-gray-100 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
@@ -82,6 +85,7 @@ function Products() {
                           // Delete button when the user IS the owner of the product
                           <button
                             onClick={() => handleDelete(product.id)}
+                            type="button"
                             className="px-3 py-1 text-sm font-medium text-red-500 bg-transparent border border-red-500 rounded-md hover:bg-red-500 hover:text-white"
                           >
                             Delete
@@ -89,6 +93,7 @@ function Products() {
                         ) : (
                           // Delete button when the user is NOT the owner of the product
                           <button
+                            type="button"
                             disabled
                             className="px-3 py-1 text-sm font-medium text-gray-400 bg-transparent border border-gray-400 rounded-md"
                           >

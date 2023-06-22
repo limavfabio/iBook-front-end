@@ -1,8 +1,8 @@
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import store from './redux/store';
 
-import { ToastContainer } from 'react-toastify';
 import router from './router';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="text-stone-800">
       <div>
         <Provider store={store}>
-        <ToastContainer/>
+          <ToastContainer />
           <RouterProvider router={router} />
         </Provider>
       </div>

@@ -4,7 +4,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { fetchProductWithId } from '../../redux/productsSlice';
 import { postReservation } from '../../redux/reservationSlice';
-import ReserveCalender from './ReserveCalender';
+import ReserveCalendar from './ReserveCalendar';
 import ReserveCity from './ReserveCity';
 
 const Reserve = () => {
@@ -19,14 +19,13 @@ const Reserve = () => {
   const product = useSelector((state) => state.products.value);
   useEffect(() => {
     dispatch(fetchProductWithId(productId));
-  }, [dispatch]);
+  }, [productId, dispatch]);
 
   // Redirect to login page if user is not logged in
   useEffect(() => {
     if (!user.id) {
       redirect('/login');
-      toast.error('Failed to add reservation!!',{theme:'dark'})
-
+      toast.error('Failed to add reservation!!', { theme: 'dark' });
     }
   }, [user, redirect]);
 
@@ -37,8 +36,8 @@ const Reserve = () => {
   const userId = useSelector((state) => state.user.id);
 
   const navigate = useNavigate();
-  
-  const handleCalender = (date) => {
+
+  const handleCalendar = (date) => {
     setDate(date);
   };
   const handleCity = (city) => {
@@ -49,17 +48,17 @@ const Reserve = () => {
     e.preventDefault();
     const postData = {
       date,
-      user_id: parseInt(userId),
+      user_id: parseInt(userId, 10),
       product_id: data.id,
-      city:city
+      city,
     };
 
     // Create a new reservation
     dispatch(postReservation({ postData }));
-    toast.success('Reservation added successfully',{theme:'dark'})
-    navigate(`/reservations`, { state: { userId, data } });
+    toast.success('Reservation added successfully', { theme: 'dark' });
+    navigate('/reservations', { state: { userId, data } });
   };
-  
+
   const bgImg = {
     backgroundImage: `url(${product.image})`,
     backgroundSize: 'cover',
@@ -80,7 +79,7 @@ const Reserve = () => {
         </p>
 
         <div className="mt-5 flex flex-col items-center justify-center gap-5 md:flex-row">
-          <ReserveCalender handleCalender={handleCalender} />
+          <ReserveCalendar handleCalendar={handleCalendar} />
           <ReserveCity handleCity={handleCity} />
 
           <button
