@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL = 'https://venom-precision.onrender.com/api/v1';
-// const URL = 'http://127.0.0.1:3000/api/v1';
+const API_URL = 'https://venom-precision.onrender.com/api/v1';
+// const API_URL = 'http://127.0.0.1:3000/api/v1';
 
 const initialState = {
   value: '',
@@ -15,7 +15,7 @@ export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async () => {
     try {
-      const response = await fetch(`${URL}/products`);
+      const response = await fetch(`${API_URL}/products`);
       const data = await response.json();
       return data;
     } catch (error) {
@@ -28,7 +28,7 @@ export const fetchProductWithId = createAsyncThunk(
   'productsId/fetchProductWithId',
   async (id) => {
     try {
-      const response = await fetch(`${URL}/products/${id}`);
+      const response = await fetch(`${API_URL}/products/${id}`);
       const data = await response.json();
       return data;
     } catch (error) {
