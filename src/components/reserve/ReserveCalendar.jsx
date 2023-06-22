@@ -44,12 +44,8 @@ const ReserveCalendar = ({ handleCalendar }) => {
   );
 };
 
-ReserveCalendar.defaultProps = {
-  handleCalendar: () => {},
-};
-
 ReserveCalendar.propTypes = {
-  handleCalendar: PropTypes.func,
+  handleCalendar: PropTypes.func.isRequired,
 };
 
 export default ReserveCalendar;

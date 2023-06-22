@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { BsPlay } from 'react-icons/bs';
 
 const ReserveCity = ({ handleCity }) => {
@@ -92,6 +93,10 @@ const ReserveCity = ({ handleCity }) => {
       </button>
     </div>
   );
+};
+
+ReserveCity.propTypes = {
+  handleCity: PropTypes.func.isRequired,
 };
 
 export default ReserveCity;
