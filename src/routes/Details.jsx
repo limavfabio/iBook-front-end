@@ -67,7 +67,7 @@ function Details() {
               <ChevronRightIcon className="h-5 text-[#97BF0F]" />
               {' '}
             </p>
-            <ReserveButton className="mt-5" data={product} />
+            <ReserveButton className="mt-5" product={product} />
 
           </div>
           <button type="button" className="bg-[#97BF0F] pl-8 pr-2 py-4 rounded-r-full absolute left-0 bottom-0 m-5" onClick={() => navigate(-1)}>

@@ -17,14 +17,14 @@ function MobileSidebar() {
       <h2 className="mt-8 self-center text-xl">VenomPrecision</h2>
       <ul className="mt-16 flex flex-col">
 
-      <SidebarLink text="MAIN PAGE" path="/" icon={<HiClipboardList />} />
+        <SidebarLink text="MAIN PAGE" path="/" icon={<HiClipboardList />} />
         <SidebarLink text="MY RESERVATIONS" path="/reservations" icon={<VscTasklist />} />
         <SidebarLink text="ALL PRODUCTS" path="/products" icon={<BsCardChecklist />} />
         <SidebarLink text="ADD NEW PRODUCT" path="/products/new" icon={<CgPlayListAdd />} />
 
         {user.username === '' ? (
           // If NOT logged in ->
-          <SidebarLink text="LOGIN" path="/login" />
+          <SidebarLink text="LOGIN" path="/login" icon={<BiLogIn />} />
         ) : (
           // If logged in ->
           <div className="">

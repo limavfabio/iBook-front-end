@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import 'react-calendar/dist/Calendar.css';
 
 const ReserveCalender = ({ handleCalender }) => {
@@ -41,6 +42,14 @@ const ReserveCalender = ({ handleCalender }) => {
       </button>
     </div>
   );
+};
+
+// ReserveCalendar.defaultProps = {
+//   icon: null,
+// };
+
+ReserveCalender.propTypes = {
+  handleCalendar: PropTypes.element,
 };
 
 export default ReserveCalender;
