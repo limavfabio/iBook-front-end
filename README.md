@@ -214,11 +214,10 @@ Example:
 - Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
-👤 **Author2**
+👤 **Jakaria Jishan**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/jakariajishan)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/jakariajishan)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
