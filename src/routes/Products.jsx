@@ -53,21 +53,21 @@ function Products() {
         <Sidebar />
         {isSidebarOpen && <MobileSidebar />}
         {/* Table */}
-        <div className="w-full max-h-screen overflow-y-auto pt-20 px-4">
+        <div className="w-full max-h-screen overflow-y-auto pt-[3rem] px-10 bg-gray-200">
           <h2 className="text-center my-5 font-bold text-3xl uppercase">All products</h2>
-          <table className="w-full divide-y divide-gray-200 shadow-lg">
+          <table className="w-full divide-y divide-gray-200 shadow-lg mb-10">
             <thead>
               <tr>
-                <th className="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 bg-gray-500 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">
                   ID
                 </th>
-                <th className="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 bg-gray-500 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">
                   Name
                 </th>
-                <th className="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 bg-gray-500 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">
                   Price
                 </th>
-                <th className="px-6 py-3 bg-gray-200 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th className="px-6 py-3 bg-gray-500 text-left text-xs font-medium text-gray-200 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>

@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { fetchProducts } from '../../redux/productsSlice';
 
 // Import Swiper styles
+import { Rings } from 'react-loader-spinner';
 import 'swiper/css';
 
 const MainHome = () => {
@@ -26,13 +27,13 @@ const MainHome = () => {
 
   return (
     <div className="h-screen pt-20">
-      <div className="text-center my-5">
+      <div className="text-center my-20">
         <h2 className="text-3xl font-bold uppercase">latest models</h2>
         <p className="text-[#B9B9B9] text-sm">Please select a model</p>
       </div>
-      <div className="mx-auto flex  gap-5 items-center justify-center text-center">
+      <div className="mx-auto flex  gap-5 items-center justify-center text-center ">
         <button type="button" className={`swiper-button-prev ${isBeginning ? 'bg-[#E4E5E9]' : 'bg-[#97BF0F]'} pl-8 pr-2 py-4 rounded-r-full`} disabled={isBeginning} onClick={() => swiperRef.current?.slidePrev()}>
-          <BsPlay className="rotate-180 text-white" />
+          <BsPlay className="rotate-180 text-white text-xl" />
         </button>
 
         <Swiper
@@ -54,7 +55,7 @@ const MainHome = () => {
             setIsBeginning(swiper.isBeginning);
             setIsEnd(swiper.isEnd);
           }}
-          className="w-full"
+          className="w-screen"
           navigation={{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -63,8 +64,9 @@ const MainHome = () => {
             swiperRef.current = swiper;
           }}
         >
+          <div className="flex justify-center">
           {
-            products && products.map((product) => (
+            products ? products.map((product) => (
               <SwiperSlide key={product.id} className="cursor-pointer">
                 <Link to={`/products/${product.id}`}>
                   <div
@@ -81,12 +83,21 @@ const MainHome = () => {
                   </div>
                 </Link>
               </SwiperSlide>
-            ))
-          }
+            )):<Rings
+            height="80"
+            width="80"
+            color="#97BF0F"
+            radius="6"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+            ariaLabel="rings-loading"
+          />
+          }</div>
         </Swiper>
 
         <button type="button" className={`swiper-button-next ${!isEnd ? 'bg-[#97BF0F]' : 'bg-[#E4E5E9]'} pl-2 pr-8 py-4 rounded-l-full`} disabled={isEnd} onClick={() => swiperRef.current?.slideNext()}>
-          <BsPlay className="text-white" />
+          <BsPlay className="text-white text-xl" />
         </button>
       </div>
     </div>
