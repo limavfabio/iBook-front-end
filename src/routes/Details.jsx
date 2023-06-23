@@ -72,7 +72,7 @@ function Details() {
             <div className="mb-5 flex flex-col justify-between">
               <DetailRow
                 label="Package price"
-                value={product.price}
+                value={product.price.toString()}
                 isGrayBackground
               />
               <DetailRow label="Date" value={new Date(product.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })} />
