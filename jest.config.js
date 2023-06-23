@@ -6,4 +6,9 @@ export default {
   moduleNameMapper: {
     '\\.(css|less)$': 'identity-obj-proxy',
   },
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
+  },
 };
