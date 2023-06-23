@@ -7,6 +7,7 @@ import { fetchReservations } from '../../redux/reservationSlice';
 import Header from '../layout/Header';
 import MobileSidebar from '../layout/MobileSidebar';
 import Sidebar from '../layout/Sidebar';
+import ReservationsList from './ReservationsList';
 
 const Reservations = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const Reservations = () => {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-
+  console.log(reservations);
   return (
     <>
       <Header toggleSidebar={toggleSidebar} />
@@ -62,26 +63,7 @@ const Reservations = () => {
                       </tr>
                     </thead>
                     <tbody className="bg-white">
-                      {reservations && Array.isArray(reservations) && reservations.length > 0 
-                        ? reservations.map((item) => (
-                          <tr key={item.reserver_at}>
-                            <th className="text-blueGray-700 whitespace-nowrap border-l-0 border-r-0 border-t-0 p-4 px-6 text-left align-middle text-xs">
-                              {item.city}
-                            </th>
-                            <td className="whitespace-nowrap border-l-0 border-r-0 border-t-0 p-4 px-6 align-middle text-xs">
-                              {item.product_name}
-                            </td>
-                            <td className="whitespace-nowrap border-l-0 border-r-0 border-t-0 p-4 px-6 align-middle text-xs">
-                              {item.date}
-                            </td>
-                          </tr>
-                        )) : (
-                          <tr>
-                            <td colSpan="4" className="px-6 py-4 text-center">
-                              Reservations not found
-                            </td>
-                          </tr>
-                        )}
+                      <ReservationsList reservations={reservations}/>
                     </tbody>
                   </table>
                 </div>

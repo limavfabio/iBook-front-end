@@ -1,45 +1,62 @@
-import configureStore from 'redux-mock-store';
-import store from '../../redux/store';
+import { render, screen } from "@testing-library/react";
+import configureStore from "redux-mock-store";
+
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import Reservations from "../Reservations/Reservations";
+
 const mockStore = configureStore([]);
 
-describe('Reservations redux state tests', () => {
-  it('expects to initially set reservations as an empty object', () => {
-    const state = store.getState().reservations;
+describe("Reservations redux state tests", () => {
+  it("expects to initially set reservations as an empty object", () => {
     const initialState = {
-        value: '',
+      reservations: {
+        value: "",
         ifSucceed: false,
         ifLoading: false,
         errors: null,
-      };
-    expect(state).toEqual(initialState);
+      },
+    };
+    const store = mockStore(initialState);
+    const state = store.getState().reservations;
+    expect(state).toEqual(initialState.reservations);
   });
-//   it('expects to display one  anime from mock store', () => {
-//     const anime = [
-//       {
-//         mal_id: 1,
-//         title: 'Cowboy Bebop',
-//         episodes: 26,
-//         images: {
-//           jpg: { image_url: 'https://cdn.myanimelist.net/images/anime/4/19644.jpg' },
-//         },
-//       },
 
-//     ];
-//     const state = {
-//       animeList: {
-//         anime,
-//         loading: false,
-//       },
-//     };
-//     const store = mockStore(state);
-//     render(
-//       <Provider store={store}>
-//         <BrowserRouter>
-//           <Reservations />
-//         </BrowserRouter>
-//       </Provider>,
-//     );
-//     const animeName = screen.getByText('Cowboy Bebop');
-//     expect(animeName).toBeInTheDocument();
-//   });
+  it("expects to display one anime from mock store", () => {
+    const initialState = {
+      user: {
+        id: 1,
+      },
+      reservations: {
+        value: {
+          reservations: [
+            {
+              city: "Los Angeles",
+              date: "2023-07-05",
+              product_name: "Grenade",
+              reserver_at: "2023-06-21T18:16:49.581Z",
+              user_name: "user1",
+            },
+          ],
+        },
+      },
+    };
+    const store = mockStore(initialState);
+
+    const TestComponent = () => {
+      return (
+        <BrowserRouter>
+          <Reservations reservations={initialState.reservations.value.reservations[0]} />
+        </BrowserRouter>
+      );
+    };
+
+    render(
+      <Provider store={store}>
+        <TestComponent />
+      </Provider>
+    );
+    const animeName = screen.getByText("MY RESERVATIONS");
+    expect(animeName).toBeInTheDocument();
+  });
 });
