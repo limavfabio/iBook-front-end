@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main Home expects to render a snapshot of the Home component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        style="background-image: url(); background-size: cover; background-position: center; background-repeat: no-repeat;"
+      >
+        <div
+          class="flex h-screen w-full flex-col items-center justify-center bg-[#96BF01] bg-opacity-90 text-center text-white"
+        >
+          <h2
+            class="text-2xl font-bold uppercase tracking-[.6rem]"
+          >
+            book a Awesome Weapon
+          </h2>
+          <hr
+            class="my-5 w-2/3 border-[#A1C839]"
+          />
+          <p
+            class="w-1/2 text-xs leading-6"
+          >
+            We have a wide range of weapons and accessories for you to choose from. You can book your product for as long as you wish.
+          </p>
+          <div
+            class="mt-5 flex flex-col items-center justify-center gap-5 md:flex-row"
+          >
+            <div>
+              <button
+                class="flex items-center justify-between gap-3 rounded-full border-2 border-[#BED86B] bg-[#97BF0F] px-4 py-2 text-xs"
+                type="button"
+              >
+                <input
+                  class=" appearance-none border-none bg-transparent text-black outline-none"
+                  min="2023-06-23"
+                  style="color: white; background-color: transparent; appearance: none; outline: none;"
+                  type="date"
+                  value="2023-06-23"
+                />
+              </button>
+            </div>
+            <div
+              class=" inline-block "
+            >
+              <button
+                class="flex items-center justify-between gap-2 rounded-full border-2 border-[#BED86B] bg-[#97BF0F] px-6 py-2 text-xs"
+                type="button"
+              >
+                <p>
+                  New York
+                </p>
+                <svg
+                  class="rotate-90 text-xl"
+                  fill="currentColor"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 16 16"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <button
+              class="rounded-full border-2  border-white bg-white px-8 py-2 text-xs text-[#97BF0F] transition delay-150 duration-200 ease-in-out  hover:-translate-y-1 hover:scale-110  hover:bg-[#97BF0F] hover:text-white"
+              type="button"
+            >
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      style="background-image: url(); background-size: cover; background-position: center; background-repeat: no-repeat;"
+    >
+      <div
+        class="flex h-screen w-full flex-col items-center justify-center bg-[#96BF01] bg-opacity-90 text-center text-white"
+      >
+        <h2
+          class="text-2xl font-bold uppercase tracking-[.6rem]"
+        >
+          book a Awesome Weapon
+        </h2>
+        <hr
+          class="my-5 w-2/3 border-[#A1C839]"
+        />
+        <p
+          class="w-1/2 text-xs leading-6"
+        >
+          We have a wide range of weapons and accessories for you to choose from. You can book your product for as long as you wish.
+        </p>
+        <div
+          class="mt-5 flex flex-col items-center justify-center gap-5 md:flex-row"
+        >
+          <div>
+            <button
+              class="flex items-center justify-between gap-3 rounded-full border-2 border-[#BED86B] bg-[#97BF0F] px-4 py-2 text-xs"
+              type="button"
+            >
+              <input
+                class=" appearance-none border-none bg-transparent text-black outline-none"
+                min="2023-06-23"
+                style="color: white; background-color: transparent; appearance: none; outline: none;"
+                type="date"
+                value="2023-06-23"
+              />
+            </button>
+          </div>
+          <div
+            class=" inline-block "
+          >
+            <button
+              class="flex items-center justify-between gap-2 rounded-full border-2 border-[#BED86B] bg-[#97BF0F] px-6 py-2 text-xs"
+              type="button"
+            >
+              <p>
+                New York
+              </p>
+              <svg
+                class="rotate-90 text-xl"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"
+                />
+              </svg>
+            </button>
+          </div>
+          <button
+            class="rounded-full border-2  border-white bg-white px-8 py-2 text-xs text-[#97BF0F] transition delay-150 duration-200 ease-in-out  hover:-translate-y-1 hover:scale-110  hover:bg-[#97BF0F] hover:text-white"
+            type="button"
+          >
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

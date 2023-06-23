@@ -7,7 +7,7 @@ import Details from '../../routes/Details';
 // Mock the Redux store
 const mockStore = configureStore([]);
 
-xdescribe('Details component', () => {
+describe('Details component', () => {
   it('renders product details correctly', () => {
     // Mock the product data
     const mockProduct = {
