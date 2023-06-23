@@ -19,7 +19,6 @@ const Reservations = () => {
 
   // State for sidebar
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  console.log(userId, reservations);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
