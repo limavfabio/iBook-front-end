@@ -1,11 +1,8 @@
-import React from 'react';
 import { render } from '@testing-library/react';
+import React from 'react';
 import { Provider } from 'react-redux';
-import { RouterProvider } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
-import { ToastContainer } from 'react-toastify';
 import Details from '../../routes/Details';
-import router from '../../router';
 
 // Mock the Redux store
 const mockStore = configureStore([]);

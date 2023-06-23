@@ -12,6 +12,7 @@ const Reservations = () => {
   const dispatch = useDispatch();
   const userId = useSelector((state) => state.user.id);
   const { reservations } = useSelector((state) => state.reservations.value);
+  
   useEffect(() => {
     dispatch(fetchReservations(parseInt(userId, 10)));
   }, [dispatch, userId]);
