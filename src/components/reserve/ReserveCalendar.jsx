@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 
 const ReserveCalendar = ({ handleCalendar }) => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [value, setValue] = useState(new Date());
   const date = new Date(value).toJSON().slice(0, 10);
-
+  const currentDate = new Date().toISOString().split('T')[0];
   const openCalendar = () => {
     setIsCalendarOpen(!isCalendarOpen);
   };
@@ -37,6 +37,7 @@ const ReserveCalendar = ({ handleCalendar }) => {
             outline: 'none',
             border: 'none',
           }}
+          min={currentDate}
           onChange={handleChange}
         />
       </button>
