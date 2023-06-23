@@ -1,16 +1,17 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { RouterProvider } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
-import Details from './Details';
-import router from '../router';
+import { ToastContainer } from 'react-toastify';
+import Details from '../../routes/Details';
+import router from '../../router';
 
 // Mock the Redux store
 const mockStore = configureStore([]);
 
 describe('Details component', () => {
-  it('renders product details correctly', async () => {
-
+  it('renders product details correctly', () => {
     // Mock the product data
     const mockProduct = {
       name: 'Test Product',
@@ -27,20 +28,17 @@ describe('Details component', () => {
       },
     });
 
-    // Render the Details component within the mocked store
+    // Render the Details component within the mocked store and router
     const { getByText, getByAltText } = render(
       <Provider store={store}>
         <Details />
       </Provider>
     );
 
-
-
     // Assert that the product details are rendered correctly
     expect(getByText(mockProduct.name)).toBeInTheDocument();
-
-    // expect(getByText(mockProduct.description)).toBeInTheDocument();
-    // expect(getByText(`$${mockProduct.price}`)).toBeInTheDocument();
-    // expect(getByAltText(mockProduct.name)).toHaveAttribute('src', mockProduct.image);
+    expect(getByText(mockProduct.description)).toBeInTheDocument();
+    expect(getByText(`$${mockProduct.price}`)).toBeInTheDocument();
+    expect(getByAltText(mockProduct.name)).toHaveAttribute('src', mockProduct.image);
   });
 });
