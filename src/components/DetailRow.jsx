@@ -7,8 +7,14 @@ function DetailRow({ label, value, isGrayBackground }) {
     <div
       className={`flex justify-between px-4 py-2 text-sm ${backgroundClass}`}
     >
+
       <p>{label}</p>
-      <p>{value.toString()}</p>
+
+      {value ? (
+        <p>{value.toString()}</p>
+      ) : (
+        <p>loading</p>
+      )}
     </div>
   );
 }
