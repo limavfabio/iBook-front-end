@@ -8,7 +8,7 @@ function DetailRow({ label, value, isGrayBackground }) {
       className={`flex justify-between px-4 py-2 text-sm ${backgroundClass}`}
     >
       <p>{label}</p>
-      <p>{value}</p>
+      <p>{value.toString()}</p>
     </div>
   );
 }
