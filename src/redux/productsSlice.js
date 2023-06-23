@@ -39,6 +39,7 @@ export const fetchProductWithId = createAsyncThunk(
     try {
       const response = await fetch(`${API_URL}/products/${id}`);
       const data = await response.json();
+      console.log(data);
       return data;
     } catch (error) {
       throw new Error(error.message);

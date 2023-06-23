@@ -6,12 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 import configureStore from "redux-mock-store";
 import Reservations from "../Reservations/Reservations";
 
-// const mockStore = configureStore([]);
 
 const mockStore = configureStore([]);
-//   jest.mock('react-router-dom', () => ({
-//     useParams: () => ({ name: 'Augustus' }),
-//   }));
 
 jest.mock("react", () => ({
   ...jest.requireActual("react"),
@@ -65,6 +61,7 @@ describe("Reservations redux state tests", () => {
         </Provider>
       </BrowserRouter>
     );
+    
     const reservation = screen.getByText("MY RESERVATIONS");
     expect(reservation).toBeInTheDocument();
     expect(useEffect).toHaveBeenCalled();
