@@ -62,7 +62,7 @@ const Reservations = () => {
                       </tr>
                     </thead>
                     <tbody className="bg-white">
-                      {reservations
+                      {reservations && Array.isArray(reservations) && reservations.length > 0 
                         ? reservations.map((item) => (
                           <tr key={item.reserver_at}>
                             <th className="text-blueGray-700 whitespace-nowrap border-l-0 border-r-0 border-t-0 p-4 px-6 text-left align-middle text-xs">
