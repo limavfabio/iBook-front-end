@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { fetchProductWithId } from '../../redux/productsSlice';
-import { postReservation } from '../../redux/reservationSlice';
-import ReserveCalendar from './ReserveCalendar';
-import ReserveCity from './ReserveCity';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import { fetchProductWithId } from "../../redux/productsSlice";
+import { postReservation } from "../../redux/reservationSlice";
+import ReserveCalendar from "./ReserveCalendar";
+import ReserveCity from "./ReserveCity";
 
 const Reserve = () => {
   const dispatch = useDispatch();
@@ -24,8 +24,8 @@ const Reserve = () => {
   // Redirect to login page if user is not logged in
   useEffect(() => {
     if (!user.id) {
-      redirect('/login');
-      toast.error('Failed to add reservation!!', { theme: 'dark' });
+      redirect("/login");
+      toast.error("Failed to add reservation!!", { theme: "dark" });
     }
   }, [user, redirect]);
 
@@ -55,15 +55,15 @@ const Reserve = () => {
 
     // Create a new reservation
     dispatch(postReservation({ postData }));
-    toast.success('Reservation added successfully', { theme: 'dark' });
-    navigate('/reservations', { state: { userId, data } });
+    toast.success("Reservation added successfully", { theme: "dark" });
+    navigate("/reservations", { state: { userId, data } });
   };
 
   const bgImg = {
     backgroundImage: `url(${product.image})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
   };
 
   return (
@@ -74,12 +74,13 @@ const Reserve = () => {
         </h2>
         <hr className="my-5 w-2/3 border-[#A1C839]" />
         <p className="w-1/2 text-xs leading-6">
-          There are 34 different versions of the Vespa. Today five series are in
-          production
+          We have a wide range of weapons and accessories for you to choose
+          from. You can book your product for as long as you wish.
         </p>
 
         <div className="mt-5 flex flex-col items-center justify-center gap-5 md:flex-row">
           <ReserveCalendar handleCalendar={handleCalendar} />
+
           <ReserveCity handleCity={handleCity} />
 
           <button
