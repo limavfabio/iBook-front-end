@@ -6,11 +6,10 @@ import Details from './Details';
 
 describe('Main Home', () => {
   it('expects to render a snapshot of the Home component', () => {
- 
     const episodeTest = render(
       <Provider store={store}>
         <BrowserRouter>
-          <Details/>
+          <Details />
         </BrowserRouter>
       </Provider>,
     );

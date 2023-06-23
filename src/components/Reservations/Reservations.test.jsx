@@ -9,7 +9,7 @@ describe('Main Home', () => {
     const episodeTest = render(
       <Provider store={store}>
         <BrowserRouter>
-          <Reservations/>
+          <Reservations />
         </BrowserRouter>
       </Provider>,
     );

@@ -1,23 +1,22 @@
-import "@testing-library/jest-dom/extend-expect";
-import { render } from "@testing-library/react";
-import React from "react";
-import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
-import configureStore from "redux-mock-store";
+import '@testing-library/jest-dom/extend-expect';
+import { render } from '@testing-library/react';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import configureStore from 'redux-mock-store';
 import Details from '../../routes/Details';
 
 // Mock the Redux store
 const mockStore = configureStore([]);
 
 // Mock useEffect
-jest.mock("react", () => ({
-  ...jest.requireActual("react"),
+jest.mock('react', () => ({
+  ...jest.requireActual('react'),
   useEffect: jest.fn(),
 }));
 
 describe('Details component', () => {
-
-  it("expects to initially set reservations as an empty object", () => {
+  it('expects to initially set reservations as an empty object', () => {
     const initialState = {
       value: {
         id: null,
@@ -40,8 +39,6 @@ describe('Details component', () => {
     expect(state).toEqual(initialState.value);
   });
 
-
-
   it('renders product details correctly', () => {
     // Mock the product data
     const mockProduct = {
@@ -60,7 +57,7 @@ describe('Details component', () => {
       user: {
         id: 1,
         username: 'test-user',
-      }
+      },
     });
 
     // Get state from mock store
@@ -75,7 +72,7 @@ describe('Details component', () => {
         <BrowserRouter>
           <Details />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
 
     // Assert that the product details are rendered correctly
@@ -83,6 +80,5 @@ describe('Details component', () => {
     expect(getByText(mockProduct.description)).toBeInTheDocument();
     expect(getByText(mockProduct.price)).toBeInTheDocument();
     expect(getByAltText(mockProduct.name)).toHaveAttribute('src', mockProduct.image);
-
   });
 });

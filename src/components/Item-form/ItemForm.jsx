@@ -73,35 +73,35 @@ const ItemForm = () => {
             <div className="w-72 md:w-96">
 
               <FormInput
-                type={"text"}
-                id={"name"}
+                type="text"
+                id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder={"Marker Kit"}
+                placeholder="Marker Kit"
               />
 
               <FormInput
-                type={"text"}
-                id={"description"}
+                type="text"
+                id="description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder={"A nice marker kit"}
+                placeholder="A nice marker kit"
               />
 
               <FormInput
-                type={"text"}
-                id={"image"}
+                type="text"
+                id="image"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
-                placeholder={"URL for the image"}
+                placeholder="URL for the image"
               />
 
               <FormInput
-                type={"number"}
-                id={"price"}
+                type="number"
+                id="price"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
-                placeholder={"Price"}
+                placeholder="Price"
               />
 
               <button

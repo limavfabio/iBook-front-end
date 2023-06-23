@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-function FormInput({type, id, value, placeholder, onChange}) {
-
-
+function FormInput({
+  type, id, value, placeholder, onChange,
+}) {
   return (
     <label htmlFor={value} className="mb-2 block">
       <p className="font-semibold">Name</p>
@@ -16,7 +16,7 @@ function FormInput({type, id, value, placeholder, onChange}) {
         required
       />
     </label>
-  )
+  );
 }
 
-export default FormInput
+export default FormInput;

@@ -13,7 +13,7 @@ describe('userSlice', () => {
   });
 
   it('should handle createUser.fulfilled', async () => {
-    const mockPayload = { id: "1", username: 'testuser' };
+    const mockPayload = { id: '1', username: 'testuser' };
 
     // Mock the fetch request
     global.fetch = jest.fn().mockResolvedValue({
