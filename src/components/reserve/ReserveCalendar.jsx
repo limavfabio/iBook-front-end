@@ -13,7 +13,7 @@ const ReserveCalendar = ({ handleCalendar }) => {
 
   useEffect(() => {
     handleCalendar(date);
-  }, [cityValue]);
+  }, [value]);
 
   const handleChange = (e) => {
     setValue(e.target.value);
