@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { BsPlay } from 'react-icons/bs';
 import { Rings } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import DetailRow from '../components/DetailRow';
 import ReserveButton from '../components/ReserveButton';
 import Header from '../components/layout/Header';
@@ -72,7 +72,7 @@ function Details() {
             <div className="mb-5 flex flex-col justify-between">
               <DetailRow
                 label="Package price"
-                value={product.price}
+                value={product.price.toString()}
                 isGrayBackground
               />
               <DetailRow label="Date" value={new Date(product.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })} />
