@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 function FormInput({
   type, id, value, placeholder, onChange,
 }) {
-
   const capitalizedId = id.charAt(0).toUpperCase() + id.slice(1);
-
 
   return (
     <label htmlFor={id} className="mb-2 block">
