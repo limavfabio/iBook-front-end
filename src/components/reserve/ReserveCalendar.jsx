@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 
 const ReserveCalendar = ({ handleCalendar }) => {
@@ -11,7 +11,9 @@ const ReserveCalendar = ({ handleCalendar }) => {
     setIsCalendarOpen(!isCalendarOpen);
   };
 
-  handleCalendar(date);
+  useEffect(() => {
+    handleCalendar(date);
+  }, [value, handleCalendar, date]);
 
   const handleChange = (e) => {
     setValue(e.target.value);

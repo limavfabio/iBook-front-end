@@ -1,13 +1,9 @@
 import { Cog6ToothIcon } from '@heroicons/react/24/outline';
+import PropTypes from 'prop-types';
 import { IoIosArrowDropright } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 function ReserveButton({ className, product }) {
-  if (!product || product.id === null) {
-    return null; // Return null or handle the case when product or product.id is null
-  }
-
   return (
 
     <Link to={`/products/${product.id}/reservation`} state={{ data: product }}>
@@ -30,9 +26,9 @@ ReserveButton.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     image: PropTypes.string,
-    price: PropTypes.string,
+    price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     owner_id: PropTypes.number,
-    created_at: PropTypes.string,
+    created_at: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     updated_at: PropTypes.string,
   }).isRequired,
 };

@@ -9,7 +9,7 @@ const initialState = {
     name: '',
     description: '',
     image: '',
-    price: '',
+    price: null,
     owner_id: null,
     created_at: '',
     updated_at: '',

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 import { BsPlay } from 'react-icons/bs';
 import CityOption from './CityOption';
 
@@ -15,7 +15,9 @@ const ReserveCity = ({ handleCity }) => {
     setCityIsOpen(!isCityOpen);
   };
 
-  handleCity(cityValue);
+  useEffect(() => {
+    handleCity(cityValue);
+  }, [cityValue, handleCity]);
 
   const cityOptions = [
     'New York',

@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from '../layout/Header';
 import MobileSidebar from '../layout/MobileSidebar';
 import Sidebar from '../layout/Sidebar';
+import FormInput from './FormInput';
 
 const ItemForm = () => {
   const URL = 'https://venom-precision.onrender.com/api/v1';
@@ -70,54 +71,39 @@ const ItemForm = () => {
           >
             <h2 className=" text-center font-bold uppercase">Add New Item</h2>
             <div className="w-72 md:w-96">
-              <label htmlFor="name" className="mb-2 block">
-                <p className="font-semibold">Name</p>
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Marker Kit"
-                  className="my-2 w-full border border-[#BFD872] px-6 py-2 focus:border-[#85a80d] focus:bg-white focus:outline-none"
-                  required
-                />
-              </label>
-              <label htmlFor="description" className="mb-2 block">
-                <p className="font-semibold">Description</p>
-                <input
-                  type="text"
-                  id="description"
-                  value={description}
-                  placeholder="A nice marker kit"
-                  onChange={(e) => setDescription(e.target.value)}
-                  className="my-2 w-full border border-[#BFD872] px-6 py-2 focus:border-[#85a80d] focus:bg-white focus:outline-none"
-                  required
-                />
-              </label>
-              <label htmlFor="image" className="mb-2 block">
-                <p className="font-semibold">Image</p>
-                <input
-                  type="text"
-                  id="image"
-                  value={image}
-                  placeholder="https://vespaindia.com/images/classic/vxl_yellow.webp"
-                  onChange={(e) => setImage(e.target.value)}
-                  className="my-2 w-full border border-[#BFD872] px-6 py-2 focus:border-[#85a80d] focus:bg-white focus:outline-none"
-                  required
-                />
-              </label>
-              <label htmlFor="price" className="mb-2 block">
-                <p className="font-semibold">Price</p>
-                <input
-                  type="text"
-                  id="price"
-                  value={price}
-                  placeholder="Price"
-                  onChange={(e) => setPrice(e.target.value)}
-                  className="my-2 w-full border border-[#BFD872] px-6 py-2 focus:border-[#85a80d] focus:bg-white focus:outline-none"
-                  required
-                />
-              </label>
+
+              <FormInput
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Marker Kit"
+              />
+
+              <FormInput
+                type="text"
+                id="description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="A nice marker kit"
+              />
+
+              <FormInput
+                type="text"
+                id="image"
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
+                placeholder="URL for the image"
+              />
+
+              <FormInput
+                type="number"
+                id="price"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+                placeholder="Price"
+              />
+
               <button
                 type="submit"
                 className="mt-4 bg-[#97BF0F] px-6 py-2 text-white hover:bg-[#85a80d] focus:bg-[#6d8a0a]"
