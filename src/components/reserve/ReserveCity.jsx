@@ -17,7 +17,7 @@ const ReserveCity = ({ handleCity }) => {
 
   useEffect(() => {
     handleCity(cityValue);
-  }, [cityValue]);
+  }, [cityValue, handleCity]);
 
   const cityOptions = [
     'New York',
