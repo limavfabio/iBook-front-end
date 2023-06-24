@@ -1,15 +1,15 @@
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-import { useEffect, useState } from "react";
-import { BsPlay } from "react-icons/bs";
-import { Rings } from "react-loader-spinner";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import DetailRow from "../components/DetailRow";
-import ReserveButton from "../components/ReserveButton";
-import Header from "../components/layout/Header";
-import MobileSidebar from "../components/layout/MobileSidebar";
-import Sidebar from "../components/layout/Sidebar";
-import { fetchProductWithId } from "../redux/productsSlice";
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
+import { useEffect, useState } from 'react';
+import { BsPlay } from 'react-icons/bs';
+import { Rings } from 'react-loader-spinner';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import DetailRow from '../components/DetailRow';
+import ReserveButton from '../components/ReserveButton';
+import Header from '../components/layout/Header';
+import MobileSidebar from '../components/layout/MobileSidebar';
+import Sidebar from '../components/layout/Sidebar';
+import { fetchProductWithId } from '../redux/productsSlice';
 
 function Details() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -58,8 +58,16 @@ function Details() {
           </div>
           {/* Right Side Details Panel */}
           <div className="flex h-full w-full min-w-fit flex-col justify-center px-5 text-end sm:w-1/3">
-            <h2 className="mb-1 text-4xl"> {product.name} </h2>
-            <p className="mb-5"> {product.description} </p>
+            <h2 className="mb-1 text-4xl">
+              {' '}
+              {product.name}
+              {' '}
+            </h2>
+            <p className="mb-5">
+              {' '}
+              {product.description}
+              {' '}
+            </p>
             {product.price && (
               <div className="mb-5 flex flex-col justify-between">
                 <DetailRow
@@ -71,18 +79,24 @@ function Details() {
                   label="Date"
                   value={new Date(product.created_at).toLocaleDateString(
                     undefined,
-                    { year: "numeric", month: "long", day: "numeric" }
+                    { year: 'numeric', month: 'long', day: 'numeric' },
                   )}
                 />
               </div>
             )}
             <Link to="/products">
               <p className="flex items-center self-end font-bold">
-                DISCOVER MORE MODELS{" "}
-                <ChevronRightIcon className="h-5 text-[#97BF0F]" />{" "}
+                DISCOVER MORE MODELS
+                {' '}
+                <ChevronRightIcon className="h-5 text-[#97BF0F]" />
+                {' '}
               </p>
             </Link>
-            <ReserveButton className="mt-5" product={product} />
+
+            {product.price && (
+              <ReserveButton className="mt-5" product={product} />
+            )}
+
           </div>
           <button
             type="button"

@@ -4,9 +4,6 @@ import { IoIosArrowDropright } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
 function ReserveButton({ className, product }) {
-  if (!product || product.id === null) {
-    return null; // Return null or handle the case when product or product.id is null
-  }
   return (
 
     <Link to={`/products/${product.id}/reservation`} state={{ data: product }}>
@@ -29,9 +26,9 @@ ReserveButton.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     image: PropTypes.string,
-    price: PropTypes.number,
+    price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     owner_id: PropTypes.number,
-    created_at: PropTypes.number,
+    created_at: PropTypes.string,
     updated_at: PropTypes.string,
   }).isRequired,
 };
