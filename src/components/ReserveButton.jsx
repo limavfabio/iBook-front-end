@@ -28,7 +28,7 @@ ReserveButton.propTypes = {
     image: PropTypes.string,
     price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     owner_id: PropTypes.number,
-    created_at: PropTypes.string,
+    created_at: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     updated_at: PropTypes.string,
   }).isRequired,
 };
