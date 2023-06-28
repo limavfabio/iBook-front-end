@@ -8,16 +8,63 @@ import Home from './routes/Home';
 import Login from './routes/Login';
 import SignUp from './routes/SignUp';
 import Products from './routes/Products';
+import AppLayout from './components/layout/AppLayout';
 
 const router = createBrowserRouter([
-  { path: '/', element: <Home /> },
-  { path: '/products/:productId', element: <Details /> },
-  { path: '/products/:productId/reservation', element: <Reserve /> },
-  { path: '/products/new', element: <ItemForm /> },
-  { path: '/products', element: <Products /> },
-  { path: '/reservations', element: <Reservations /> },
-  { path: '/login', element: <Login /> },
-  { path: '/signup', element: <SignUp /> },
+  {
+    path: '/',
+    element:
+  <AppLayout>
+    <Home />
+  </AppLayout>,
+  },
+
+  {
+    path: '/products/:productId',
+    element:
+  <AppLayout>
+    <Details />
+  </AppLayout>,
+  },
+
+  {
+    path: '/products/:productId/reservation',
+    element: <Reserve />,
+  },
+
+  {
+    path: '/products/new',
+    element:
+  <AppLayout>
+    <ItemForm />
+  </AppLayout>,
+  },
+
+  {
+    path: '/products',
+    element:
+  <AppLayout>
+    <Products />
+  </AppLayout>,
+  },
+
+  {
+    path: '/reservations',
+    element:
+  <AppLayout>
+    <Reservations />
+  </AppLayout>,
+  },
+
+  {
+    path: '/login',
+    element: <Login />,
+  },
+
+  {
+    path: '/signup',
+    element: <SignUp />,
+  },
 ]);
 
 export default router;
