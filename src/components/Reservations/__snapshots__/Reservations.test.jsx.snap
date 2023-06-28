@@ -6,416 +6,12 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="flex items-center justify-between bg-lime-500 px-4 py-2 md:hidden"
-      >
-        <button
-          class=""
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            class="h-8 text-white"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </button>
-        <p
-          class="font-bold text-white"
-        >
-          VenomPrecision
-        </p>
-        <div />
-      </div>
-      <div
-        class="flex"
-      >
-        <div
-          class="hidden h-screen min-w-max flex-col border border-gray-100 bg-white md:flex"
-        >
-          <div
-            class="flex mt-10 justify-center"
-          >
-            <img
-              alt="logo"
-              class="w-40"
-              src="/venom-precision-logo.png"
-            />
-          </div>
-          <ul
-            class="mt-10"
-          >
-            <a
-              href="/"
-            >
-              <li
-                class="w-64 ml-2 py-4 pl-3 flex  items-center  font-bold bg-lime-500 text-white"
-              >
-                <span
-                  class="mr-5 text-xl"
-                >
-                  <svg
-                    aria-hidden="true"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 20 20"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"
-                    />
-                    <path
-                      clip-rule="evenodd"
-                      d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                      fill-rule="evenodd"
-                    />
-                  </svg>
-                </span>
-                MAIN PAGE
-              </li>
-            </a>
-            <a
-              href="/products"
-            >
-              <li
-                class="w-64 ml-2 py-4 pl-3 flex  items-center  font-bold text-slate-700"
-              >
-                <span
-                  class="mr-5 text-xl"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 16 16"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"
-                    />
-                    <path
-                      d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"
-                    />
-                  </svg>
-                </span>
-                ALL PRODUCTS
-              </li>
-            </a>
-            <a
-              href="/login"
-            >
-              <li
-                class="w-64 ml-2 py-4 pl-3 flex  items-center  font-bold text-slate-700"
-              >
-                <span
-                  class="mr-5 text-xl"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="m13 16 5-4-5-4v3H4v2h9z"
-                    />
-                    <path
-                      d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"
-                    />
-                  </svg>
-                </span>
-                LOGIN
-              </li>
-            </a>
-          </ul>
-        </div>
-        <div
-          class="h-screen w-full flex-1 overflow-y-auto bg-gray-200 pt-[3rem]"
-        >
-          <h2
-            class="my-5 text-center text-3xl font-bold uppercase"
-          >
-            My Reservations
-          </h2>
-          <section
-            class="bg-blueGray-50 "
-          >
-            <div
-              class="mx-auto mb-12 mt-5 w-full px-10 xl:mb-0"
-            >
-              <div
-                class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded  shadow-lg "
-              >
-                <div
-                  class="block w-full overflow-x-auto"
-                >
-                  <table
-                    class="w-full border-collapse items-center  rounded border bg-transparent"
-                  >
-                    <thead
-                      class="bg-gray-500 text-white"
-                    >
-                      <tr>
-                        <th
-                          class="bg-blueGray-50 text-blueGray-500 border-blueGray-100 whitespace-nowrap border border-l-0 border-r-0 border-solid px-6 py-3 text-left align-middle text-xs font-semibold uppercase"
-                        >
-                          <span
-                            class="inline-block pr-2 align-middle text-xl"
-                          >
-                            <svg
-                              fill="currentColor"
-                              height="1em"
-                              stroke="currentColor"
-                              stroke-width="0"
-                              viewBox="0 0 512 512"
-                              width="1em"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M217 25v30h30V25h-30zm48 0v30h30V25h-30zm48 0v30h30V25h-30zm-96 48v46h30V73h-30zm48 0v46h30V73h-30zm48 0v46h30V73h-30zm-96 64v46h30v-46h-30zm48 0v46h30v-46h-30zm48 0v46h30v-46h-30zm174 6.508l-94 53.715V215h94v-71.492zM217 201v46h30v-46h-30zm48 0v46h30v-46h-30zm48 0v46h30v-46h-30zm80 32v110h94V233h-94zM39 256v23h18v-23H39zm178 9v46h30v-46h-30zm48 0v46h30v-46h-30zm48 0v46h30v-46h-30zM37.562 297l-7 14h146.875l-7-14H37.563zM25 329v158h23v-23h32v23h48v-23h32v23h23V329H25zm192 0v46h30v-46h-30zm48 0v46h30v-46h-30zm48 0v46h30v-46h-30zM48 352h32v16H48v-16zm80 0h32v16h-32v-16zm265 9v126h31v-23h32v23h31V361h-94zM48 384h32v16H48v-16zm80 0h32v16h-32v-16zm89 9v46h30v-46h-30zm48 0v46h30v-46h-30zm48 0v46h30v-46h-30zM48 416h32v16H48v-16zm80 0h32v16h-32v-16zm89 41v30h30v-30h-30zm48 0v30h30v-30h-30zm48 0v30h30v-30h-30z"
-                              />
-                            </svg>
-                          </span>
-                          City
-                        </th>
-                        <th
-                          class="bg-blueGray-50 text-blueGray-500 border-blueGray-100 whitespace-nowrap border border-l-0 border-r-0 border-solid px-6 py-3 text-left align-middle text-xs font-semibold uppercase"
-                        >
-                          <span
-                            class="inline-block pr-2 align-middle text-xl"
-                          >
-                            <svg
-                              fill="currentColor"
-                              height="1em"
-                              stroke="currentColor"
-                              stroke-width="0"
-                              viewBox="0 0 24 24"
-                              width="1em"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M0 0h24v24H0z"
-                                fill="none"
-                              />
-                              <path
-                                d="M13 10h-2V8h2v2zm0-4h-2V1h2v5zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-8.9-5h7.45c.75 0 1.41-.41 1.75-1.03L21 4.96 19.25 4l-3.7 7H8.53L4.27 2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2z"
-                              />
-                            </svg>
-                             
-                          </span>
-                          Product
-                        </th>
-                        <th
-                          class="bg-blueGray-50 text-blueGray-500 border-blueGray-100 whitespace-nowrap border border-l-0 border-r-0 border-solid px-6 py-3 text-left align-middle text-xs font-semibold uppercase"
-                        >
-                          <span
-                            class="inline-block pr-2 align-middle text-xl"
-                          >
-                            <svg
-                              fill="currentColor"
-                              height="1em"
-                              stroke="currentColor"
-                              stroke-width="0"
-                              viewBox="0 0 640 512"
-                              width="1em"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM80.55 341.27c6.28 6.84 15.1 10.72 24.33 10.71l130.54-.18a65.62 65.62 0 0 0 29.64-7.12l290.96-147.65c26.74-13.57 50.71-32.94 67.02-58.31 18.31-28.48 20.3-49.09 13.07-63.65-7.21-14.57-24.74-25.27-58.25-27.45-29.85-1.94-59.54 5.92-86.28 19.48l-98.51 49.99-218.7-82.06a17.799 17.799 0 0 0-18-1.11L90.62 67.29c-10.67 5.41-13.25 19.65-5.17 28.53l156.22 98.1-103.21 52.38-72.35-36.47a17.804 17.804 0 0 0-16.07.02L9.91 230.22c-10.44 5.3-13.19 19.12-5.57 28.08l76.21 82.97z"
-                              />
-                            </svg>
-                             
-                          </span>
-                           
-                          Visits
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody
-                      class="bg-white"
-                    >
-                      <tr>
-                        <td
-                          class="px-6 py-4 text-center"
-                          colspan="4"
-                        >
-                          Reservations not found
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="flex items-center justify-between bg-lime-500 px-4 py-2 md:hidden"
-    >
-      <button
-        class=""
-        type="button"
-      >
-        <svg
-          aria-hidden="true"
-          class="h-8 text-white"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-      <p
-        class="font-bold text-white"
-      >
-        VenomPrecision
-      </p>
-      <div />
-    </div>
-    <div
-      class="flex"
-    >
-      <div
-        class="hidden h-screen min-w-max flex-col border border-gray-100 bg-white md:flex"
-      >
-        <div
-          class="flex mt-10 justify-center"
-        >
-          <img
-            alt="logo"
-            class="w-40"
-            src="/venom-precision-logo.png"
-          />
-        </div>
-        <ul
-          class="mt-10"
-        >
-          <a
-            href="/"
-          >
-            <li
-              class="w-64 ml-2 py-4 pl-3 flex  items-center  font-bold bg-lime-500 text-white"
-            >
-              <span
-                class="mr-5 text-xl"
-              >
-                <svg
-                  aria-hidden="true"
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 20 20"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"
-                  />
-                  <path
-                    clip-rule="evenodd"
-                    d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
-                    fill-rule="evenodd"
-                  />
-                </svg>
-              </span>
-              MAIN PAGE
-            </li>
-          </a>
-          <a
-            href="/products"
-          >
-            <li
-              class="w-64 ml-2 py-4 pl-3 flex  items-center  font-bold text-slate-700"
-            >
-              <span
-                class="mr-5 text-xl"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 16 16"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"
-                  />
-                  <path
-                    d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"
-                  />
-                </svg>
-              </span>
-              ALL PRODUCTS
-            </li>
-          </a>
-          <a
-            href="/login"
-          >
-            <li
-              class="w-64 ml-2 py-4 pl-3 flex  items-center  font-bold text-slate-700"
-            >
-              <span
-                class="mr-5 text-xl"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  stroke="currentColor"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="m13 16 5-4-5-4v3H4v2h9z"
-                  />
-                  <path
-                    d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z"
-                  />
-                </svg>
-              </span>
-              LOGIN
-            </li>
-          </a>
-        </ul>
-      </div>
-      <div
         class="h-screen w-full flex-1 overflow-y-auto bg-gray-200 pt-[3rem]"
       >
         <h2
-          class="my-5 text-center text-3xl font-bold uppercase"
+          class="my-5 text-center text-3xl font-bold"
         >
-          My Reservations
+          MY RESERVATIONS
         </h2>
         <section
           class="bg-blueGray-50 "
@@ -529,6 +125,128 @@ Object {
           </div>
         </section>
       </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="h-screen w-full flex-1 overflow-y-auto bg-gray-200 pt-[3rem]"
+    >
+      <h2
+        class="my-5 text-center text-3xl font-bold"
+      >
+        MY RESERVATIONS
+      </h2>
+      <section
+        class="bg-blueGray-50 "
+      >
+        <div
+          class="mx-auto mb-12 mt-5 w-full px-10 xl:mb-0"
+        >
+          <div
+            class="relative mb-6 flex w-full min-w-0 flex-col break-words rounded  shadow-lg "
+          >
+            <div
+              class="block w-full overflow-x-auto"
+            >
+              <table
+                class="w-full border-collapse items-center  rounded border bg-transparent"
+              >
+                <thead
+                  class="bg-gray-500 text-white"
+                >
+                  <tr>
+                    <th
+                      class="bg-blueGray-50 text-blueGray-500 border-blueGray-100 whitespace-nowrap border border-l-0 border-r-0 border-solid px-6 py-3 text-left align-middle text-xs font-semibold uppercase"
+                    >
+                      <span
+                        class="inline-block pr-2 align-middle text-xl"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 512 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M217 25v30h30V25h-30zm48 0v30h30V25h-30zm48 0v30h30V25h-30zm-96 48v46h30V73h-30zm48 0v46h30V73h-30zm48 0v46h30V73h-30zm-96 64v46h30v-46h-30zm48 0v46h30v-46h-30zm48 0v46h30v-46h-30zm174 6.508l-94 53.715V215h94v-71.492zM217 201v46h30v-46h-30zm48 0v46h30v-46h-30zm48 0v46h30v-46h-30zm80 32v110h94V233h-94zM39 256v23h18v-23H39zm178 9v46h30v-46h-30zm48 0v46h30v-46h-30zm48 0v46h30v-46h-30zM37.562 297l-7 14h146.875l-7-14H37.563zM25 329v158h23v-23h32v23h48v-23h32v23h23V329H25zm192 0v46h30v-46h-30zm48 0v46h30v-46h-30zm48 0v46h30v-46h-30zM48 352h32v16H48v-16zm80 0h32v16h-32v-16zm265 9v126h31v-23h32v23h31V361h-94zM48 384h32v16H48v-16zm80 0h32v16h-32v-16zm89 9v46h30v-46h-30zm48 0v46h30v-46h-30zm48 0v46h30v-46h-30zM48 416h32v16H48v-16zm80 0h32v16h-32v-16zm89 41v30h30v-30h-30zm48 0v30h30v-30h-30zm48 0v30h30v-30h-30z"
+                          />
+                        </svg>
+                      </span>
+                      City
+                    </th>
+                    <th
+                      class="bg-blueGray-50 text-blueGray-500 border-blueGray-100 whitespace-nowrap border border-l-0 border-r-0 border-solid px-6 py-3 text-left align-middle text-xs font-semibold uppercase"
+                    >
+                      <span
+                        class="inline-block pr-2 align-middle text-xl"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 24 24"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          />
+                          <path
+                            d="M13 10h-2V8h2v2zm0-4h-2V1h2v5zM7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-8.9-5h7.45c.75 0 1.41-.41 1.75-1.03L21 4.96 19.25 4l-3.7 7H8.53L4.27 2H1v2h2l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2z"
+                          />
+                        </svg>
+                         
+                      </span>
+                      Product
+                    </th>
+                    <th
+                      class="bg-blueGray-50 text-blueGray-500 border-blueGray-100 whitespace-nowrap border border-l-0 border-r-0 border-solid px-6 py-3 text-left align-middle text-xs font-semibold uppercase"
+                    >
+                      <span
+                        class="inline-block pr-2 align-middle text-xl"
+                      >
+                        <svg
+                          fill="currentColor"
+                          height="1em"
+                          stroke="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 640 512"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM80.55 341.27c6.28 6.84 15.1 10.72 24.33 10.71l130.54-.18a65.62 65.62 0 0 0 29.64-7.12l290.96-147.65c26.74-13.57 50.71-32.94 67.02-58.31 18.31-28.48 20.3-49.09 13.07-63.65-7.21-14.57-24.74-25.27-58.25-27.45-29.85-1.94-59.54 5.92-86.28 19.48l-98.51 49.99-218.7-82.06a17.799 17.799 0 0 0-18-1.11L90.62 67.29c-10.67 5.41-13.25 19.65-5.17 28.53l156.22 98.1-103.21 52.38-72.35-36.47a17.804 17.804 0 0 0-16.07.02L9.91 230.22c-10.44 5.3-13.19 19.12-5.57 28.08l76.21 82.97z"
+                          />
+                        </svg>
+                         
+                      </span>
+                       
+                      Visits
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="bg-white"
+                >
+                  <tr>
+                    <td
+                      class="px-6 py-4 text-center"
+                      colspan="4"
+                    >
+                      Reservations not found
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>,
   "debug": [Function],
