@@ -16,8 +16,8 @@ const Reservations = () => {
 
   return (
     <div className="h-screen w-full flex-1 overflow-y-auto bg-gray-200 pt-[3rem]">
-      <h2 className="my-5 text-center text-3xl font-bold uppercase">
-        My Reservations
+      <h2 className="my-5 text-center text-3xl font-bold">
+        MY RESERVATIONS
       </h2>
       <section className="bg-blueGray-50 ">
         <div className="mx-auto mb-12 mt-5 w-full px-10 xl:mb-0">

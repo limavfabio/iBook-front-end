@@ -9,9 +9,9 @@ Object {
         class="h-screen w-full flex-1 overflow-y-auto bg-gray-200 pt-[3rem]"
       >
         <h2
-          class="my-5 text-center text-3xl font-bold uppercase"
+          class="my-5 text-center text-3xl font-bold"
         >
-          My Reservations
+          MY RESERVATIONS
         </h2>
         <section
           class="bg-blueGray-50 "
@@ -132,9 +132,9 @@ Object {
       class="h-screen w-full flex-1 overflow-y-auto bg-gray-200 pt-[3rem]"
     >
       <h2
-        class="my-5 text-center text-3xl font-bold uppercase"
+        class="my-5 text-center text-3xl font-bold"
       >
-        My Reservations
+        MY RESERVATIONS
       </h2>
       <section
         class="bg-blueGray-50 "
