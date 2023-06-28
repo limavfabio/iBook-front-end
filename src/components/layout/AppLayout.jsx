@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
@@ -7,6 +8,12 @@ import MobileSidebar from './MobileSidebar';
 
 function AppLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Close the sidebar when the route changes
+    setIsSidebarOpen(false);
+  }, [location]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
