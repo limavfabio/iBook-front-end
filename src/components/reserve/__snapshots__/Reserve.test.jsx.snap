@@ -34,10 +34,10 @@ Object {
               >
                 <input
                   class=" appearance-none border-none bg-transparent text-black outline-none"
-                  min="2023-06-24"
+                  min="2023-06-28"
                   style="color: white; background-color: transparent; appearance: none; outline: none;"
                   type="date"
-                  value="2023-06-24"
+                  value="2023-06-28"
                 />
               </button>
             </div>
@@ -108,10 +108,10 @@ Object {
             >
               <input
                 class=" appearance-none border-none bg-transparent text-black outline-none"
-                min="2023-06-24"
+                min="2023-06-28"
                 style="color: white; background-color: transparent; appearance: none; outline: none;"
                 type="date"
-                value="2023-06-24"
+                value="2023-06-28"
               />
             </button>
           </div>
