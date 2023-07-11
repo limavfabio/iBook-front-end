@@ -146,6 +146,14 @@ The build files will be located in the `dist` folder.
 
 - GitHub: [@githubhandle](https://github.com/jakariajishan)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/jakariajishan)
+- 
+
+👤 **Marcelo Alarcon Barrenechea** 
+
+🇧🇴 Bolivia 💓
+
+- GitHub: [@chelobotix](https://github.com/chelobotix)
+- Linkedin: [Marcelo Alarcon](https://www.linkedin.com/in/marceloalarconb/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
